@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a defect in this repository instance or in a reusable artifact.
+title: "[Bug] "
+labels:
+  - type: bug
+body:
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Affected layer
+      options:
+        - Repository instance
+        - Reusable artifact library
+    validations:
+      required: true
+  - type: textarea
+    id: path
+    attributes:
+      label: Affected path
+      description: Name the file or directory that is failing.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the defect and the observed behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: List the validation or usage steps that reproduce the issue.
+    validations:
+      required: true
+
+# Source Attribution: governance__github_docs.md; GitHub Docs; native-platform-binding; Reviewed on 2026-03-27

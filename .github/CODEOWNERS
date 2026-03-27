@@ -1,0 +1,5 @@
+# This repository-specific CODEOWNERS file is intentionally conservative until
+# concrete publication handles are finalized. Add real GitHub owners before
+# relying on CODEOWNERS enforcement for protected branches.
+#
+# Source Attribution: governance__github_docs.md; GitHub Docs; direct-adaptation; Reviewed on 2026-03-27

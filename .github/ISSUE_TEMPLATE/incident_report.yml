@@ -1,0 +1,35 @@
+name: Incident report
+description: Report a public, non-sensitive repository or automation incident.
+title: "[Incident] "
+labels:
+  - type: incident
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Describe the impact on this repository or on downstream reuse.
+    validations:
+      required: true
+  - type: textarea
+    id: timeline
+    attributes:
+      label: Timeline
+      description: Summarize the known sequence of events.
+    validations:
+      required: true
+  - type: textarea
+    id: next_steps
+    attributes:
+      label: Next steps
+      description: Record immediate mitigation or follow-up actions.
+    validations:
+      required: true
+
+# Source Attribution: governance__github_docs.md; GitHub Docs; native-platform-binding; Reviewed on 2026-03-27

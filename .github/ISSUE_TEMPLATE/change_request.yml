@@ -1,0 +1,32 @@
+name: Change request
+description: Propose a structural, policy, or reusable-artifact change.
+title: "[Change] "
+labels:
+  - type: change
+body:
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - Repository instance
+        - Reusable artifact library
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Requested change
+      description: Explain the change and why it is needed now.
+    validations:
+      required: true
+  - type: textarea
+    id: downstream
+    attributes:
+      label: Downstream impact
+      description: Note whether downstream repositories will need to update or re-instantiate anything.
+    validations:
+      required: true
+
+# Source Attribution: governance__github_docs.md; GitHub Docs; native-platform-binding; Reviewed on 2026-03-27
