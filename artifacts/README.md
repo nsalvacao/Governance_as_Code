@@ -35,10 +35,18 @@ Not every dimension needs every artifact type.
 | Dimension | Purpose |
 |---|---|
 | `conventions` | Cross-cutting metadata, attribution, automation, and validation rules |
-| `governance` | Decision architecture, repository-health templates, GitHub-native templates, and governance schemas |
-| `reliability` | Error budgets, postmortems, and production readiness |
-| `operations` | Incident policy, incident records, and playbooks |
-| `continuity` | Business impact analysis and contingency planning |
+| `governance` | Governance method, repository-health templates, GitHub-native templates, and decision architecture |
+| `discovery` | Discovery, planning, experimentation, retrospectives, and early learning records |
+| `architecture` | Architecture decision support, review, threat modeling, and security reasoning |
+| `quality` | Review controls, ownership, support, and verification surfaces |
+| `delivery` | Delivery planning, change management, rollout, rollback, and post-implementation review |
+| `platform` | CI/CD, GitOps, environment governance, platform baselines, and AI operations |
+| `operations` | Service facts, incident response, operational playbooks, runbooks, and procedures |
+| `continuity` | Continuity planning, recovery, business impact, and drills |
+| `knowledge` | Post-incident learning, documentation governance, and continuous improvement |
+| `project-governance` | Project, portfolio, service governance, and ITSM-adjacent reusable records |
+| `risk` | Risk, exceptions, auditability, vulnerability records, and governance review cadence |
+| `reliability` | Legacy first-wave reliability assets retained as reusable support material during catalog coverage |
 
 ## Instance versus template
 

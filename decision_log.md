@@ -214,6 +214,45 @@ The following foundational inferences are hereby recorded:
 2. Dimensions should align with the public document map wherever practical.
 3. The library structure should make it obvious which category an artifact belongs to before the reader needs to care about file type.
 
+## DL-0015 - One catalog entry, at least one reusable artifact
+
+- Date: 2026-03-27
+- Status: Accepted
+- Context: Clarification on the expected completion model for the public document catalog embedded in the README.
+
+### Decision
+
+1. Each document entry listed in the ten dimensional tables of the README must, in the final system, link to a corresponding reusable artifact.
+2. The minimum target is therefore at least one reusable artifact per catalog entry.
+3. The total number of reusable artifacts may exceed the number of catalog entries where the system benefits from additional schemas, explanatory standards, rationale documents, scenario-specific variants, or multiple implementation forms.
+4. The folder structure must be designed for that end state from the start, so that the final corpus remains intuitive even as the number of artifacts grows beyond the base catalog count.
+
+## DL-0016 - README as canonical public artifact index
+
+- Date: 2026-03-27
+- Status: Accepted
+- Context: The catalog wave turns the README from a descriptive map into the public navigational index of the reusable corpus.
+
+### Decision
+
+1. The ten dimensional tables in `README.md` are the canonical public index of the reusable governance corpus.
+2. Every catalog row must expose a final canonical primary artifact link.
+3. That link must resolve to a real reusable artifact under `artifacts/`.
+4. Deterministic validation must fail when a row is missing its canonical link or when the linked target does not exist.
+
+## DL-0017 - Canonical bridge artifacts are allowed
+
+- Date: 2026-03-27
+- Status: Accepted
+- Context: Some existing reusable assets are supportive or implementation-specific but not sufficiently explicit to serve directly as the public canonical target for a README row.
+
+### Decision
+
+1. A catalog row may point to a bridge artifact created specifically to represent that document class more clearly in the public library.
+2. Bridge artifacts are valid when they improve navigability, naming clarity, or dimensional alignment.
+3. Bridge artifacts must remain reusable, source-attributed, and publication-safe.
+4. The existence of a bridge artifact does not invalidate older supporting artifacts in neighboring dimensions when those still serve implementation or supporting purposes.
+
 ## Source Attribution
 
 - Source manifests: governance__github_docs.md, platform__aws_well_architected.md, platform__microsoft_learn.md

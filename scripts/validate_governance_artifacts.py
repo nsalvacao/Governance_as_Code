@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from pathlib import Path
 from typing import Iterable, Sequence, Tuple
 
@@ -35,6 +36,9 @@ ROOT_MARKDOWN_PATHS = [
     Path("SECURITY.md"),
     Path("decision_log.md"),
 ]
+
+CATALOG_SECTION_PATTERN = re.compile(r"^## \d+\.")
+MARKDOWN_LINK_PATTERN = re.compile(r"\]\(\./([^)]+)\)")
 
 GITHUB_META_PATHS = [
     Path(".github/ISSUE_TEMPLATE"),
@@ -175,6 +179,8 @@ def gather_all_checks() -> list[Tuple[Path, Sequence[str]]]:
     failures.extend(run_checks(iter_comment_paths(), check_comment_file))
     failures.extend(run_checks(iter_artifact_meta_paths(), check_comment_file))
     failures.extend(run_checks(iter_schema_paths(), check_schema_file))
+    failures.extend(check_artifact_layout())
+    failures.extend(check_readme_catalog_links())
     return failures
 
 
@@ -191,6 +197,87 @@ def check_schema_file(path: Path) -> list[str]:
     if "alignment_mode" not in content:
         problems.append("missing 'alignment_mode' reference")
     return problems
+
+
+def check_artifact_layout() -> list[Tuple[Path, Sequence[str]]]:
+    failures: list[Tuple[Path, Sequence[str]]] = []
+    artifacts_root = Path("artifacts")
+    if not artifacts_root.exists():
+        return failures
+    for path in artifacts_root.rglob("*"):
+        if not path.is_file():
+            continue
+        relative = path.relative_to(artifacts_root)
+        if len(relative.parts) == 1 and path.name == "README.md":
+            continue
+        if len(relative.parts) == 2 and path.name == "README.md":
+            continue
+        if len(relative.parts) < 3:
+            failures.append(
+                (
+                    path,
+                    ["artifact file must live under artifacts/<dimension>/<artifact-type>/ unless it is a dimension README"],
+                )
+            )
+    return failures
+
+
+def check_readme_catalog_links() -> list[Tuple[Path, Sequence[str]]]:
+    readme = Path("README.md")
+    content = readme.read_text(encoding="utf-8").splitlines()
+    failures: list[Tuple[Path, Sequence[str]]] = []
+    current_section = ""
+    in_catalog_table = False
+    row_count = 0
+
+    for line in content:
+        if CATALOG_SECTION_PATTERN.match(line):
+            current_section = line[3:].strip()
+            in_catalog_table = False
+            continue
+
+        if current_section and line.startswith("| Document | Nature | Public role | Primary source basis"):
+            in_catalog_table = True
+            continue
+
+        if in_catalog_table and line.startswith("|---"):
+            continue
+
+        if in_catalog_table and line.startswith("|"):
+            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+            if len(cells) < 5:
+                failures.append((readme, [f"catalog row in '{current_section}' is missing the canonical artifact column: {line}"]))
+                continue
+            document = cells[0]
+            if document == "Document":
+                continue
+            row_count += 1
+            link_match = MARKDOWN_LINK_PATTERN.search(cells[4])
+            if not link_match:
+                failures.append((readme, [f"catalog row '{document}' is missing a valid relative artifact link"]))
+                continue
+            target = Path(link_match.group(1))
+            if not target.exists():
+                failures.append((readme, [f"catalog row '{document}' points to a missing artifact: {target}"]))
+                continue
+            if target.parts[0] != "artifacts":
+                failures.append((readme, [f"catalog row '{document}' must point into artifacts/: {target}"]))
+            relative = target.relative_to("artifacts")
+            if len(relative.parts) < 3:
+                failures.append(
+                    (
+                        readme,
+                        [f"catalog row '{document}' must point to artifacts/<dimension>/<artifact-type>/, got: {target}"],
+                    )
+                )
+            continue
+
+        if in_catalog_table and not line.startswith("|"):
+            in_catalog_table = False
+
+    if row_count != 103:
+        failures.append((readme, [f"expected 103 catalog rows with canonical links, found {row_count}"]))
+    return failures
 
 
 def main() -> int:
