@@ -36,12 +36,18 @@ When the type is ambiguous, prefer a more restrictive type (normative over opera
 
 All Markdown artifacts under `artifacts/` require YAML frontmatter. Required fields are defined in `artifacts/conventions/schemas/frontmatter.schema.json`. The mandatory set is:
 
-```
-title, artifact_type, status, visibility, classification, owner,
-review_cadence, applies_to, source_basis, source_manifests,
-alignment_mode, updated
-```
-
+- `title`
+- `artifact_type`
+- `status`
+- `visibility`
+- `classification`
+- `owner`
+- `review_cadence`
+- `applies_to`
+- `source_basis`
+- `source_manifests`
+- `alignment_mode`
+- `updated`
 Additional artifact-specific keys (e.g., `decision_log_id`, `logic_owner`) are allowed as extensions. Downstream consumers may add their own keys without violating the base schema. Use `{{UPPER_SNAKE_CASE}}` for all values that are instance-specific.
 
 ## Heading Hierarchy Rules
