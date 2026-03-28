@@ -253,9 +253,70 @@ The following foundational inferences are hereby recorded:
 3. Bridge artifacts must remain reusable, source-attributed, and publication-safe.
 4. The existence of a bridge artifact does not invalidate older supporting artifacts in neighboring dimensions when those still serve implementation or supporting purposes.
 
+## DL-0018 - Public provenance manifests
+
+- Date: 2026-03-28
+- Status: Accepted
+- Context: Public documents and reusable artifacts claim traceable provenance, but that provenance must be publicly inspectable rather than implicit or private-only.
+
+### Decision
+
+1. Source manifests referenced in public files must resolve to public, sanitized manifest documents.
+2. Public source manifests are published under `sources/manifests/`.
+3. Private research material may remain richer and more exploratory, but public provenance must be sufficient to verify the declared source basis and authority.
+4. Public-facing attribution should link to the published manifest whenever practical.
+
+## DL-0019 - Public versus private agent guidance
+
+- Date: 2026-03-28
+- Status: Accepted
+- Context: Some agent- and automation-oriented documents exposed implementation detail and internal operating tone that are not appropriate for the public presentation of the repository.
+
+### Decision
+
+1. Public agent guidance must remain minimal, institutional, and contribution-oriented.
+2. Detailed operational instructions, orchestration notes, and internal execution heuristics belong in non-public material.
+3. Public AI automation surfaces should describe intent, trust boundaries, and contribution expectations without exposing unnecessary internal process detail.
+
+## DL-0020 - Canonical single-source rule for duplicate artifact families
+
+- Date: 2026-03-28
+- Status: Accepted
+- Context: Some public artifact families evolved into parallel variants with the same semantic role, creating ambiguity about the canonical source of truth.
+
+### Decision
+
+1. For each semantic document role, the public corpus should expose one canonical reusable artifact.
+2. Duplicate public artifacts with the same semantic role must be consolidated, archived, or reclassified as supporting material.
+3. The README catalog must link only to the canonical artifact for each document role.
+
+## DL-0021 - Public-readiness before structural simplification
+
+- Date: 2026-03-28
+- Status: Accepted
+- Context: The current numbered structure can still be opened publicly if its semantics, attribution, and validation are sound, even if deeper structural simplification is still desirable later.
+
+### Decision
+
+1. Public-readiness hardening takes precedence over a broader tree refactor.
+2. The numbered dimension structure remains in place for the current remediation wave.
+3. Structural simplification toward a flatter `dimension -> artifact-type` model remains a later optimization rather than a prerequisite for publication safety.
+
+## DL-0022 - MIT formalization
+
+- Date: 2026-03-28
+- Status: Accepted
+- Context: The public repository already claimed MIT licensing and needed that claim to be made legally and operationally explicit.
+
+### Decision
+
+1. The repository now ships with a formal MIT `LICENSE` file.
+2. Public license claims must link directly to that file.
+3. If future licensing changes are needed, public claims must change atomically with the legal artifact.
+
 ## Source Attribution
 
-- Source manifests: governance__github_docs.md, platform__aws_well_architected.md, platform__microsoft_learn.md
+- Source manifests: [`governance__github_docs.md`](./sources/manifests/governance__github_docs.md), [`platform__aws_well_architected.md`](./sources/manifests/platform__aws_well_architected.md), [`platform__microsoft_learn.md`](./sources/manifests/platform__microsoft_learn.md)
 - Primary source basis: GitHub Docs community governance guidance plus AWS and Microsoft decision-record practices
 - Alignment mode: hybrid-synthesis
 - Reviewed on: 2026-03-27

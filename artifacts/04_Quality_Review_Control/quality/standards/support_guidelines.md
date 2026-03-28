@@ -56,7 +56,7 @@ The following are **not supported** through this repository:
 
 ## Canonical Relationship
 
-- The repository-instance equivalent is `artifacts/governance/templates/repository-health/SUPPORT.md`.
+- The repository-instance equivalent is `artifacts/01_Governance_Method/governance/templates/repository-health/SUPPORT.md`.
 - This standard is the reusable quality-layer companion for downstream repositories.
 
 ## Source Attribution

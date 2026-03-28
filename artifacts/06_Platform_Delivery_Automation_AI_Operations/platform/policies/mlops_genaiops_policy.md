@@ -51,13 +51,13 @@ Current maturity target: **Level `{{TARGET_MATURITY_LEVEL}}`**
 
 ### Dataset Assets
 
-- All training and evaluation datasets MUST have a Datasheet record (see `artifacts/platform/templates/dataset_training_data_record.md`)
+- All training and evaluation datasets MUST have a Datasheet record (see `artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/dataset_training_data_record.md`)
 - Dataset version used for each model training run MUST be pinned and logged in `{{LINEAGE_TRACKER}}`
 - PII and sensitive data MUST be identified, documented, and handled per `{{DATA_GOVERNANCE_POLICY}}`
 
 ### Prompt / System Instruction Assets
 
-- All production prompts MUST be registered in the Prompt Registry (see `artifacts/platform/templates/prompt_system_instruction_registry.md`)
+- All production prompts MUST be registered in the Prompt Registry (see `artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/prompt_system_instruction_registry.md`)
 - Prompt changes follow the same change management process as code changes
 - Prompt evaluation is required before promotion; results logged in `{{PROMPT_EVAL_TRACKER}}`
 
@@ -70,7 +70,7 @@ Current maturity target: **Level `{{TARGET_MATURITY_LEVEL}}`**
 | Lineage | Source data → training → model → serving chain traceable end-to-end | `{{LINEAGE_VERIFICATION}}` |
 | Continuous Training | Retraining triggered by: data drift PSI > `{{DRIFT_TRIGGER_THRESHOLD}}`, schedule `{{RETRAINING_SCHEDULE}}`, or performance regression | `{{RETRAINING_VERIFICATION}}` |
 | Monitoring | Data drift, concept drift, prediction quality, and latency monitored post-deployment | `{{MONITORING_VERIFICATION}}` |
-| Safety | AI safety guardrails applied per `artifacts/platform/policies/ai_safety_guardrail_policy.md` | `{{SAFETY_VERIFICATION}}` |
+| Safety | AI safety guardrails applied per `artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/policies/ai_safety_guardrail_policy.md` | `{{SAFETY_VERIFICATION}}` |
 
 ## Experiment and Production Separation
 

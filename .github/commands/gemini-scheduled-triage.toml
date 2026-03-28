@@ -114,3 +114,4 @@ The output **MUST** be a JSON array of objects. Each object represents a triaged
 ]
 ```
 """
+# Source Attribution: governance__github_docs.md; GitHub issue triage automation guidance; guided-synthesis; Reviewed on 2026-03-28

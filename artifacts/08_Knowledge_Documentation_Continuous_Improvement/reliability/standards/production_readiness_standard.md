@@ -99,7 +99,7 @@ A PRR is required for:
 
 - PRR must be completed minimum `{{PRR_LEAD_TIME}}` business days before planned launch.
 - Evidence links must resolve to real, current artifacts — not placeholders.
-- Downstream repos instantiate the production readiness review template at `artifacts/reliability/templates/production_readiness_review.md`.
+- Downstream repos instantiate the canonical production readiness review template at `artifacts/04_Quality_Review_Control/quality/templates/production_readiness_review.md`.
 
 ## Source Attribution
 

@@ -8,14 +8,15 @@ owner: repository-maintainer
 review_cadence: quarterly
 applies_to: this repository
 source_basis: GitHub Docs + Open Source Guides
-source_manifests: governance__github_docs.md
+source_manifests:
+  - governance__github_docs.md
 alignment_mode: hybrid-synthesis
 updated: 2026-03-27
 ---
 
 # Governance Overview
 
-This file governs **this repository as an instance** of the central governance system. It does not act as a downstream template. Reusable equivalents live under [`artifacts/governance/templates/`](./artifacts/governance/templates).
+This file governs **this repository as an instance** of the central governance system. It does not act as a downstream template. Reusable equivalents live under [`artifacts/01_Governance_Method/governance/templates/`](./artifacts/01_Governance_Method/governance/templates/).
 
 ## Scope
 
@@ -45,7 +46,7 @@ This file governs **this repository as an instance** of the central governance s
 
 ## Source Attribution
 
-- Source manifests: `governance__github_docs.md`
+- Source manifests: [`governance__github_docs.md`](./sources/manifests/governance__github_docs.md)
 - Primary source basis: GitHub Docs + Open Source Guides
 - Alignment mode: `hybrid-synthesis`
 - Reviewed on: 2026-03-27

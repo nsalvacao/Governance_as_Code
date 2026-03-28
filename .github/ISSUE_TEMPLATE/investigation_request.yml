@@ -2,7 +2,7 @@ name: Investigation request
 description: Ask for clarification on structure, applicability, or validation behavior.
 title: "[Investigation] "
 labels:
-  - type: investigation
+  - question
 body:
   - type: dropdown
     id: area

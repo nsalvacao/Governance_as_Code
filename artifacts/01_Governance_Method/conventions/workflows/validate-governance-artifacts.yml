@@ -15,6 +15,10 @@ on:
       - 'SUPPORT.md'
       - 'SECURITY.md'
       - 'decision_log.md'
+      - 'CLAUDE.md'
+      - 'GEMINI.md'
+      - 'LICENSE'
+      - 'sources/**'
   pull_request:
     paths:
       - 'artifacts/**'
@@ -27,6 +31,10 @@ on:
       - 'SUPPORT.md'
       - 'SECURITY.md'
       - 'decision_log.md'
+      - 'CLAUDE.md'
+      - 'GEMINI.md'
+      - 'LICENSE'
+      - 'sources/**'
 
 jobs:
   validate:
@@ -34,4 +42,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate governance artifacts
-        run: python scripts/validate_governance_artifacts.py
+        run: python3 scripts/validate_governance_artifacts.py

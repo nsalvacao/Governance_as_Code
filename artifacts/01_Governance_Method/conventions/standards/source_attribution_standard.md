@@ -69,7 +69,7 @@ Do not update `Reviewed on` as a formatting or housekeeping change; it must refl
 
 ## Using the Partial Template
 
-Use `artifacts/conventions/templates/partials/source_attribution.md` as the canonical snippet. Append it to new artifacts at creation time and update the placeholder values. Automation agents may inject the snippet and leave the attribution block untouched while updating other sections.
+Use `artifacts/01_Governance_Method/conventions/templates/partials/source_attribution.md` as the canonical snippet. Append it to new artifacts at creation time and update the placeholder values. Automation agents may inject the snippet and leave the attribution block untouched while updating other sections.
 
 ## Validation Method
 

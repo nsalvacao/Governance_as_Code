@@ -107,11 +107,11 @@ Every automation pipeline or AI-assisted workflow must document:
 - Downstream actions (e.g., `{{GOVERNANCE_VALIDATION_WORKFLOW}}`).
 - Whether each step is deterministic or non-deterministic (see section above).
 
-Link automation descriptions to `artifacts/conventions/templates/partials/source_attribution.md` so attribution travels with results. Preface deterministic steps with "Deterministic step:" to make the boundary explicit.
+Link automation descriptions to `artifacts/01_Governance_Method/conventions/templates/partials/source_attribution.md` so attribution travels with results. Preface deterministic steps with "Deterministic step:" to make the boundary explicit.
 
 ## AI Agent Guidelines
 
-- Document the surface that agents may read or write, such as frontmatter schema hooking (`artifacts/conventions/schemas/frontmatter.schema.json`) and `source_manifests` and `alignment_mode` fields for verification.
+- Document the surface that agents may read or write, such as frontmatter schema hooking (`artifacts/01_Governance_Method/conventions/schemas/frontmatter.schema.json`) and `source_manifests` and `alignment_mode` fields for verification.
 - Provide guidance for how agents should interpret placeholders: "Replace `{{PROJECT_NAME}}` before instantiating the template."
 - State the fallback behavior when AI detects missing data: "If `{{SERVICE_AREA}}` is unknown, tag as `requires human` and stop before committing changes."
 - Outline the verification obligation: agents must run `python scripts/validate_governance_artifacts.py` locally before merging; `.github/workflows/validate-governance-artifacts.yml` enforces the same checks in CI.

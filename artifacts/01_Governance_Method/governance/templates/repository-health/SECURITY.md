@@ -102,7 +102,7 @@ Disclosure timeline target (Critical/High): `{{DISCLOSURE_TIMELINE_TARGET}}` fro
 ## Safe Harbour
 
 We will not pursue legal action against researchers who:
-- Report issues through the private channel above
+- Report issues through the private reporting channel above
 - Act in good faith and do not exploit vulnerabilities beyond what is needed to demonstrate impact
 - Do not access, modify, or delete data of other users
 

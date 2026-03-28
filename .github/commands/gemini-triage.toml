@@ -52,3 +52,4 @@ You are an issue triage assistant. Analyze the current GitHub issue and identify
     echo "SELECTED_LABELS=bug,enhancement" >> "/tmp/runner/env"
     ```
 """
+# Source Attribution: governance__github_docs.md; GitHub issue triage automation guidance; guided-synthesis; Reviewed on 2026-03-28

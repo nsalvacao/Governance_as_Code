@@ -2,7 +2,7 @@ name: Bug report
 description: Report a defect in this repository instance or in a reusable artifact.
 title: "[Bug] "
 labels:
-  - type: bug
+  - bug
 body:
   - type: dropdown
     id: layer

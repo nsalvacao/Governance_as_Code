@@ -86,7 +86,7 @@ Following Spotify/GitHub engineering culture norms:
 | Toil tracking | Log toil >30 min in `{{TOIL_TRACKER_LINK}}` for elimination planning |
 
 On-call runbooks: `{{RUNBOOK_INDEX_LINK}}`
-Escalation guide: `artifacts/operations/templates/on_call_escalation_guide.md`
+Escalation guide: `artifacts/07_Operations_Incidents_Continuity/operations/templates/on_call_escalation_guide.md`
 
 ---
 
@@ -109,12 +109,12 @@ Escalation guide: `artifacts/operations/templates/on_call_escalation_guide.md`
 
 | Phase | Artifact | Owner | Link |
 |---|---|---|---|
-| Discovery | Discovery brief | Product / Tech Lead | `artifacts/discovery/templates/discovery_brief.md` |
-| Planning | Product backlog, sprint planning record | Engineering Lead | `artifacts/discovery/templates/product_backlog.md` |
-| Development | ADR (architectural decisions) | Tech Lead | `artifacts/governance/templates/architecture_decision_record.md` |
-| Release | Change record, release checklist | Release Manager | `artifacts/delivery/templates/` |
-| Incident | Incident report, postmortem | IC / On-Call Lead | `artifacts/operations/templates/`, `artifacts/knowledge/templates/` |
-| Review | Service review, lessons learned | Engineering Lead | `artifacts/knowledge/templates/` |
+| Discovery | Discovery brief | Product / Tech Lead | `artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/discovery_brief.md` |
+| Planning | Product backlog, sprint planning record | Engineering Lead | `artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/product_backlog.md` |
+| Development | ADR (architectural decisions) | Tech Lead | `artifacts/01_Governance_Method/governance/templates/architecture_decision_record.md` |
+| Release | Change record, release checklist | Release Manager | `artifacts/05_Delivery_Change_Readiness/delivery/templates/change_record.md`, `artifacts/05_Delivery_Change_Readiness/delivery/templates/release_checklist.md` |
+| Incident | Incident report, postmortem | IC / On-Call Lead | `artifacts/07_Operations_Incidents_Continuity/operations/templates/incident_report.md`, `artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/postmortem.md` |
+| Review | Service review, lessons learned | Engineering Lead | `artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/service_review.md` |
 
 ---
 
@@ -129,7 +129,7 @@ Escalation guide: `artifacts/operations/templates/on_call_escalation_guide.md`
 | Security scan | `{{SECURITY_SCAN_TOOL}}` | Every PR (CI) | CI |
 | SLO review | Error budget dashboard | Monthly | Engineering Lead |
 
-Definition of Done: `artifacts/conventions/standards/definition_of_done_quality_gates.md`
+Definition of Done: `artifacts/01_Governance_Method/conventions/standards/definition_of_done_quality_gates.md`
 
 ---
 
@@ -147,8 +147,8 @@ Definition of Done: `artifacts/conventions/standards/definition_of_done_quality_
 
 ## Learning and Improvement Culture
 
-- **Retrospectives**: held every `{{RETRO_CADENCE}}` — template: `artifacts/discovery/templates/technical_retrospective.md`
-- **Postmortems**: blameless; required for all SEV1 and novel SEV2 — template: `artifacts/knowledge/templates/postmortem.md`
+- **Retrospectives**: held every `{{RETRO_CADENCE}}` — template: `artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/technical_retrospective.md`
+- **Postmortems**: blameless; required for all SEV1 and novel SEV2 — template: `artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/postmortem.md`
 - **Knowledge sharing**: `{{KNOWLEDGE_SHARING_FORUM}}` — frequency: `{{KS_FREQUENCY}}`
 - **Learning budget**: `{{LEARNING_BUDGET_PER_PERSON}}` per engineer per year for conferences, courses, certifications
 - **Incident reviews**: each incident action item reviewed at next sprint retrospective

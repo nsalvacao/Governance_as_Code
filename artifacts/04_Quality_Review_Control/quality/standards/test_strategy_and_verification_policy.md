@@ -77,7 +77,7 @@ A build is releasable when ALL of the following are true:
 
 ## Canonical Relationship
 
-- The implementation-level validator lives in `artifacts/conventions/scripts/validate_governance_artifacts.py`.
+- The implementation-level validator lives in `artifacts/01_Governance_Method/conventions/scripts/validate_governance_artifacts.py`.
 - This standard explains the verification model that the validator supports.
 
 ## Source Attribution

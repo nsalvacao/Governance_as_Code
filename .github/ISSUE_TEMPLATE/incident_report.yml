@@ -2,7 +2,7 @@ name: Incident report
 description: Report a public, non-sensitive repository or automation incident.
 title: "[Incident] "
 labels:
-  - type: incident
+  - bug
 body:
   - type: input
     id: summary

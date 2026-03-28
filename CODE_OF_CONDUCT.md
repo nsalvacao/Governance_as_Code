@@ -8,7 +8,8 @@ owner: repository-maintainer
 review_cadence: annual
 applies_to: this repository
 source_basis: GitHub Docs + Open Source Guides
-source_manifests: governance__github_docs.md
+source_manifests:
+  - governance__github_docs.md
 alignment_mode: hybrid-synthesis
 updated: 2026-03-27
 ---
@@ -25,7 +26,7 @@ This repository expects respectful, constructive, and publication-safe collabora
 
 ## Reporting
 
-1. Use [/.github/ISSUE_TEMPLATE/investigation_request.yml](/mnt/d/GitHub/.github/.github/ISSUE_TEMPLATE/investigation_request.yml) for governance or process concerns.
+1. Use [`.github/ISSUE_TEMPLATE/investigation_request.yml`](./.github/ISSUE_TEMPLATE/investigation_request.yml) for governance or process concerns.
 2. Use [SUPPORT.md](./SUPPORT.md) for clarification before filing a formal change request.
 3. Keep sensitive details out of public issues when private handling is more appropriate.
 
@@ -35,7 +36,7 @@ The repository maintainer may request edits, pause discussion, or close contribu
 
 ## Source Attribution
 
-- Source manifests: `governance__github_docs.md`
+- Source manifests: [`governance__github_docs.md`](./sources/manifests/governance__github_docs.md)
 - Primary source basis: GitHub Docs + Open Source Guides
 - Alignment mode: `hybrid-synthesis`
 - Reviewed on: 2026-03-27

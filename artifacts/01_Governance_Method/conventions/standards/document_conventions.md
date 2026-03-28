@@ -34,7 +34,7 @@ When the type is ambiguous, prefer a more restrictive type (normative over opera
 
 ## Frontmatter Requirements
 
-All Markdown artifacts under `artifacts/` require YAML frontmatter. Required fields are defined in `artifacts/conventions/schemas/frontmatter.schema.json`. The mandatory set is:
+All Markdown artifacts under `artifacts/` require YAML frontmatter. Required fields are defined in `artifacts/01_Governance_Method/conventions/schemas/frontmatter.schema.json`. The mandatory set is:
 
 - `title`
 - `artifact_type`
@@ -116,12 +116,12 @@ A block without a language tag must use ` ```text ` to make the omission explici
 
 - Explicitly call out any prerequisites (e.g., requires `production` environment or `services` team).
 - When an artifact is optional, state the decision filter: "Apply when `{{MISSING_CONTROLS}}` equals `true`."
-- Document how to override defaults: use parameterized templates from `artifacts/conventions/templates/partials/` and supply values through `{{UPPER_SNAKE_CASE}}` placeholders.
+- Document how to override defaults: use parameterized templates from `artifacts/01_Governance_Method/conventions/templates/partials/` and supply values through `{{UPPER_SNAKE_CASE}}` placeholders.
 
 ## Collaboration Signals
 
 - Provide reviewer checklists and ownership details in the metadata.
-- Surface how a downstream repo requests updates (e.g., "Propose a PR referencing `artifacts/conventions/standards/document_conventions.md` to propose a change").
+- Surface how a downstream repo requests updates (e.g., "Propose a PR referencing `artifacts/01_Governance_Method/conventions/standards/document_conventions.md` to propose a change").
 
 ## Source Attribution
 

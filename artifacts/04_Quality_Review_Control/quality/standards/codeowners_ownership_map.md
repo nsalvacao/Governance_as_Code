@@ -30,19 +30,16 @@ All paths are matched relative to repository root. The last matching rule wins (
 *                               @{{DEFAULT_OWNER_TEAM}}
 
 # Dimension-level ownership
-artifacts/architecture/         @{{ORG_NAME}}/{{ARCHITECTURE_TEAM}}
-artifacts/continuity/           @{{ORG_NAME}}/{{CONTINUITY_TEAM}}
-artifacts/conventions/          @{{ORG_NAME}}/{{STANDARDS_TEAM}}
-artifacts/delivery/             @{{ORG_NAME}}/{{DELIVERY_TEAM}}
-artifacts/discovery/            @{{ORG_NAME}}/{{PRODUCT_TEAM}}
-artifacts/governance/           @{{ORG_NAME}}/{{GOVERNANCE_TEAM}}
-artifacts/knowledge/            @{{ORG_NAME}}/{{SRE_TEAM}}
-artifacts/operations/           @{{ORG_NAME}}/{{OPS_TEAM}}
-artifacts/platform/             @{{ORG_NAME}}/{{PLATFORM_TEAM}}
-artifacts/project-governance/   @{{ORG_NAME}}/{{PMO_TEAM}}
-artifacts/quality/              @{{ORG_NAME}}/{{QUALITY_TEAM}}
-artifacts/reliability/          @{{ORG_NAME}}/{{SRE_TEAM}}
-artifacts/risk/                 @{{ORG_NAME}}/{{RISK_TEAM}}
+artifacts/01_Governance_Method/                            @{{ORG_NAME}}/{{GOVERNANCE_TEAM}}
+artifacts/02_Discovery_Planning_Early_Learning/           @{{ORG_NAME}}/{{PRODUCT_TEAM}}
+artifacts/03_Architecture_Security_Decision/              @{{ORG_NAME}}/{{ARCHITECTURE_TEAM}}
+artifacts/04_Quality_Review_Control/                      @{{ORG_NAME}}/{{QUALITY_TEAM}}
+artifacts/05_Delivery_Change_Readiness/                   @{{ORG_NAME}}/{{DELIVERY_TEAM}}
+artifacts/06_Platform_Delivery_Automation_AI_Operations/  @{{ORG_NAME}}/{{PLATFORM_TEAM}}
+artifacts/07_Operations_Incidents_Continuity/             @{{ORG_NAME}}/{{OPS_TEAM}}
+artifacts/08_Knowledge_Documentation_Continuous_Improvement/ @{{ORG_NAME}}/{{SRE_TEAM}}
+artifacts/09_Project_Portfolio_Service_Governance/        @{{ORG_NAME}}/{{PMO_TEAM}}
+artifacts/10_Risk_Exceptions_Traceability/                @{{ORG_NAME}}/{{RISK_TEAM}}
 
 # Critical governance files — require explicit owner approval
 scripts/                        @{{AUTOMATION_OWNER}}
@@ -69,7 +66,7 @@ SECURITY.md                     @{{SECURITY_OFFICER}}
 
 ## Canonical Relationship
 
-- The GitHub-native file used for enforcement lives in `artifacts/governance/templates/github-native/CODEOWNERS`.
+- The GitHub-native file used for enforcement lives in `artifacts/01_Governance_Method/governance/templates/github-native/CODEOWNERS`.
 - This standard documents the ownership model and how it should be maintained.
 
 ## Source Attribution

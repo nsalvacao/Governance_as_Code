@@ -23,15 +23,18 @@
     },
     "artifact_type": {
       "type": "string",
-      "description": "High-level category such as normative, operational, instantiable, or evidence."
+      "enum": ["architectural_decision_record", "decision_log_entry", "evidence", "index", "normative", "policy", "standard", "template", "template-partial"],
+      "description": "Artifact class used by the public governance corpus."
     },
     "status": {
       "type": "string",
-      "description": "Lifecycle stage (draft, published, retired)."
+      "enum": ["discovery", "draft", "public", "public-draft"],
+      "description": "Lifecycle stage used by the public governance corpus."
     },
     "visibility": {
       "type": "string",
-      "description": "Public visibility scope; typically public, internal, or private."
+      "enum": ["public", "internal", "private"],
+      "description": "Visibility scope supported by the governance model."
     },
     "classification": {
       "type": "string",
@@ -85,5 +88,5 @@
       "description": "Optional narrative for filtering or gating."
     }
   },
-"additionalProperties": true
+"additionalProperties": false
 }

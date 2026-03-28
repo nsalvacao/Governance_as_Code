@@ -39,7 +39,7 @@ Not all decisions have the same scope or longevity. This standard recognizes thr
 
 - **Scope**: technical architecture, system design, tooling selection, interface contracts
 - **When to use**: when a decision shapes the structure or behavior of the system in a way that is costly to reverse
-- **Storage location**: `{{ADR_STORAGE_LOCATION}}` (e.g., `docs/adr/` or `artifacts/knowledge/records/`)
+- **Storage location**: `{{ADR_STORAGE_LOCATION}}` (e.g., `docs/adr/` or `artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/records/`)
 - **Format**: ADR format (context, decision, consequences, status)
 - **Lifecycle**: proposed → accepted → superseded/deprecated
 

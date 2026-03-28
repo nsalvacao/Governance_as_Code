@@ -2,8 +2,7 @@ name: Governance bug report
 description: Report a bug in this governance corpus or the automation that enforces it.
 title: "[Bug] {{SHORT_TITLE}}"
 labels:
-- type: bug
-- area: governance
+  - bug
 assignees:
 - "{{GOVERNANCE_TEAM}}"
 body:

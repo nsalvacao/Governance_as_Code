@@ -73,7 +73,7 @@ jobs:
           echo '🔍 Finding unlabeled issues and issues marked for triage...'
           ISSUES="$(gh issue list \
             --state 'open' \
-            --search 'no:label label:"status/needs-triage"' \
+            --search 'no:label' \
             --json number,title,body \
             --limit '100' \
             --repo "${GITHUB_REPOSITORY}"
@@ -134,10 +134,10 @@ jobs:
     needs:
       - 'triage'
     if: |-
-      needs.triage.outputs.available_labels != '' &&
-      needs.triage.outputs.available_labels != '[]' &&
-      needs.triage.outputs.triaged_issues != '' &&
-      needs.triage.outputs.triaged_issues != '[]'
+      ${{ needs.triage.outputs.available_labels != '' &&
+          needs.triage.outputs.available_labels != '[]' &&
+          needs.triage.outputs.triaged_issues != '' &&
+          needs.triage.outputs.triaged_issues != '[]' }}
     permissions:
       contents: 'read'
       issues: 'write'

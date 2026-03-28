@@ -54,7 +54,7 @@ All times in UTC. Minimum granularity: 5 minutes during active response.
 - **Actor / Role**: use the role name (e.g., "IC", "Ops Lead") rather than personal names where possible — postmortems are blameless
 - **Evidence links**: link to log query, alert URL, dashboard snapshot, or Slack message — do NOT paraphrase telemetry
 - **Notes**: capture decision rationale and hypotheses, not just actions
-- Actors map to roles defined in `artifacts/operations/policies/incident_management_policy.md`
+- Actors map to roles defined in `artifacts/01_Governance_Method/operations/policies/incident_management_policy.md`
 
 ## Time-to-Resolution Metrics
 

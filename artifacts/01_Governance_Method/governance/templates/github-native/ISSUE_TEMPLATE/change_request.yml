@@ -2,8 +2,7 @@ name: Governance change request
 description: Propose a new governance artifact, modification, or automation enhancement.
 title: "[Change] {{SHORT_TITLE}}"
 labels:
-- type: change-request
-- area: governance
+  - enhancement
 assignees:
 - "{{GOVERNANCE_TEAM}}"
 body:

@@ -22,7 +22,7 @@ This standard explains when an ADR is required, how it follows MADR 3.x structur
 
 ## ADR versus Decision Log
 
-- **ADR**: captures the full context, options considered, trade-offs, and technical consequences of a hard-to-reverse decision (architecture, platform, delivery contracts, automation safety). Each ADR follows the template in `artifacts/governance/templates/architecture_decision_record.md` and is the single source for the working rationale.
+- **ADR**: captures the full context, options considered, trade-offs, and technical consequences of a hard-to-reverse decision (architecture, platform, delivery contracts, automation safety). Each ADR follows the template in `artifacts/01_Governance_Method/governance/templates/architecture_decision_record.md` and is the single source for the working rationale.
 - **Decision log**: publishes the distilled acceptance outcome once the ADR (or other governance process) is approved. Decision log entries point back to one or more ADRs for context and keep the public corpus lightweight.
 - Always link the ADR ID inside the decision log template under `Linked ADR`. Automation can then follow the link to fetch the reasoning, review status, and superseded history.
 
@@ -37,7 +37,7 @@ Write an ADR when any of the following conditions apply:
 
 ## MADR 3.x Required Structure
 
-Every ADR must include the following sections in order. Use the template in `artifacts/governance/templates/architecture_decision_record.md`.
+Every ADR must include the following sections in order. Use the template in `artifacts/01_Governance_Method/governance/templates/architecture_decision_record.md`.
 
 | Section | Purpose |
 |---|---|
@@ -83,7 +83,7 @@ Store ADRs in `{{ADR_DIRECTORY}}` within the consuming repository (e.g., `docs/d
 
 ## Link to Decision Log
 
-After an ADR reaches `accepted` state, append a corresponding entry to `decision_log.md` using the template in `artifacts/governance/templates/decision_log_entry.md`. The decision log entry must include the ADR ID under `Linked ADR`.
+After an ADR reaches `accepted` state, append a corresponding entry to `decision_log.md` using the template in `artifacts/01_Governance_Method/governance/templates/decision_log_entry.md`. The decision log entry must include the ADR ID under `Linked ADR`.
 
 ## Review Process
 

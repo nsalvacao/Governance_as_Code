@@ -8,7 +8,8 @@ owner: repository-maintainer
 review_cadence: quarterly
 applies_to: this repository
 source_basis: GitHub Docs
-source_manifests: governance__github_docs.md
+source_manifests:
+  - governance__github_docs.md
 alignment_mode: direct-adaptation
 updated: 2026-03-27
 ---
@@ -31,7 +32,7 @@ Use support before opening a formal change when you need clarification about thi
 
 ## Source Attribution
 
-- Source manifests: `governance__github_docs.md`
+- Source manifests: [`governance__github_docs.md`](./sources/manifests/governance__github_docs.md)
 - Primary source basis: GitHub Docs
 - Alignment mode: `direct-adaptation`
 - Reviewed on: 2026-03-27

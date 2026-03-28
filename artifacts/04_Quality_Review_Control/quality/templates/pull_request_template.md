@@ -61,7 +61,7 @@ Related: {{RELATED_LINKS}}
 ## Checklist
 
 - [ ] I have read `CONTRIBUTING.md`
-- [ ] My changes follow the coding standards in `artifacts/conventions/standards/coding_standards.md`
+- [ ] My changes follow the coding standards in `artifacts/01_Governance_Method/conventions/standards/coding_standards.md`
 - [ ] I have added/updated tests where applicable
 - [ ] All status checks pass
 - [ ] I have updated documentation if necessary

@@ -22,8 +22,8 @@ This standard defines the architecture-layer entry point for recording durable d
 
 ## Canonical relationship
 
-- The detailed ADR body lives in the reusable template at `artifacts/governance/templates/architecture_decision_record.md`.
-- The governance-layer ADR standard at `artifacts/governance/standards/adr_standard.md` defines the broader decision policy.
+- The detailed ADR body lives in the reusable template at `artifacts/01_Governance_Method/governance/templates/architecture_decision_record.md`.
+- The governance-layer ADR standard at `artifacts/01_Governance_Method/governance/standards/adr_standard.md` defines the broader decision policy.
 - This artifact exists so the architecture dimension has a clear, public canonical primary artifact for the catalog.
 
 ## When to write an ADR

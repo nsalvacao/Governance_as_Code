@@ -2,8 +2,7 @@ name: Investigation request
 description: Ask for governance-level investigation, research, or clarification before filing a change.
 title: "[Investigation] {{SHORT_TITLE}}"
 labels:
-- type: investigation
-- area: governance
+  - question
 assignees:
 - "{{GOVERNANCE_TEAM}}"
 body:

@@ -66,7 +66,7 @@ BIAs must be reviewed on the schedule `{{REVIEW_CADENCE}}` and upon any triggeri
 
 ## BIA Template Reference
 
-Use the canonical BIA template at `artifacts/continuity/templates/business_impact_analysis.md` for all new BIA documents. The template enforces the required output structure and placeholder conventions.
+Use the canonical BIA template at `artifacts/07_Operations_Incidents_Continuity/continuity/templates/business_impact_analysis.md` for all new BIA documents. The template enforces the required output structure and placeholder conventions.
 
 ## Source Attribution
 

@@ -76,7 +76,7 @@ Exceptions to the above must be:
 
 ## Canonical Relationship
 
-- The GitHub-native enforcement surface is represented by the reusable assets under `artifacts/governance/templates/github-native/`.
+- The GitHub-native enforcement surface is represented by the reusable assets under `artifacts/01_Governance_Method/governance/templates/github-native/`.
 - This standard is the quality-layer policy that explains why the rules exist and how they are applied.
 
 ## Source Attribution

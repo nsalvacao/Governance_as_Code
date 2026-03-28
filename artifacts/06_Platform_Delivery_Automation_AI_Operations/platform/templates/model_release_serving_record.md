@@ -93,7 +93,7 @@ Traffic routing mechanism: `{{TRAFFIC_ROUTING_MECHANISM}}` (e.g., Istio weight, 
 | Error rate | `{{ERROR_RATE_TOOL}}` | `{{ERROR_RATE_ALERT_DEST}}` |
 | Feature distribution | `{{FEATURE_MONITOR_TOOL}}` | `{{FEATURE_ALERT_DEST}}` |
 
-Drift report cadence: `{{DRIFT_REPORT_CADENCE}}` — template at `artifacts/platform/templates/model_monitoring_drift_report.md`
+Drift report cadence: `{{DRIFT_REPORT_CADENCE}}` — template at `artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/model_monitoring_drift_report.md`
 
 ## Source Attribution
 

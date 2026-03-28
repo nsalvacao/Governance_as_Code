@@ -84,7 +84,7 @@ Following the placeholder and traceability conventions of this repository:
 |---|---|
 | Placeholder convention | Use `{{UPPER_SNAKE_CASE}}` for all instance-specific values |
 | Source Attribution | Every Markdown artifact MUST end with `## Source Attribution` |
-| Frontmatter | All 11 required keys must be present (see `artifacts/conventions/schemas/frontmatter.schema.json`) |
+| Frontmatter | All 11 required keys must be present (see `artifacts/01_Governance_Method/conventions/schemas/frontmatter.schema.json`) |
 | Canonical faithfulness | Artifact body must structurally follow its stated canonical framework |
 | Path placement | `artifacts/<dimension>/<artifact-type>/` — no other locations |
 | No private content | Never include private rationale, operational secrets, or personal details |

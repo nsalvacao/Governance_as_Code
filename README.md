@@ -1,10 +1,9 @@
-[![Status](https://img.shields.io/badge/status-discovery-2563eb)](./decision_log.md)
-[![Wave](https://img.shields.io/badge/wave-catalog--coverage-0f766e)](./decision_log.md)
+[![Status](https://img.shields.io/badge/status-public--hardening-2563eb)](./decision_log.md)
+[![Wave](https://img.shields.io/badge/wave-public--readiness-0f766e)](./decision_log.md)
 [![Validation](https://img.shields.io/badge/validation-deterministic-15803d)](./.github/workflows/validate-governance-artifacts.yml)
-[![Artifacts](https://img.shields.io/badge/artifacts-103-blue)](./artifacts/README.md)
+[![Catalog](https://img.shields.io/badge/catalog-canonical-blue)](./artifacts/README.md)
 [![Standards](https://img.shields.io/badge/standards-NIST%20%7C%20ITIL%20%7C%20SRE-blueviolet)](#primary-source-frameworks)
 [![Architecture](https://img.shields.io/badge/architecture-dual--layer-informational)](./decision_log.md)
-[![Governance Version](https://img.shields.io/badge/governance-v4.0-darkgreen)](#framework-versioning)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](#license-usage)
 [![Visibility](https://img.shields.io/badge/visibility-public-475569)](#public-document-map)
 [![Language](https://img.shields.io/badge/language-english-lightgrey)](#publication-conventions)
@@ -81,6 +80,7 @@ graph LR
 ### How to navigate
 - **Physical structure:** The [`artifacts/`](./artifacts/README.md) directory is organized into 10 numbered sections (01 to 10) matching this map.
 - **Governance Enforcement:** Standards are enforced via deterministic validation. Refer to [`scripts/validate_governance_artifacts.py`](./scripts/validate_governance_artifacts.py).
+- **Public provenance:** Source manifests live under [`sources/manifests/`](./sources/README.md) and are the public basis for traceable attribution.
 - **Exceptions & Deviations:** Recorded via the [`Exception / Deviation Record`](./artifacts/10_Risk_Exceptions_Traceability/risk/templates/exception_deviation_record.md).
 
 ---
@@ -97,7 +97,7 @@ To adopt this governance framework in a new repository, follow these three steps
 
 # Public Document Map (The Corpus)
 
-Click on a dimension to explore its associated policies, standards, and templates. Links point to both the resource **Folder 📂** and the **Anchor Artifact ⚓**.
+Click on a dimension to explore its associated policies, standards, and templates. Links point to both the resource **Folder 📂** and the **Anchor Artifact ⚓**. Not every reusable support artifact appears as a top-level catalog row; supporting standards, playbooks, and helper assets remain discoverable inside each dimension folder.
 
 <details>
 <summary><b>01. Governance & Method (Foundation & Norms)</b></summary>
@@ -216,7 +216,7 @@ Click on a dimension to explore its associated policies, standards, and template
 | Incident Response Plan | Normative | Defines process, roles, and escalation | NIST | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/incident_response_plan.md) |
 | Incident Report | Evidence | Records facts and impact | NIST | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/incident_report.md) |
 | Incident Timeline | Evidence | Preserves the chronology of events | Google SRE | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/incident_timeline.md) |
-| Playbook | Operational | Guides triage and decision-making | AWS Docs | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/incident_management_policy.md) |
+| Playbook | Operational | Guides triage and decision-making | AWS Docs | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/playbook.md) |
 | Runbook | Operational | Guides mitigation and recovery | Google SRE | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/runbook.md) |
 | SOP (Standard Op. Procedure) | Operational | Standardizes stable processes | NIST | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/standard_operating_procedure.md) |
 | Incident Communications Plan | Operational | Defines channels and stakeholders | Google SRE | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/incident_communications_plan.md) |
@@ -286,19 +286,25 @@ Click on a dimension to explore its associated policies, standards, and template
 
 ## Primary Source Frameworks
 
-This governance system is a hybrid synthesis of the following industrial standards:
+This governance system is a hybrid synthesis of the following official source families:
 
-- [**Scrum Guide**](https://scrumguides.org/) - Planning, Backlog & Retrospectives.
-- [**NIST / CISA**](https://docs.aws.amazon.com/wellarchitected/latest/incident-response-guide/welcome.html) - Incident Response & Risk Management.
-- [**Google SRE**](https://sre.google/workbook/postmortem-culture/) - Postmortems, Error Budgets & PRR.
-- [**AWS Well-Architected**](https://docs.aws.architected/) - Design Rationale & Trade-off Analysis.
-- [**ITIL v4**](https://atv.peoplecert.org/accreditation/accreditation-model/) - Service Strategy, Catalog & SLAs.
-- [**PMI / PRINCE2**](https://www.axelos.com/resource-hub/template/prince2-7-a1-business-case-template) - Business Case & Project Governance.
-- [**Diataxis**](https://diataxis.fr/) - Documentation Information Model.
+- [**GitHub Docs**](https://docs.github.com/) - Community health files, repository governance, issue forms, pull request templates, workflows, and security reporting surfaces.
+- [**Scrum Guide**](https://scrumguides.org/scrum-guide.html) - Planning, backlog management, iteration cadence, and retrospectives.
+- [**Diataxis**](https://diataxis.fr/) - Documentation architecture and information design.
+- [**NIST / CISA**](https://www.nist.gov/cyberframework) - Incident response, risk management, auditability, and continuity-aligned governance.
+- [**Google SRE**](https://sre.google/workbook/) - Postmortems, error budgets, operational readiness, and reliability learning loops.
+- [**AWS Well-Architected**](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) - Architecture trade-offs, reliability, and operational readiness.
+- [**Microsoft Learn**](https://learn.microsoft.com/) - Platform delivery, security, architecture, and operational practice guidance.
+- [**OpenAI Docs**](https://platform.openai.com/docs/overview) - AI operations, evaluation, prompt lifecycle, and safety guidance.
+- [**PMI**](https://www.pmi.org/) - Project framing, stakeholder and communications governance.
+- [**PRINCE2**](https://www.peoplecert.org/browse-certifications/project-programme-and-portfolio-management/PRINCE2-7) - Business case, project governance, and exception reporting.
+- [**ITIL / PeopleCert**](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1) - Service catalog, service levels, requests, change enablement, and problem management.
+
+Public source manifests for the currently adopted source families are published in [`sources/manifests/`](./sources/README.md).
 
 ## Governance Stewards & Support
 
-This repository is maintained by the **Central Architecture Council**.
+This repository is maintained through pull requests, deterministic validation, and curator review by the repository maintainer.
 
 - **Support:** Open an [Investigation Request](./.github/ISSUE_TEMPLATE/investigation_request.yml) for framework guidance.
 - **Reporting:** Use [Incident Report](./.github/ISSUE_TEMPLATE/incident_report.yml) for governance breaches.
@@ -307,11 +313,11 @@ This repository is maintained by the **Central Architecture Council**.
 
 ## License & Usage
 
-This governance corpus is licensed under the **MIT License**. Reusable artifacts are provided as-is for organizational instantiation.
+This governance corpus is licensed under the [**MIT License**](./LICENSE). Reusable artifacts are provided as-is for organizational instantiation.
 
 ## Source Attribution
 
-- **Source manifests:** `governance__github_docs.md`, `platform__aws_well_architected.md`, `platform__microsoft_learn.md`
+- **Source manifests:** [`governance__github_docs.md`](./sources/manifests/governance__github_docs.md), [`platform__aws_well_architected.md`](./sources/manifests/platform__aws_well_architected.md), [`platform__microsoft_learn.md`](./sources/manifests/platform__microsoft_learn.md)
 - **Primary source basis:** GitHub Docs community governance guidance plus industrial technical frameworks.
 - **Alignment mode:** `hybrid-synthesis`
 - **Reviewed on:** 2026-03-28

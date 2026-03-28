@@ -2,7 +2,7 @@ name: Change request
 description: Propose a structural, policy, or reusable-artifact change.
 title: "[Change] "
 labels:
-  - type: change
+  - enhancement
 body:
   - type: dropdown
     id: scope

@@ -8,7 +8,8 @@ owner: repository-maintainer
 review_cadence: quarterly
 applies_to: this repository
 source_basis: GitHub Docs + Open Source Guides
-source_manifests: governance__github_docs.md
+source_manifests:
+  - governance__github_docs.md
 alignment_mode: hybrid-synthesis
 updated: 2026-03-27
 ---
@@ -35,14 +36,14 @@ Contributions to this repository must respect one core distinction:
 
 ## Pull request expectations
 
-1. Use [/.github/PULL_REQUEST_TEMPLATE.md](/mnt/d/GitHub/.github/.github/PULL_REQUEST_TEMPLATE.md).
+1. Use [`.github/PULL_REQUEST_TEMPLATE.md`](./.github/PULL_REQUEST_TEMPLATE.md).
 2. Explain whether the change affects the repository instance, the reusable library, or both.
 3. Describe any follow-up required for downstream repositories.
 4. Merge only after validation passes.
 
 ## Source Attribution
 
-- Source manifests: `governance__github_docs.md`
+- Source manifests: [`governance__github_docs.md`](./sources/manifests/governance__github_docs.md)
 - Primary source basis: GitHub Docs + Open Source Guides
 - Alignment mode: `hybrid-synthesis`
 - Reviewed on: 2026-03-27

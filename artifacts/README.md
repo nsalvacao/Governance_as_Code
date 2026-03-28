@@ -8,7 +8,9 @@ owner: GOVERNANCE
 review_cadence: quarterly
 applies_to: repositories consuming reusable governance assets
 source_basis: Repository structural decisions and the public document map
-source_manifests: governance__github_docs.md, documentation__diataxis.md
+source_manifests:
+  - governance__github_docs.md
+  - documentation__diataxis.md
 alignment_mode: hybrid-synthesis
 updated: 2026-03-27
 ---
@@ -34,19 +36,16 @@ Not every dimension needs every artifact type.
 
 | Dimension | Purpose |
 |---|---|
-| `conventions` | Cross-cutting metadata, attribution, automation, and validation rules |
-| `governance` | Governance method, repository-health templates, GitHub-native templates, and decision architecture |
-| `discovery` | Discovery, planning, experimentation, retrospectives, and early learning records |
-| `architecture` | Architecture decision support, review, threat modeling, and security reasoning |
-| `quality` | Review controls, ownership, support, and verification surfaces |
-| `delivery` | Delivery planning, change management, rollout, rollback, and post-implementation review |
-| `platform` | CI/CD, GitOps, environment governance, platform baselines, and AI operations |
-| `operations` | Service facts, incident response, operational playbooks, runbooks, and procedures |
-| `continuity` | Continuity planning, recovery, business impact, and drills |
-| `knowledge` | Post-incident learning, documentation governance, and continuous improvement |
-| `project-governance` | Project, portfolio, service governance, and ITSM-adjacent reusable records |
-| `risk` | Risk, exceptions, auditability, vulnerability records, and governance review cadence |
-| `reliability` | Legacy first-wave reliability assets retained as reusable support material during catalog coverage |
+| `01_Governance_Method` | Cross-cutting governance method, conventions, repository health, GitHub-native templates, and decision architecture |
+| `02_Discovery_Planning_Early_Learning` | Discovery, planning, experimentation, retrospectives, and early learning records |
+| `03_Architecture_Security_Decision` | Architecture decision support, review, threat modeling, and security reasoning |
+| `04_Quality_Review_Control` | Review controls, ownership, support, and verification surfaces |
+| `05_Delivery_Change_Readiness` | Delivery planning, change management, rollout, rollback, and post-implementation review |
+| `06_Platform_Delivery_Automation_AI_Operations` | CI/CD, GitOps, environment governance, platform baselines, and AI operations |
+| `07_Operations_Incidents_Continuity` | Service facts, incident response, operational playbooks, runbooks, procedures, continuity, and drills |
+| `08_Knowledge_Documentation_Continuous_Improvement` | Post-incident learning, documentation governance, and continuous improvement |
+| `09_Project_Portfolio_Service_Governance` | Project, portfolio, service governance, and ITSM-adjacent reusable records |
+| `10_Risk_Exceptions_Traceability` | Risk, exceptions, auditability, vulnerability records, and governance review cadence |
 
 ## Instance versus template
 
@@ -54,9 +53,21 @@ Not every dimension needs every artifact type.
 - Files in `artifacts/` are reusable source assets.
 - If a document class exists in both places, the root version is the concrete instance and the `artifacts/` version is the reusable template or standard.
 
+## Supporting artifacts outside the top-level catalog
+
+The public README indexes one canonical artifact per document class. The library also contains intentionally supporting artifacts that do not appear as top-level README rows, including:
+
+- attribution and document-convention support assets;
+- GitHub-native repository-health template variants;
+- incident playbook standards and specialized playbook variants;
+- continuity standards that support continuity templates;
+- reliability support standards and policies that inform canonical knowledge or quality artifacts.
+
+Those assets remain public and reusable, but they are secondary to the canonical README catalog.
+
 ## Source Attribution
 
-- Source manifests: governance__github_docs.md, documentation__diataxis.md
+- Source manifests: [`governance__github_docs.md`](../sources/manifests/governance__github_docs.md), [`documentation__diataxis.md`](../sources/manifests/documentation__diataxis.md)
 - Primary source basis: GitHub Docs, Diataxis, and the repository's accepted structural decisions
 - Alignment mode: hybrid-synthesis
 - Reviewed on: 2026-03-27

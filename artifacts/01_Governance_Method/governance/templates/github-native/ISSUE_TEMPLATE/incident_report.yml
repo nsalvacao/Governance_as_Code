@@ -2,8 +2,7 @@ name: Incident report
 description: Record an incident, security event, or automation failure that affected governance assets.
 title: "[Incident] {{SHORT_TITLE}}"
 labels:
-- type: incident
-- area: governance
+  - bug
 assignees:
 - "{{GOVERNANCE_TEAM}}"
 body:
