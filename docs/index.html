@@ -166,7 +166,10 @@
     <script>
         let dimensions = [];
         let currentFilters = { nature: 'All', dimension: null, search: '' };
-        const REPO_NAME = window.location.pathname.split('/')[1] || '.github';
+        
+        // Dynamic Repo Detection
+        const pathSegments = window.location.pathname.split('/').filter(s => s.length > 0 && s !== 'docs');
+        const REPO_NAME = pathSegments.length > 0 ? pathSegments[0] : 'Governance_as_Code';
         const GITHUB_BASE = `https://github.com/nsalvacao/${REPO_NAME}/blob/main`;
 
         function escapeHTML(str) {
