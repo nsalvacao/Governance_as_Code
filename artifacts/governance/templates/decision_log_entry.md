@@ -19,17 +19,65 @@ decision_date: "{{DECISION_DATE}}"
 linked_adr: "{{ADR_REFERENCE}}"
 ---
 
-Use this template to add a `DL-` entry to the shared decision log. Keep the context short, capture the accepted outcome, and trace the governing source(s).
+## Entry Header
 
-- **Owner**: `{{OWNER}}`
-- **Context**: `{{BRIEF_CONTEXT}}`
-- **Decision**: `{{DECISION_SUMMARY}}`
-- **Consequences**: `{{CONSEQUENCES}}`
-- **Supersedes**: `{{SUPERSEDES}}` (leave blank if none)
-- **Review trigger**: `{{NEXT_REVIEW}}`
-- **Linked ADR**: `{{ADR_REFERENCE}}`
+<!-- Populate these fields before submitting the entry for review. The ID must be the next sequential DL- number in the log. -->
 
-Downstream automation (AI or scripts) should parse these fields, apply the schema, and update `decision_log.md` using the ordering rules defined in `decision_log_standard.md`.
+| Field | Value |
+|---|---|
+| ID | `{{DL_ID}}` |
+| Date | `{{DATE}}` |
+| Status | `{{STATUS}}` <!-- proposed \| accepted \| superseded \| revoked --> |
+| Owner | `{{OWNER}}` |
+
+## Context
+
+{{CONTEXT}}
+
+<!-- Describe the situation that forced the decision. What changed in the environment, requirements, or constraints that made this decision necessary? Keep this to 2–4 sentences. -->
+
+## Concern
+
+{{CONCERN}}
+
+<!-- State the quality attribute or constraint at stake. What would break or degrade without a clear decision here? Examples: security posture, deployment frequency, maintainability, cost control. -->
+
+## Decision
+
+{{DECISION}}
+
+<!-- State the chosen option clearly and unambiguously. Write in plain language so it can be read without additional context. -->
+
+## Rationale
+
+{{RATIONALE}}
+
+<!-- Explain why this option was chosen over the alternatives. Reference the linked ADR for full options analysis. Keep this focused on the decisive factors. -->
+
+## Consequences
+
+{{CONSEQUENCES}}
+
+<!-- List the trade-offs accepted and any follow-up actions required as a result of this decision. Include known risks and mitigation steps. -->
+
+## Y-Statement Summary
+
+<!-- The Y-Statement provides a one-sentence structured summary of the decision and its trade-off. Complete all five slots. -->
+
+> In the context of `{{SITUATION}}`, facing `{{CONCERN}}`, we decided `{{OPTION}}`, to achieve `{{QUALITY}}`, accepting `{{DOWNSIDE}}`.
+
+## Related ADRs
+
+<!-- List all ADRs that provide the full context and options analysis for this decision. -->
+
+* `{{RELATED_ADR_1}}` — {{BRIEF_RELATION_DESCRIPTION}}
+* `{{RELATED_ADR_2}}` — {{BRIEF_RELATION_DESCRIPTION}}
+
+## Review Date
+
+Next review: `{{REVIEW_DATE}}`
+
+<!-- Set this to the date when this decision should be re-evaluated. Use the review_cadence from the frontmatter as the default interval. -->
 
 ## Source Attribution
 
