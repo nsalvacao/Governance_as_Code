@@ -36,7 +36,7 @@ jobs:
       pull-requests: 'read'
     outputs:
       available_labels: '${{ steps.get_labels.outputs.available_labels }}'
-      triaged_issues: '${{ env.TRIAGED_ISSUES }}'
+      triaged_issues: '${{ steps.normalize_outputs.outputs.triaged_issues }}'
     steps:
       - name: 'Get repository labels'
         id: 'get_labels'
@@ -128,6 +128,16 @@ jobs:
               }
             }
           prompt: '/gemini-scheduled-triage'
+
+      - name: 'Normalize triage outputs'
+        id: 'normalize_outputs'
+        if: always()
+        run: |-
+          value='[]'
+          if [ -n "${TRIAGED_ISSUES:-}" ]; then
+            value="${TRIAGED_ISSUES}"
+          fi
+          printf 'triaged_issues=%s\n' "${value}" >> "${GITHUB_OUTPUT}"
 
   label:
     runs-on: 'ubuntu-latest'

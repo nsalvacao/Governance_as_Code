@@ -53,17 +53,14 @@ Not every dimension needs every artifact type.
 - Files in `artifacts/` are reusable source assets.
 - If a document class exists in both places, the root version is the concrete instance and the `artifacts/` version is the reusable template or standard.
 
-## Supporting artifacts outside the top-level catalog
+## Catalog model
 
-The public README indexes one canonical artifact per document class. The library also contains intentionally supporting artifacts that do not appear as top-level README rows, including:
+The public README indexes both:
 
-- attribution and document-convention support assets;
-- GitHub-native repository-health template variants;
-- incident playbook standards and specialized playbook variants;
-- continuity standards that support continuity templates;
-- reliability support standards and policies that inform canonical knowledge or quality artifacts.
+- canonical artifacts, which anchor each document class in the main tables;
+- supporting artifacts, which appear in supporting tables inside the same collapsible dimension sections.
 
-Those assets remain public and reusable, but they are secondary to the canonical README catalog.
+This keeps the README as the single public catalog while preserving a distinction between primary anchors and secondary reusable assets.
 
 ## Source Attribution
 

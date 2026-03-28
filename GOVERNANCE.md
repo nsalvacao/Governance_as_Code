@@ -16,7 +16,7 @@ updated: 2026-03-27
 
 # Governance Overview
 
-This file governs **this repository as an instance** of the central governance system. It does not act as a downstream template. Reusable equivalents live under [`artifacts/01_Governance_Method/governance/templates/`](./artifacts/01_Governance_Method/governance/templates/).
+This file governs **this repository as an instance** of the central governance system. It does not act as a downstream template. Reusable equivalents live under [`artifacts/01_Governance_Method/templates/`](./artifacts/01_Governance_Method/templates/).
 
 ## Scope
 
