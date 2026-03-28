@@ -1,7 +1,7 @@
 ---
 title: Document Conventions
 artifact_type: normative
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: governance@org
@@ -10,7 +10,7 @@ applies_to: repositories that opt into the governance corpus
 source_basis: documentation__diataxis, governance__github_docs
 source_manifests: documentation__diataxis.md, governance__github_docs.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-28
 ---
 
 # Document Conventions

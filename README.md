@@ -81,6 +81,8 @@ graph LR
 - **Physical structure:** The [`artifacts/`](./artifacts/README.md) directory is organized into 10 numbered sections (01 to 10) matching this map.
 - **Governance Enforcement:** Standards are enforced via deterministic validation. Refer to [`scripts/validate_governance_artifacts.py`](./scripts/validate_governance_artifacts.py).
 - **Public provenance:** Source manifests live under [`sources/manifests/`](./sources/README.md) and are the public basis for traceable attribution.
+- **AI contribution policy:** Public AI and agent contribution rules live in [`AI_AGENT_POLICY.md`](./AI_AGENT_POLICY.md).
+- **Provider patterns:** Gemini reusable workflow patterns live in the artifact library and are not active by default in this repository instance.
 - **Exceptions & Deviations:** Recorded via the [`Exception / Deviation Record`](./artifacts/10_Risk_Exceptions_Traceability/templates/exception_deviation_record.md).
 
 ---
@@ -120,12 +122,12 @@ Click on a dimension to explore its associated policies, standards, and template
 
 ### Supporting Artifacts
 
-| Artifact | Role | Maturity | Public status | Primary link |
+| Artifact | Role | Maturity | Catalog role | Primary link |
 |---|---|---|---|---|
-| ADR Standard | Governs how ADR templates and accepted decisions interact | Public draft | Supporting standard | [Link](./artifacts/01_Governance_Method/standards/adr_standard.md) |
+| ADR Standard | Governs how ADR templates and accepted decisions interact | Public | Supporting standard | [Link](./artifacts/01_Governance_Method/standards/adr_standard.md) |
 | Automation & AI Execution | Defines deterministic versus AI-assisted execution behavior | Public draft | Supporting standard | [Link](./artifacts/01_Governance_Method/standards/automation_and_ai_execution.md) |
-| Document Conventions | Defines placeholders, frontmatter, and writing rules | Public draft | Supporting standard | [Link](./artifacts/01_Governance_Method/standards/document_conventions.md) |
-| Source Attribution Standard | Governs traceable attribution blocks and alignment modes | Public draft | Supporting standard | [Link](./artifacts/01_Governance_Method/standards/source_attribution_standard.md) |
+| Document Conventions | Defines placeholders, frontmatter, and writing rules | Public | Supporting standard | [Link](./artifacts/01_Governance_Method/standards/document_conventions.md) |
+| Source Attribution Standard | Governs traceable attribution blocks and alignment modes | Public | Supporting standard | [Link](./artifacts/01_Governance_Method/standards/source_attribution_standard.md) |
 | Architecture Decision Record Template | Reusable ADR body template for downstream repositories | Public draft | Supporting template | [Link](./artifacts/01_Governance_Method/templates/architecture_decision_record.md) |
 | Decision Log Entry Template | Reusable decision entry template aligned with the public decision log | Public draft | Supporting template | [Link](./artifacts/01_Governance_Method/templates/decision_log_entry.md) |
 | GitHub-native Pull Request Template | Ready-to-copy PR template for downstream repositories | Public | Supporting GitHub-native template | [Link](./artifacts/01_Governance_Method/templates/github-native/PULL_REQUEST_TEMPLATE.md) |
@@ -245,12 +247,12 @@ Click on a dimension to explore its associated policies, standards, and template
 
 ### Supporting Artifacts
 
-| Artifact | Role | Maturity | Public status | Primary link |
+| Artifact | Role | Maturity | Catalog role | Primary link |
 |---|---|---|---|---|
 | Incident Response Policy | Governs incident process expectations behind the plan and report set | Public draft | Supporting policy | [Link](./artifacts/07_Operations_Incidents_Continuity/policies/incident_response_policy.md) |
 | Incident Playbook Standard | Defines the common structure for specialized incident playbooks | Public draft | Supporting standard | [Link](./artifacts/07_Operations_Incidents_Continuity/standards/incident_playbook_standard.md) |
-| Business Impact Analysis Standard | Governs how BIAs are authored and refreshed | Public draft | Supporting standard | [Link](./artifacts/07_Operations_Incidents_Continuity/standards/business_impact_analysis_standard.md) |
-| Contingency Planning Standard | Governs contingency plan scope and review expectations | Public draft | Supporting standard | [Link](./artifacts/07_Operations_Incidents_Continuity/standards/contingency_planning_standard.md) |
+| Business Impact Analysis Standard | Governs how BIAs are authored and refreshed | Public | Supporting standard | [Link](./artifacts/07_Operations_Incidents_Continuity/standards/business_impact_analysis_standard.md) |
+| Contingency Planning Standard | Governs contingency plan scope and review expectations | Public | Supporting standard | [Link](./artifacts/07_Operations_Incidents_Continuity/standards/contingency_planning_standard.md) |
 | Business Impact Analysis Template | Reusable BIA template that feeds continuity planning | Public draft | Supporting template | [Link](./artifacts/07_Operations_Incidents_Continuity/templates/business_impact_analysis.md) |
 | Contingency Plan Template | Reusable contingency planning template for downstream repositories | Public draft | Supporting template | [Link](./artifacts/07_Operations_Incidents_Continuity/templates/contingency_plan.md) |
 | Escalation Playbook | Specialized playbook for escalation sequencing and ownership | Public draft | Supporting playbook | [Link](./artifacts/07_Operations_Incidents_Continuity/templates/playbooks/escalation.md) |
@@ -280,7 +282,7 @@ Click on a dimension to explore its associated policies, standards, and template
 
 ### Supporting Artifacts
 
-| Artifact | Role | Maturity | Public status | Primary link |
+| Artifact | Role | Maturity | Catalog role | Primary link |
 |---|---|---|---|---|
 | Error Budget Policy | Reliability companion policy used by service reviews and SLO governance | Public draft | Supporting policy | [Link](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/policies/error_budget_policy.md) |
 | Postmortem Standard | Defines how postmortems should be authored and evaluated | Public draft | Supporting standard | [Link](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/postmortem_standard.md) |

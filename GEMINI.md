@@ -1,17 +1,22 @@
 # Gemini Automation Overview
 
-This repository includes maintainer-controlled Gemini workflows for triage, review, and plan-oriented automation inside GitHub Actions.
+This file is the provider-specific public note for Gemini-related automation patterns.
 
-## Public expectations
+## Canonical policy
 
-- automation must respect repository trust boundaries;
-- public workflows must remain attributable and deterministic where possible;
-- public prompts and workflow contracts should stay minimal and publication-safe.
+Follow the repository-wide rules in [`AI_AGENT_POLICY.md`](./AI_AGENT_POLICY.md).
+
+## Repository stance
+
+- Gemini automation is **not** currently active in the root workflow surface of this repository instance.
+- Reusable Gemini workflow patterns are preserved in the library under [`artifacts/06_Platform_Delivery_Automation_AI_Operations/workflows/gemini/`](./artifacts/06_Platform_Delivery_Automation_AI_Operations/workflows/gemini/).
+- Reusable Gemini prompt and command contracts are preserved under [`artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/ai_automation/gemini/`](./artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/ai_automation/gemini/).
+- Downstream repositories may activate those patterns explicitly when they provide the required configuration, trust boundaries, and human review model.
 
 ## Notes
 
-- Detailed operational heuristics are intentionally kept out of the public surface.
-- Canonical repository rules continue to live in `README.md`, `decision_log.md`, and `scripts/validate_governance_artifacts.py`.
+- The active root workflow surface of this repository is intentionally kept deterministic and minimal.
+- Detailed runtime heuristics remain out of the public root surface.
 
 ## Source Attribution
 

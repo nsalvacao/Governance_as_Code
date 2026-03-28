@@ -1,7 +1,7 @@
 ---
 title: Architectural Decision Record Standard
 artifact_type: policy
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: GOVERNANCE
@@ -13,7 +13,7 @@ source_manifests:
   - platform__microsoft_learn.md
   - governance__github_docs.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-28
 ---
 
 ## Purpose

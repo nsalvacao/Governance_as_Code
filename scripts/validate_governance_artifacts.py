@@ -27,6 +27,7 @@ REQUIRED_FRONTMATTER_KEYS = [
 FRONTMATTER_PATHS = [Path("artifacts")]
 ROOT_MARKDOWN_PATHS = [
     Path("README.md"),
+    Path("AI_AGENT_POLICY.md"),
     Path("GOVERNANCE.md"),
     Path("CONTRIBUTING.md"),
     Path("CODE_OF_CONDUCT.md"),
@@ -56,6 +57,12 @@ MARKDOWN_LINK_PATTERN = re.compile(r"\]\(\./([^)]+)\)")
 LOCAL_PATH_PATTERN = re.compile(r"(/mnt/[^\s)]+|(?<![A-Za-z])[A-Za-z]:[\\/][^\s)]*)")
 ISSUE_TEMPLATE_BAD_LABELS_PATTERN = re.compile(r"^labels:\s*\n\s*-\s*type\s*:", re.MULTILINE)
 MANIFEST_NAME_PATTERN = re.compile(r"[\w-]+__[\w-]+\.md")
+SUPPORTING_ROLE_PATTERN = re.compile(r"Supporting [A-Za-z-]+(?: [A-Za-z-]+)*$")
+THIN_WRAPPER_REFERENCES = {
+    Path("CLAUDE.md"): "./AI_AGENT_POLICY.md",
+    Path("GEMINI.md"): "./AI_AGENT_POLICY.md",
+    Path(".github/copilot-instructions.md"): "../AI_AGENT_POLICY.md",
+}
 
 
 def iter_markdown_paths() -> Iterable[Path]:
@@ -97,6 +104,8 @@ def iter_artifact_meta_paths() -> Iterable[Path]:
         if not base.exists():
             continue
         for path in base.rglob("*.yml"):
+            yield path
+        for path in base.rglob("*.toml"):
             yield path
         for path in base.rglob("PULL_REQUEST_TEMPLATE.md"):
             yield path
@@ -258,6 +267,34 @@ def check_license_exists() -> list[Tuple[Path, Sequence[str]]]:
     return [(LICENSE_PATH, ["missing LICENSE file"])]
 
 
+def check_ai_policy_surface() -> list[Tuple[Path, Sequence[str]]]:
+    failures: list[Tuple[Path, Sequence[str]]] = []
+    ai_policy = Path("AI_AGENT_POLICY.md")
+    if not ai_policy.exists():
+        return [(ai_policy, ["missing canonical AI agent policy"])]
+
+    for path, needle in THIN_WRAPPER_REFERENCES.items():
+        if not path.exists():
+            failures.append((path, ["missing provider guidance wrapper"]))
+            continue
+        content = path.read_text(encoding="utf-8")
+        if needle not in content:
+            failures.append((path, [f"provider wrapper must reference {needle}"]))
+        if len(content.splitlines()) > 30:
+            failures.append((path, ["provider wrapper should remain thin and under 30 lines"]))
+
+    return failures
+
+
+def check_root_gemini_absence() -> list[Tuple[Path, Sequence[str]]]:
+    failures: list[Tuple[Path, Sequence[str]]] = []
+    for path in sorted(Path(".github/workflows").glob("gemini-*.yml")):
+        failures.append((path, ["Gemini workflows must not remain active in the root workflow surface"]))
+    for path in sorted(Path(".github/commands").glob("gemini-*.toml")):
+        failures.append((path, ["Gemini command contracts must live in the reusable artifact library"]))
+    return failures
+
+
 def check_artifact_layout() -> list[Tuple[Path, Sequence[str]]]:
     failures: list[Tuple[Path, Sequence[str]]] = []
     artifacts_root = Path("artifacts")
@@ -377,6 +414,55 @@ def check_readme_artifact_coverage() -> list[Tuple[Path, Sequence[str]]]:
     return failures
 
 
+def check_readme_supporting_tables() -> list[Tuple[Path, Sequence[str]]]:
+    readme = Path("README.md")
+    lines = readme.read_text(encoding="utf-8").splitlines()
+    failures: list[Tuple[Path, Sequence[str]]] = []
+    in_table = False
+    section = ""
+
+    for line in lines:
+        if CATALOG_SECTION_PATTERN.match(line):
+            section = line.strip()
+            in_table = False
+            continue
+        if section and line.startswith("| Artifact | Role | Maturity |"):
+            in_table = True
+            continue
+        if in_table and line.startswith("|---"):
+            continue
+        if in_table and line.startswith("|"):
+            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+            if len(cells) < 5:
+                failures.append((readme, [f"supporting row in '{section}' is malformed: {line}"]))
+                continue
+            artifact, _, maturity, catalog_role, link_cell = cells[:5]
+            if maturity not in {"Public", "Public draft", "Private"}:
+                failures.append((readme, [f"supporting row '{artifact}' uses invalid maturity value: {maturity}"]))
+            if not SUPPORTING_ROLE_PATTERN.match(catalog_role):
+                failures.append((readme, [f"supporting row '{artifact}' uses invalid catalog role: {catalog_role}"]))
+
+            links = MARKDOWN_LINK_PATTERN.findall(link_cell)
+            if not links:
+                failures.append((readme, [f"supporting row '{artifact}' is missing a valid artifact link"]))
+                continue
+            target = Path(links[0])
+            if not target.exists():
+                failures.append((readme, [f"supporting row '{artifact}' points to a missing artifact: {target}"]))
+                continue
+            text = target.read_text(encoding="utf-8")
+            fm_data, _ = parse_frontmatter(text)
+            status = str(fm_data.get("status", "")).strip()
+            expected = {"public": "Public", "public-draft": "Public draft", "private": "Private"}.get(status)
+            if expected and maturity != expected:
+                failures.append((readme, [f"supporting row '{artifact}' maturity '{maturity}' does not match artifact status '{status}'"]))
+            continue
+        if in_table and not line.startswith("|"):
+            in_table = False
+
+    return failures
+
+
 def gather_all_checks() -> list[Tuple[Path, Sequence[str]]]:
     failures: list[Tuple[Path, Sequence[str]]] = []
     failures.extend(run_checks(iter_markdown_paths(), check_markdown))
@@ -389,6 +475,9 @@ def gather_all_checks() -> list[Tuple[Path, Sequence[str]]]:
     failures.extend(check_duplicate_artifact_names())
     failures.extend(check_readme_catalog_links())
     failures.extend(check_readme_artifact_coverage())
+    failures.extend(check_readme_supporting_tables())
+    failures.extend(check_ai_policy_surface())
+    failures.extend(check_root_gemini_absence())
     return failures
 
 

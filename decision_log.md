@@ -314,6 +314,42 @@ The following foundational inferences are hereby recorded:
 2. Public license claims must link directly to that file.
 3. If future licensing changes are needed, public claims must change atomically with the legal artifact.
 
+## DL-0023 - Phased editorial promotion for public supporting artifacts
+
+- Date: 2026-03-28
+- Status: Accepted
+- Context: Supporting artifacts in the public catalog do not all have the same editorial maturity, placeholder density, or operational sensitivity.
+
+### Decision
+
+1. Public supporting artifacts may be promoted from `public-draft` to `public` in phases rather than through blanket promotion.
+2. An artifact may remain publicly indexed while still being explicitly marked `public-draft`.
+3. Promotion should prioritize stable standards and low-ambiguity reusable documents before scenario-heavy operational templates and playbooks.
+
+## DL-0024 - Canonical public AI policy plus minimal provider notes
+
+- Date: 2026-03-28
+- Status: Accepted
+- Context: The root public surface should stay understandable and institutionally coherent even when multiple AI providers or agent tools are referenced.
+
+### Decision
+
+1. The repository exposes one canonical public AI contribution policy.
+2. Provider-specific files such as `CLAUDE.md`, `GEMINI.md`, and Copilot instructions must remain thin wrappers that defer to that canonical policy.
+3. Public provider notes should describe only provider-specific entry expectations and repository stance, not internal orchestration detail.
+
+## DL-0025 - Gemini retained as a reusable pattern, not active root automation
+
+- Date: 2026-03-28
+- Status: Accepted
+- Context: Gemini workflows are useful as reusable governance automation patterns, but this repository should not expose them as active root automation without explicit operational configuration and review.
+
+### Decision
+
+1. Gemini workflows and command contracts are preserved in the reusable artifact library.
+2. They are not active by default in the root workflow surface of this repository instance.
+3. Mutation-capable AI workflow patterns are opt-in downstream assets and require explicit activation, configuration, and human review in consuming repositories.
+
 ## Source Attribution
 
 - Source manifests: [`governance__github_docs.md`](./sources/manifests/governance__github_docs.md), [`platform__aws_well_architected.md`](./sources/manifests/platform__aws_well_architected.md), [`platform__microsoft_learn.md`](./sources/manifests/platform__microsoft_learn.md)

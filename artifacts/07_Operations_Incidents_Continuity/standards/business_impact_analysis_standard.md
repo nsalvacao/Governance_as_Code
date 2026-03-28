@@ -1,7 +1,7 @@
 ---
 title: Business Impact Analysis Standard
 artifact_type: standard
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{OWNER_NAME}}"
@@ -10,7 +10,7 @@ applies_to: continuity planning
 source_basis: NIST SP 800-34 Rev. 1
 source_manifests: operations__nist_cisa.md, platform__aws_well_architected.md, operations__google_sre.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-28
 ---
 
 ## Purpose

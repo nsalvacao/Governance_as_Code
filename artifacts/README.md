@@ -52,6 +52,7 @@ Not every dimension needs every artifact type.
 - Files in the repository root and `/.github/` are the live instance for this repository.
 - Files in `artifacts/` are reusable source assets.
 - If a document class exists in both places, the root version is the concrete instance and the `artifacts/` version is the reusable template or standard.
+- Provider-specific automation patterns may exist in `artifacts/` without being active in the root repository instance.
 
 ## Catalog model
 
@@ -61,6 +62,12 @@ The public README indexes both:
 - supporting artifacts, which appear in supporting tables inside the same collapsible dimension sections.
 
 This keeps the README as the single public catalog while preserving a distinction between primary anchors and secondary reusable assets.
+
+## AI automation patterns
+
+- Gemini workflow patterns live under `artifacts/06_Platform_Delivery_Automation_AI_Operations/workflows/gemini/`.
+- Gemini prompt and command contracts live under `artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/ai_automation/gemini/`.
+- Their presence in the library does not imply that they are active in the root workflow surface of this repository.
 
 ## Source Attribution
 

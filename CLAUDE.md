@@ -1,25 +1,18 @@
 # Claude Code Public Guidance
 
-This file is the public contribution guide for Claude Code and similar coding agents working in this repository.
+This file is the provider-specific public note for Claude Code and similar coding agents.
 
-## Purpose
+## Canonical policy
 
-- preserve the boundary between the repository instance and the reusable artifact library;
-- keep changes publication-safe and attributable;
-- run deterministic validation before proposing merge.
+Follow the repository-wide rules in [`AI_AGENT_POLICY.md`](./AI_AGENT_POLICY.md).
 
-## Public rules
+## Provider note
 
-1. Treat root files and `/.github/` as the concrete behavior of this repository.
-2. Treat `artifacts/` as the reusable library for downstream repositories.
-3. Keep source attribution intact in Markdown, YAML, and workflow-facing assets.
-4. Use `python3 scripts/validate_governance_artifacts.py` before proposing changes.
-5. Prefer small, auditable changes over broad undocumented rewrites.
+- treat the root repository files as the live instance and `artifacts/` as the reusable library;
+- preserve traceability and source attribution in any public change;
+- run `python3 scripts/validate_governance_artifacts.py` before proposing merge-ready work.
 
-## Notes
-
-- Detailed internal orchestration and execution heuristics are intentionally not published in this file.
-- The public source of truth for repository behavior remains `README.md`, `decision_log.md`, `GOVERNANCE.md`, and the deterministic validator.
+Detailed internal orchestration heuristics are intentionally not published here.
 
 ## Source Attribution
 

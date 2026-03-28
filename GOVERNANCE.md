@@ -30,6 +30,7 @@ This file governs **this repository as an instance** of the central governance s
 2. The public target corpus is defined in the [`Public Document Map`](./README.md#public-document-map) section of the README.
 3. Reusable assets must be edited in `artifacts/`, not in the root instance files, unless the change is specific to this repository itself.
 4. This repository stays publishable by default; non-public rationale and working material remain under `/.private/`.
+5. Public AI and coding-agent contribution behavior is governed by [`AI_AGENT_POLICY.md`](./AI_AGENT_POLICY.md).
 
 ## Lifecycle
 
