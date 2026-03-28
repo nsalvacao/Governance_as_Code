@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Governance Repository | Liquid Governance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        ai: {
+                            indigo: '#6366f1',
+                            purple: '#8b5cf6',
+                            soft: '#f8fafc',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .ai-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        }
+        .ai-text-gradient {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-200 font-sans transition-colors duration-300">
+
+    <!-- Header / Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 ai-gradient rounded-lg flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-xs">CG</span>
+                    </div>
+                    <span class="font-semibold text-lg tracking-tight">Central Governance <span class="text-ai-indigo opacity-70">Repo</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#" class="hover:text-ai-indigo transition-colors">Dimensions</a>
+                    <a href="#" class="hover:text-ai-indigo transition-colors">Catalog</a>
+                    <a href="#" class="hover:text-ai-indigo transition-colors">Search</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <!-- Hero Section: The Compass -->
+        <section class="mb-20 text-center">
+            <h1 class="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight">
+                Governance as <span class="ai-text-gradient">Code</span>
+            </h1>
+            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-12">
+                O modelo operacional central para governança tecnológica, estruturado em 10 dimensões críticas para o ciclo de vida industrial.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- Dimensão 01 -->
+                <a href="#dimension-01" class="group relative p-6 glass rounded-2xl hover:border-ai-indigo transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-xs font-mono text-ai-indigo mb-2 opacity-60">01</div>
+                    <div class="font-semibold text-sm">Governance & Method</div>
+                    <div class="absolute inset-0 bg-ai-indigo/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </a>
+                <!-- Dimensões 02 a 10 simplificadas para o protótipo -->
+                <a href="#dimension-02" class="group p-6 glass rounded-2xl hover:border-ai-indigo transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div class="text-xs font-mono text-ai-indigo mb-2 opacity-60">02</div>
+                    <div class="font-semibold text-sm">Discovery & Planning</div>
+                </a>
+                <a href="#dimension-03" class="group p-6 glass rounded-2xl hover:border-ai-indigo transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div class="text-xs font-mono text-ai-indigo mb-2 opacity-60">03</div>
+                    <div class="font-semibold text-sm">Architecture & Security</div>
+                </a>
+                <a href="#dimension-04" class="group p-6 glass rounded-2xl hover:border-ai-indigo transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div class="text-xs font-mono text-ai-indigo mb-2 opacity-60">04</div>
+                    <div class="font-semibold text-sm">Quality & Review</div>
+                </a>
+                <a href="#dimension-05" class="group p-6 glass rounded-2xl hover:border-ai-indigo transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div class="text-xs font-mono text-ai-indigo mb-2 opacity-60">05</div>
+                    <div class="font-semibold text-sm">Delivery & Readiness</div>
+                </a>
+                <a href="#dimension-06" class="group p-6 glass rounded-2xl hover:border-ai-indigo transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div class="text-xs font-mono text-ai-indigo mb-2 opacity-60">06</div>
+                    <div class="font-semibold text-sm">Platform & AI Ops</div>
+                </a>
+                <a href="#dimension-07" class="group p-6 glass rounded-2xl hover:border-ai-indigo transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div class="text-xs font-mono text-ai-indigo mb-2 opacity-60">07</div>
+                    <div class="font-semibold text-sm">Operations & Incidents</div>
+                </a>
+                <a href="#dimension-08" class="group p-6 glass rounded-2xl hover:border-ai-indigo transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div class="text-xs font-mono text-ai-indigo mb-2 opacity-60">08</div>
+                    <div class="font-semibold text-sm">Knowledge & Learning</div>
+                </a>
+                <a href="#dimension-09" class="group p-6 glass rounded-2xl hover:border-ai-indigo transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div class="text-xs font-mono text-ai-indigo mb-2 opacity-60">09</div>
+                    <div class="font-semibold text-sm">Project & Portfolio</div>
+                </a>
+                <a href="#dimension-10" class="group p-6 glass rounded-2xl hover:border-ai-indigo transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div class="text-xs font-mono text-ai-indigo mb-2 opacity-60">10</div>
+                    <div class="font-semibold text-sm">Risk & Traceability</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Search & Catalog Section -->
+        <section id="catalog" class="pt-12 border-t border-slate-200 dark:border-slate-800">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 space-y-4 md:space-y-0">
+                <h2 class="text-2xl font-bold">Artifact Catalog</h2>
+                <div class="relative w-full md:w-96 group">
+                    <input type="text" placeholder="Search artifacts (e.g. ADR, SLA)..." class="w-full pl-10 pr-4 py-2 glass rounded-xl focus:ring-2 focus:ring-ai-indigo outline-none transition-all">
+                    <svg class="absolute left-3 top-2.5 w-5 h-5 text-slate-400 group-hover:text-ai-indigo transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <span class="absolute right-3 top-2.5 text-[10px] font-mono glass px-1.5 py-0.5 rounded opacity-50">CMD + K</span>
+                </div>
+            </div>
+
+            <!-- Filter Badges -->
+            <div class="flex space-x-2 mb-8 overflow-x-auto scrollbar-hide pb-2">
+                <button class="px-4 py-1.5 rounded-full glass border-ai-indigo text-xs font-medium whitespace-nowrap">All Items</button>
+                <button class="px-4 py-1.5 rounded-full glass hover:border-ai-indigo text-xs font-medium whitespace-nowrap transition-colors">Normative</button>
+                <button class="px-4 py-1.5 rounded-full glass hover:border-ai-indigo text-xs font-medium whitespace-nowrap transition-colors">Instantiable</button>
+                <button class="px-4 py-1.5 rounded-full glass hover:border-ai-indigo text-xs font-medium whitespace-nowrap transition-colors">Evidence</button>
+                <button class="px-4 py-1.5 rounded-full glass hover:border-ai-indigo text-xs font-medium whitespace-nowrap transition-colors text-emerald-500">✅ Ready</button>
+            </div>
+
+            <!-- Table-like Catalog List (GitHub Style) -->
+            <div class="glass rounded-2xl overflow-hidden">
+                <div class="grid grid-cols-12 gap-4 p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-100/30 dark:bg-slate-900/30 text-xs font-semibold uppercase tracking-wider opacity-60">
+                    <div class="col-span-1">ID</div>
+                    <div class="col-span-5">Document / Artifact</div>
+                    <div class="col-span-2">Nature</div>
+                    <div class="col-span-2">Source Basis</div>
+                    <div class="col-span-2 text-right">Maturity</div>
+                </div>
+                
+                <div id="catalog-list" class="divide-y divide-slate-200 dark:divide-slate-800">
+                    <!-- Loading State -->
+                    <div class="p-12 text-center text-slate-500 italic">
+                        Loading artifacts from the governance-as-code repository...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / Source Section -->
+        <footer class="mt-24 pt-12 border-t border-slate-200 dark:border-slate-800 text-center">
+            <div class="flex flex-wrap justify-center gap-6 mb-8 opacity-50 grayscale hover:grayscale-0 transition-all">
+                <span>NIST</span>
+                <span>ITIL</span>
+                <span>SRE</span>
+                <span>SCRUM</span>
+                <span>PMI</span>
+                <span>DIATAXIS</span>
+                <span>PRINCE2</span>
+            </div>
+            <p class="text-xs text-slate-500">© 2026 Governance-as-Code. Licensed under MIT.</p>
+        </footer>
+    </main>
+
+    <script>
+        let artifacts = [];
+
+        async function loadCatalog() {
+            try {
+                const response = await fetch('./catalog.json');
+                artifacts = await response.json();
+                renderCatalog(artifacts);
+            } catch (error) {
+                console.error('Error loading catalog:', error);
+                document.getElementById('catalog-list').innerHTML = '<div class="p-8 text-red-500">Error loading catalog. Please ensure scripts/generate_catalog.py was run.</div>';
+            }
+        }
+
+        function getStatusColor(status) {
+            const s = status.toLowerCase();
+            if (s.includes('ready')) return 'text-emerald-500';
+            if (s.includes('hardening')) return 'text-amber-500';
+            if (s.includes('draft')) return 'text-ai-indigo opacity-70';
+            return 'text-slate-400';
+        }
+
+        function renderCatalog(items) {
+            const container = document.getElementById('catalog-list');
+            if (items.length === 0) {
+                container.innerHTML = '<div class="p-8 text-center text-slate-500">No artifacts found matching your search.</div>';
+                return;
+            }
+
+            container.innerHTML = items.map(item => `
+                <div class="grid grid-cols-12 gap-4 p-4 hover:bg-white/5 transition-all items-center text-sm group">
+                    <div class="col-span-1 font-mono text-xs opacity-50 uppercase">${item.id.substring(0, 8)}</div>
+                    <div class="col-span-5 flex items-center space-x-2">
+                        <span class="text-xs font-mono text-ai-indigo opacity-40">${item.dimension}</span>
+                        <a href="https://github.com/{{REPO_NAME}}/blob/main/${item.path.replace('./', '')}" target="_blank" class="font-medium group-hover:text-ai-indigo transition-colors cursor-pointer">
+                            ${item.title}
+                        </a>
+                    </div>
+                    <div class="col-span-2">
+                        <span class="px-2 py-0.5 glass rounded-md text-[10px] border-ai-indigo/20">${item.nature}</span>
+                    </div>
+                    <div class="col-span-2 text-xs opacity-70 truncate" title="${item.source}">${item.source}</div>
+                    <div class="col-span-2 text-right">
+                        <span class="${getStatusColor(item.status)} font-medium text-xs">
+                            ${item.status.replace(/-/g, ' ').toUpperCase()}
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter & Search Logic
+        document.querySelector('input[type="text"]').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = artifacts.filter(a => 
+                a.title.toLowerCase().includes(term) || 
+                a.id.toLowerCase().includes(term) ||
+                a.source.toLowerCase().includes(term)
+            );
+            renderCatalog(filtered);
+        });
+
+        function filterByNature(nature) {
+            const filtered = nature === 'All' ? artifacts : artifacts.filter(a => a.nature.toLowerCase() === nature.toLowerCase());
+            renderCatalog(filtered);
+            
+            // Highlight active button
+            document.querySelectorAll('#catalog button').forEach(btn => {
+                btn.classList.remove('border-ai-indigo');
+                if (btn.innerText.includes(nature)) btn.classList.add('border-ai-indigo');
+            });
+        }
+
+        // Add event listeners to filter buttons
+        document.querySelectorAll('#catalog button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const text = btn.innerText;
+                if (text.includes('Ready')) {
+                    renderCatalog(artifacts.filter(a => a.status.toLowerCase().includes('ready')));
+                } else if (text.includes('Normative') || text.includes('Instantiable') || text.includes('Evidence')) {
+                    filterByNature(text);
+                } else if (text.includes('All')) {
+                    filterByNature('All');
+                }
+            });
+        });
+
+        // Dark Mode Logic
+        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+        // Initialize Mermaid
+        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+
+        // Load dynamic data
+        loadCatalog();
+    </script>
+</body>
+</html>
