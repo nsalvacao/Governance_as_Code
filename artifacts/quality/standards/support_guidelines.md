@@ -16,15 +16,45 @@ updated: 2026-03-27
 
 ## Purpose
 
-Explain where support requests belong and how they should be framed so the right team can act.
+Define routing rules for support requests to prevent noisy issue intake and ensure each request reaches the right team without ambiguity.
 
-## Guidance
+## Request Type Routing
 
-- Distinguish support from contribution and from bug reporting.
-- Keep escalation paths obvious and public-safe.
-- Link to the canonical support entry point for the repository instance and downstream adopters.
+| Request Type | Where to Go | What NOT to Use |
+|---|---|---|
+| Bug report (reproducible defect) | GitHub Issues — Bug Report form | Support channels, email |
+| Feature request or idea | GitHub Issues — Feature Request form or `{{DISCUSSION_CATEGORY}}` | Direct email to maintainers |
+| Security vulnerability | Private advisory or `{{SECURITY_EMAIL}}` — see SECURITY.md | Public issues |
+| Usage question / how-to | `{{DISCUSSION_CATEGORY_QA}}` (e.g., Discussions → Q&A) | Issues |
+| Community discussion | `{{DISCUSSION_CATEGORY_GENERAL}}` | Issues |
+| Commercial support / SLA | `{{COMMERCIAL_SUPPORT_LINK}}` or `{{SUPPORT_EMAIL}}` | GitHub Issues |
+| Documentation error | GitHub Issues — Documentation form or PR | Email |
 
-## Canonical relationship
+## Response Expectations
+
+| Channel | First Response SLA | Resolution SLA | Owner |
+|---|---|---|---|
+| GitHub Issues (bugs) | `{{BUG_RESPONSE_SLA}}` (e.g., 5 business days) | `{{BUG_RESOLUTION_SLA}}` | `{{BUG_OWNER_TEAM}}` |
+| GitHub Discussions | `{{DISCUSSION_RESPONSE_SLA}}` | Best-effort | Community + `{{MAINTAINER_TEAM}}` |
+| Security reports | `{{SECURITY_ACK_SLA}}` | Per SECURITY.md SLA | `{{SECURITY_CONTACT}}` |
+| Commercial support | Per `{{SUPPORT_AGREEMENT_REF}}` | Per agreement | `{{COMMERCIAL_SUPPORT_TEAM}}` |
+
+## Escalation Path
+
+1. **Community tier** — Discussions, issues: handled by contributors and maintainers on a best-effort basis
+2. **Maintainer tier** — Bugs and confirmed defects: handled by `{{MAINTAINER_TEAM}}` within SLA
+3. **Security tier** — Vulnerabilities: handled confidentially per SECURITY.md
+4. **Executive tier** — Service-impacting incidents for commercial customers: escalate via `{{EXECUTIVE_ESCALATION_CONTACT}}`
+
+## Out of Scope
+
+The following are **not supported** through this repository:
+
+- `{{OUT_OF_SCOPE_ITEM_1}}` (e.g., general programming help unrelated to this project)
+- `{{OUT_OF_SCOPE_ITEM_2}}` (e.g., debugging user-specific infrastructure)
+- Third-party integrations not maintained by `{{ORG_NAME}}`
+
+## Canonical Relationship
 
 - The repository-instance equivalent is `artifacts/governance/templates/repository-health/SUPPORT.md`.
 - This standard is the reusable quality-layer companion for downstream repositories.

@@ -15,26 +15,72 @@ updated: 2026-03-27
 
 ## Purpose
 
-Define what a postmortem must capture so that we treat failures as learning opportunities without exposing sensitive decision processes.
+Define triggering criteria, required sections, review process, and blameless culture guidance for postmortems (Google SRE Book Ch.15 + SRE Workbook).
 
-## When to run
+## Triggering Criteria
 
-- `{{TRIGGER}}`: service-impacting incident where recovery took longer than `{{MTTR_THRESHOLD}}` or where customer commitment degrade.
-- `{{RESPONSE_OWNER}}` should ensure the postmortem is filed within `{{POSTMORTEM_WINDOW}}`.
+A postmortem MUST be initiated for any of the following:
 
-## Evidence fields
+| Trigger | Mandatory? | Notes |
+|---|---|---|
+| SEV1 incident (complete service unavailability) | Yes | Always, no exceptions |
+| SEV2 incident (major degradation) | Yes | Always |
+| SEV2 incident (minor / novel failure mode) | Yes | Required if failure mode is new or unexpected |
+| Error budget consumed > `{{POSTMORTEM_BUDGET_TRIGGER}`% in a single incident | Yes | |
+| Customer-visible data loss or corruption | Yes | Regardless of severity classification |
+| On-call engineer discretion | Optional | For learning opportunity or near-miss |
+| User-reported issue with no internal detection | Yes — retrospective | Signals monitoring gap |
 
-- `Timeline`: brief chronological entries (supporting documentation may live in incident bucket).
-- `Impact`: measurable customer/operator impact, using available SLO/outage data.
-- `Root causes`: minimal set of contributing factors (technical, process, tooling, human).
-- `Remediation`: actions, owners, and due dates.
-- `Recognition`: what worked well or positive deviations worth repeating.
+## Required Sections
 
-## Writing guidance
+Every postmortem MUST contain all of the following sections in this order:
 
-- Write in plain English, avoid conjecture, and reference logs/graphs where possible.
-- Quote SLO dashboards or telemetry records when calling out impact.
-- Coordinate with `{{TOOLS_TEAM}}` to ensure sensitive data is redacted before sharing publicly.
+1. **Incident Metadata** — date, duration, services, severity, incident commander
+2. **Executive Summary** — ≤ 5 sentences: what happened, customer impact, current status
+3. **Impact** — quantitative: users affected `{{USERS_AFFECTED}}`, error budget consumed `{{BUDGET_CONSUMED}}`%, revenue impact if known
+4. **Timeline** — UTC-stamped chronological log from first signal to resolution (minimum 5-minute granularity during active response)
+5. **Root Cause Analysis** — minimal causal chain; distinguish immediate cause from systemic contributing factors
+6. **Contributing Factors** — technical, process, tooling, and human factors that enabled or amplified the incident
+7. **What Went Well** — actions that limited the blast radius or accelerated recovery
+8. **Action Items** — each item must have owner `{{ACTION_OWNER}}`, due date `{{ACTION_DUE_DATE}}`, and tracking link `{{ACTION_TRACKER_LINK}}`
+9. **Lessons Learned** — non-obvious insights not captured in action items
+
+## Timeline Requirements
+
+- All times in UTC
+- Minimum events to include: first signal, first notification, IC declared, impact scope established, mitigation applied, service restored, postmortem opened
+- Reference log queries, alert links, or graph snapshots for each entry
+- Format: `HH:MM UTC — {{EVENT_DESCRIPTION}}` (`{{EVIDENCE_LINK}}`)
+
+## Blameless Culture Language
+
+Avoid in postmortems:
+
+| ❌ Avoid | ✅ Use Instead |
+|---|---|
+| "{{PERSON}} made a mistake" | "The process did not prevent `{{ERROR_CONDITION}}`" |
+| "Human error" as root cause | Describe the system condition that made the error likely |
+| "Should have known" | "Monitoring did not alert on `{{SIGNAL}}`" |
+| Passive voice to obscure actions | Active voice attributing actions to roles, not persons |
+
+Postmortems are not disciplinary documents. Their purpose is systemic learning.
+
+## Review Process
+
+| Stage | Owner | Deadline | Criteria |
+|---|---|---|---|
+| Draft | Incident Commander `{{IC_CONTACT}}` | `{{DRAFT_DEADLINE}}` business days | All required sections present, timeline complete |
+| Technical review | `{{TECH_REVIEW_TEAM}}` | `{{TECH_REVIEW_DEADLINE}}` business days | Root cause validated, action items actionable |
+| Management review | `{{MGMT_REVIEWER}}` | `{{MGMT_REVIEW_DEADLINE}}` business days | Customer comms alignment, escalation decisions |
+| Published | `{{POSTMORTEM_CURATOR}}` | `{{PUBLISH_DEADLINE}}` business days | Stored in `{{POSTMORTEM_REPOSITORY}}`, linked from incident record |
+
+Total deadline from incident resolution to published postmortem: `{{TOTAL_POSTMORTEM_DEADLINE}}` business days.
+
+## Writing Guidance
+
+- Write in plain English; reference logs/graphs/dashboards — do not paraphrase telemetry.
+- Quote SLO dashboard readings when stating impact.
+- Redact PII, customer identifiers, and credentials before sharing; coordinate with `{{PRIVACY_REVIEWER}}`.
 
 ## Source Attribution
 

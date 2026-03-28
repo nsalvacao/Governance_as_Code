@@ -15,26 +15,75 @@ alignment_mode: hybrid-synthesis
 updated: 2026-03-27
 ---
 
-## Purpose
+## Register Metadata
 
-Track risks in a structured way so owners can assess, mitigate, and review them consistently.
+| Field | Value |
+|---|---|
+| Register Owner | `{{REGISTER_OWNER}}` |
+| Scope | `{{RISK_REGISTER_SCOPE}}` (e.g., project name, service name, programme) |
+| Risk Framework | ISO 31000:2018 + NIST RMF (SP 800-37 Rev.2) |
+| Review Cadence | `{{REVIEW_CADENCE}}` |
+| Last Reviewed | `{{LAST_REVIEWED_DATE}}` |
+| Next Review | `{{NEXT_REVIEW_DATE}}` |
 
-## Required fields
+## Risk Register
 
-- Risk ID
-- Description
-- Likelihood
-- Impact
-- Owner
-- Mitigation
-- Status
-- Review date
+| Risk ID | Category | Description | Likelihood (1–5) | Impact (1–5) | Risk Score | Inherent Risk Level | Treatment Strategy | Mitigation / Control | Residual Likelihood | Residual Impact | Residual Score | Status | Owner | Review Date |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `{{RISK_ID_1}}` | `{{CATEGORY_1}}` | `{{DESCRIPTION_1}}` | `{{L_1}}` | `{{I_1}}` | `{{L_1 × I_1}}` | `{{INHERENT_LEVEL_1}}` | `{{TREATMENT_1}}` | `{{MITIGATION_1}}` | `{{RL_1}}` | `{{RI_1}}` | `{{RS_1}}` | `{{STATUS_1}}` | `{{OWNER_1}}` | `{{REVIEW_1}}` |
+| `{{RISK_ID_2}}` | `{{CATEGORY_2}}` | `{{DESCRIPTION_2}}` | `{{L_2}}` | `{{I_2}}` | `{{L_2 × I_2}}` | `{{INHERENT_LEVEL_2}}` | `{{TREATMENT_2}}` | `{{MITIGATION_2}}` | `{{RL_2}}` | `{{RI_2}}` | `{{RS_2}}` | `{{STATUS_2}}` | `{{OWNER_2}}` | `{{REVIEW_2}}` |
 
-## Guidance
+## Scoring Scales
 
-- Keep one risk per row.
-- Separate current state from intended mitigation.
-- Make the review cadence explicit.
+### Likelihood Scale
+
+| Score | Label | Description |
+|---|---|---|
+| 1 | Rare | May occur only in exceptional circumstances (<10% probability) |
+| 2 | Unlikely | Could occur at some time (10–30%) |
+| 3 | Possible | Might occur at some time (30–50%) |
+| 4 | Likely | Will probably occur in most circumstances (50–70%) |
+| 5 | Almost Certain | Expected to occur in most circumstances (>70%) |
+
+### Impact Scale
+
+| Score | Label | Description |
+|---|---|---|
+| 1 | Insignificant | Negligible business impact |
+| 2 | Minor | Limited impact; resolved quickly with minimal cost |
+| 3 | Moderate | Significant but manageable impact; requires escalation |
+| 4 | Major | Serious impact on objectives, reputation, or financials |
+| 5 | Catastrophic | Existential risk; regulatory breach; major financial loss |
+
+### Risk Level Matrix
+
+| Score Range | Level | Colour | Required Response |
+|---|---|---|---|
+| 1–4 | Low | Green | Accept; monitor |
+| 5–9 | Medium | Yellow | Mitigate; owner accountability |
+| 10–16 | High | Orange | Active mitigation plan; monthly review |
+| 17–25 | Critical | Red | Immediate escalation to `{{CRITICAL_RISK_ESCALATION}}`; weekly review |
+
+## Treatment Strategies
+
+| Strategy | When to Use |
+|---|---|
+| **Accept** | Risk score ≤ `{{ACCEPT_THRESHOLD}}`; residual risk within appetite |
+| **Mitigate** | Reduce likelihood or impact via control; preferred for medium/high risks |
+| **Transfer** | Shift risk to third party (insurance, contract); appropriate for financial risks |
+| **Avoid** | Eliminate the activity that creates the risk; used when mitigation cost > impact |
+
+## Risk Categories
+
+| Code | Category | Examples |
+|---|---|---|
+| STR | Strategic | Business model, competitive, regulatory change |
+| OPS | Operational | Process failure, supply chain, third-party dependency |
+| SEC | Security | Data breach, insider threat, vulnerability exploitation |
+| COM | Compliance | Regulatory violation, contractual breach, audit finding |
+| FIN | Financial | Budget overrun, cost variance, fraud |
+| TEC | Technical | Architecture failure, scalability, tech debt |
+| REP | Reputational | Brand damage, public incident, negative press |
 
 ## Source Attribution
 
