@@ -1,7 +1,0 @@
-blank_issues_enabled: false
-contact_links:
-- name: Governance support
-  url: https://github.com/{{GITHUB_ORG}}/issues/new?templates=investigation_request.yml
-  about: Use the governance support channel for quick clarification before filing a formal request.
-
-# Source Attribution: governance__github_docs.md; GitHub Docs; native-platform-binding; Reviewed on 2026-03-27

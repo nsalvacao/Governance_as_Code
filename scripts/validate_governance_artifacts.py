@@ -37,7 +37,7 @@ ROOT_MARKDOWN_PATHS = [
     Path("decision_log.md"),
 ]
 
-CATALOG_SECTION_PATTERN = re.compile(r"^## \d+\.")
+CATALOG_SECTION_PATTERN = re.compile(r".*<b>(\d+)\..*")
 MARKDOWN_LINK_PATTERN = re.compile(r"\]\(\./([^)]+)\)")
 
 GITHUB_META_PATHS = [
@@ -252,11 +252,19 @@ def check_readme_catalog_links() -> list[Tuple[Path, Sequence[str]]]:
             if document == "Document":
                 continue
             row_count += 1
-            link_match = MARKDOWN_LINK_PATTERN.search(cells[4])
-            if not link_match:
+            links = MARKDOWN_LINK_PATTERN.findall(cells[4])
+            if not links:
                 failures.append((readme, [f"catalog row '{document}' is missing a valid relative artifact link"]))
                 continue
-            target = Path(link_match.group(1))
+            
+            # Prefer the file link (.md) if multiple links exist (Folder | Anchor format)
+            target_link = links[0]
+            for l in links:
+                if l.endswith(".md"):
+                    target_link = l
+                    break
+            
+            target = Path(target_link)
             if not target.exists():
                 failures.append((readme, [f"catalog row '{document}' points to a missing artifact: {target}"]))
                 continue

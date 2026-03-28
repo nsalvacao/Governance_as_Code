@@ -1,307 +1,317 @@
 [![Status](https://img.shields.io/badge/status-discovery-2563eb)](./decision_log.md)
 [![Wave](https://img.shields.io/badge/wave-catalog--coverage-0f766e)](./decision_log.md)
 [![Validation](https://img.shields.io/badge/validation-deterministic-15803d)](./.github/workflows/validate-governance-artifacts.yml)
+[![Artifacts](https://img.shields.io/badge/artifacts-103-blue)](./artifacts/README.md)
+[![Standards](https://img.shields.io/badge/standards-NIST%20%7C%20ITIL%20%7C%20SRE-blueviolet)](#primary-source-frameworks)
+[![Architecture](https://img.shields.io/badge/architecture-dual--layer-informational)](./decision_log.md)
+[![Governance Version](https://img.shields.io/badge/governance-v4.0-darkgreen)](#framework-versioning)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey)](#license-usage)
 [![Visibility](https://img.shields.io/badge/visibility-public-475569)](#public-document-map)
+[![Language](https://img.shields.io/badge/language-english-lightgrey)](#publication-conventions)
 
 # Central Governance Repository
 
-This repository is the concrete public instance of the organisation's central governance system. It serves two roles at the same time:
+This repository is the concrete public instance of the organization's central governance system. It functions as a **Governance-as-Code** infrastructure, providing both the live operating model and a reusable library of technical standards.
 
-1. it is the live repository where this governance corpus is maintained;
-2. it is the source library for reusable templates, schemas, scripts, workflows, and standards that downstream repositories may selectively instantiate.
+## Table of Contents
+- [Central Governance Repository](#central-governance-repository)
+  - [Table of Contents](#table-of-contents)
+  - [Governance Compass (Executive Index)](#governance-compass-executive-index)
+  - [Governance Operating Model](#governance-operating-model)
+    - [Repository Architecture](#repository-architecture)
+    - [How to navigate](#how-to-navigate)
+  - [Quick Start: Project Onboarding](#quick-start-project-onboarding)
+- [Public Document Map (The Corpus)](#public-document-map-the-corpus)
+  - [Primary Source Frameworks](#primary-source-frameworks)
+  - [Governance Stewards \& Support](#governance-stewards--support)
+  - [License \& Usage](#license--usage)
+  - [Source Attribution](#source-attribution)
 
-## What this repository is
+---
 
-- A single source of truth for governance method, document rules, reusable artifacts, and deterministic validation.
-- A public anchor for discovery decisions, curation rules, and the evolving document map.
-- A reusable library whose assets are organised by governance dimension, not by file type alone.
+## Governance Compass (Executive Index)
 
-## Why now
+The governance corpus is organized into 10 logical dimensions that follow the industrial technical lifecycle.
 
-The repository has moved out of pure discovery and into catalog coverage. The current focus is to make the operating model explicit, reusable, machine-consumable, and fully indexable from the public README before deeper schema and automation waves.
+| Section | Governance Dimension | Focus Area | Status | Reusable Library |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | **Governance & Method** | Foundation & Norms | ✅ Ready | [`artifacts/01_Governance_Method/`](./artifacts/01_Governance_Method/) |
+| **02** | **Discovery & Planning** | Ideation & Framing | ✅ Ready | [`artifacts/02_Discovery_Planning_Early_Learning/`](./artifacts/02_Discovery_Planning_Early_Learning/) |
+| **03** | **Architecture & Security** | Design & Decision | ✅ Ready | [`artifacts/03_Architecture_Security_Decision/`](./artifacts/03_Architecture_Security_Decision/) |
+| **04** | **Quality & Review** | Assurance & Ownership | ✅ Ready | [`artifacts/04_Quality_Review_Control/`](./artifacts/04_Quality_Review_Control/) |
+| **05** | **Delivery & Readiness** | Change & Release | ✅ Ready | [`artifacts/05_Delivery_Change_Readiness/`](./artifacts/05_Delivery_Change_Readiness/) |
+| **06** | **Platform & AI Ops** | Automation & AI Execution | ✅ Ready | [`artifacts/06_Platform_Delivery_Automation_AI_Operations/`](./artifacts/06_Platform_Delivery_Automation_AI_Operations/) |
+| **07** | **Operations & Incidents** | Execution & Continuity | ✅ Ready | [`artifacts/07_Operations_Incidents_Continuity/`](./artifacts/07_Operations_Incidents_Continuity/) |
+| **08** | **Knowledge & Learning** | Evolution & SRE | ✅ Ready | [`artifacts/08_Knowledge_Documentation_Continuous_Improvement/`](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/) |
+| **09** | **Project & Portfolio** | Strategy & Value | ✅ Ready | [`artifacts/09_Project_Portfolio_Service_Governance/`](./artifacts/09_Project_Portfolio_Service_Governance/) |
+| **10** | **Risk & Traceability** | Control & Exceptions | ✅ Ready | [`artifacts/10_Risk_Exceptions_Traceability/`](./artifacts/10_Risk_Exceptions_Traceability/) |
 
-## Repository model
+---
 
+## Governance Operating Model
+
+The organization follows a **lifecycle-oriented governance flow**, where every project or service evolves through these standard gates.
+
+```mermaid
+graph LR
+    A[01. Governance] --> B[02. Discovery]
+    B --> C[03. Architecture]
+    C --> D[04. Quality]
+    D --> E[05. Delivery]
+    E --> F[06. Platform]
+    F --> G[07. Operations]
+    G --> H[08. Knowledge]
+    H --> I[09. Portfolio]
+    I --> J[10. Risk]
+    J --> A
+    
+    subgraph "The Feedback Loop"
+    G -.-> B
+    H -.-> C
+    end
+```
+
+### Repository Architecture
 | Layer | Purpose | Location |
 |---|---|---|
-| Repository instance | Documents and GitHub-native files that describe and operate **this** repository | repository root and `/.github/` |
-| Artifact library | Reusable standards, templates, schemas, scripts, partials, and workflow definitions for downstream repositories | [`artifacts/`](./artifacts/README.md) |
-| Private working material | Drafts, source extraction, internal rationale, and implementation notes not intended for publication | `/.private/` |
+| **Repository Instance** | Concrete documents and GitHub-native files operating **this** repository | Root and `/.github/` |
+| **Artifact Library** | Reusable standards, templates, schemas, and workflows for **downstream** projects | [`artifacts/`](./artifacts/README.md) |
+| **Private Workspace** | Internal rationale and drafts not intended for publication | `/.private/` |
 
-## Current catalog coverage
+### How to navigate
+- **Physical structure:** The [`artifacts/`](./artifacts/README.md) directory is organized into 10 numbered sections (01 to 10) matching this map.
+- **Governance Enforcement:** Standards are enforced via deterministic validation. Refer to [`scripts/validate_governance_artifacts.py`](./scripts/validate_governance_artifacts.py).
+- **Exceptions & Deviations:** Recorded via the [`Exception / Deviation Record`](./artifacts/10_Risk_Exceptions_Traceability/risk/templates/exception_deviation_record.md).
 
-| Dimension | Current status | Canonical location |
-|---|---|---|
-| Cross-cutting conventions | Canonical coverage in place | [`artifacts/conventions/`](./artifacts/conventions) |
-| Governance and method | Canonical coverage in place | [`artifacts/governance/`](./artifacts/governance) |
-| Discovery, planning, and early learning | Canonical coverage in place | [`artifacts/discovery/`](./artifacts/discovery) |
-| Architecture, security, and decision | Canonical coverage in place | [`artifacts/architecture/`](./artifacts/architecture) |
-| Quality, review, and control | Canonical coverage in place | [`artifacts/quality/`](./artifacts/quality) |
-| Delivery, change, and readiness | Canonical coverage in place | [`artifacts/delivery/`](./artifacts/delivery) |
-| Platform delivery, automation, and AI operations | Canonical coverage in place | [`artifacts/platform/`](./artifacts/platform) |
-| Operations and incidents | Canonical coverage in place | [`artifacts/operations/`](./artifacts/operations) |
-| Continuity | Canonical coverage in place | [`artifacts/continuity/`](./artifacts/continuity) |
-| Knowledge, documentation, and continuous improvement | Canonical coverage in place | [`artifacts/knowledge/`](./artifacts/knowledge) |
-| Project, portfolio, and service governance | Canonical coverage in place | [`artifacts/project-governance/`](./artifacts/project-governance) |
-| Risk, exceptions, and traceability | Canonical coverage in place | [`artifacts/risk/`](./artifacts/risk) |
+---
 
-## How to navigate
+## Quick Start: Project Onboarding
 
-- Start with the [`Public Document Map`](#public-document-map) section below to understand the target corpus and its canonical artifact links.
-- Read [`decision_log.md`](./decision_log.md) for accepted principles and structural decisions.
-- Use [`artifacts/README.md`](./artifacts/README.md) to find reusable assets by category.
-- Use [`GOVERNANCE.md`](./GOVERNANCE.md) and [`CONTRIBUTING.md`](./CONTRIBUTING.md) to understand how this repository itself is maintained.
+To adopt this governance framework in a new repository, follow these three steps:
 
-## How reuse works
+1.  **Initialize Metadata:** Copy the [Pull Request Template](./artifacts/04_Quality_Review_Control/quality/templates/pull_request_template.md) and [Issue Forms](./artifacts/04_Quality_Review_Control/quality/templates/issue_forms_and_templates.md) to your `.github/` folder.
+2.  **Dimension Selection:** Identify which Governance Dimensions (01-10) apply to your project. Instantiate the corresponding `Normative` policies.
+3.  **Validate Compliance:** Run the [Deterministic Validator](./scripts/validate_governance_artifacts.py) locally or integrate it into your CI/CD pipeline.
 
-- Root files are **not** templates. They are the concrete instance for this repository.
-- Reusable assets live under `artifacts/<dimension>/<artifact-type>/`.
-- Downstream repositories should instantiate only the subset they need, using the templates and schemas in the artifact library rather than copying the root instance files.
+---
 
-## Validation and contribution
+# Public Document Map (The Corpus)
 
-- The deterministic validator is executed with `python scripts/validate_governance_artifacts.py`.
-- The CI wrapper lives at [/.github/workflows/validate-governance-artifacts.yml](/mnt/d/GitHub/.github/.github/workflows/validate-governance-artifacts.yml).
-- Changes to reusable assets should normally happen in `artifacts/`; changes to root and `/.github/` should only happen when this repository's own instance behavior changes.
+Click on a dimension to explore its associated policies, standards, and templates. Links point to both the resource **Folder 📂** and the **Anchor Artifact ⚓**.
 
-# Public Document Map
-
-This section defines the public document corpus for a central technical governance repository.
-
-Objectives of this version:
-- make explicit the set of documents that supports method, decision, delivery, operations, continuity, and learning;
-- separate normative documents from instantiable documents and evidence records;
-- fix a canonical map before the phase of templates, schemas, and frontmatter.
-
-## Legend
-
-| Nature | Meaning |
-|---|---|
-| Normative | Defines policies, rules, standards, and operational contracts |
-| Operational | Guides recurring execution, coordination, or response |
-| Instantiable | Is created by a project, release, incident, decision, or initiative |
-| Evidence | Records facts, decisions, results, and learning |
-
-## Publication Conventions
-
-This corpus follows a few public-facing conventions:
-
-- use short, stable, and recognizable names; prefer common public terms over internal jargon;
-- include concise YAML frontmatter for publication metadata, ownership, review cadence, visibility, and classification;
-- use classification labels consistently, at minimum across `public`, `public-redacted`, and `private` where applicable;
-- record ownership and review metadata where a document needs a clear maintainer or review cadence;
-- preserve provenance and cross-links so each document points to its source, parent, or related records;
-- keep archival and deprecation rules explicit so obsolete material can be retired without ambiguity;
-- keep the public corpus free of internal rationale that does not help readers understand the system.
-
-## Repository Implementation Note
-
-The current repository implementation distinguishes between:
-
-- repository-instance files at the root and under `/.github/`, which describe and operate this repository itself;
-- reusable assets under `artifacts/<dimension>/<artifact-type>/`, which are the canonical templates, schemas, scripts, workflows, policies, and standards for downstream repositories.
-
-This layout is intended to mirror the dimensional structure of this map while keeping a clear boundary between instance documents and reusable sources.
-
-## 1. Governance & Method
+<details>
+<summary><b>01. Governance & Method (Foundation & Norms)</b></summary>
 
 | Document | Nature | Public role | Primary source basis | Canonical primary artifact |
 |---|---|---|---|---|
-| README / Repository Overview | Normative | Presents the repository purpose, scope, structure, and navigation | GitHub Docs | [`artifacts/governance/templates/repository_overview.md`](./artifacts/governance/templates/repository_overview.md) |
-| GOVERNANCE.md / Governance Overview | Normative | Explains how the system is governed, who decides, and how it evolves | GitHub Docs | [`artifacts/governance/templates/governance_overview.md`](./artifacts/governance/templates/governance_overview.md) |
-| Engineering Handbook | Normative | Anchor document for the operating model, roles, lifecycle, and required artifacts | Scrum Guide, GitHub Docs | [`artifacts/governance/templates/engineering_handbook.md`](./artifacts/governance/templates/engineering_handbook.md) |
-| Workflow Definition | Normative | Defines the workflow used for development, review, and delivery | GitHub Docs, Scrum Guide | [`artifacts/governance/standards/workflow_definition.md`](./artifacts/governance/standards/workflow_definition.md) |
-| Contribution Guidelines | Normative | Explains how to contribute, propose changes, and submit artifacts | GitHub Docs, Open Source Guides | [`artifacts/governance/templates/contribution_guidelines.md`](./artifacts/governance/templates/contribution_guidelines.md) |
-| Code of Conduct | Normative | Defines behavioral standards and moderation mechanisms | GitHub Docs, Open Source Guides | [`artifacts/governance/policies/code_of_conduct_policy.md`](./artifacts/governance/policies/code_of_conduct_policy.md) |
-| Coding Standards | Normative | Defines technical quality and consistency standards | GitHub Docs, Microsoft Learn | [`artifacts/conventions/standards/coding_standards.md`](./artifacts/conventions/standards/coding_standards.md) |
-| Definition of Done / Quality Gates | Normative | States the minimum completion and validation criteria | Scrum Guide | [`artifacts/conventions/standards/definition_of_done_quality_gates.md`](./artifacts/conventions/standards/definition_of_done_quality_gates.md) |
-| Documentation Policy | Normative | Defines what to document, when, and at what level of rigor | GitHub Docs, Diataxis | [`artifacts/conventions/standards/documentation_policy.md`](./artifacts/conventions/standards/documentation_policy.md) |
-| ADR Policy | Normative | Defines when a decision requires a formal record | GitHub Docs, Microsoft Learn | [`artifacts/conventions/policies/adr_policy.md`](./artifacts/conventions/policies/adr_policy.md) |
-| Incident Management Policy | Normative | Defines incident principles, severity, roles, and governance | NIST, Google SRE | [`artifacts/operations/policies/incident_management_policy.md`](./artifacts/operations/policies/incident_management_policy.md) |
-| Release & Versioning Policy | Normative | Defines release rules, versioning, and change communication | GitHub Docs, Google SRE | [`artifacts/conventions/policies/release_versioning_policy.md`](./artifacts/conventions/policies/release_versioning_policy.md) |
-| Knowledge Lifecycle Policy | Normative | Defines creation, review, update, archive, and retirement of knowledge | Diataxis, GitHub Docs | [`artifacts/conventions/policies/knowledge_lifecycle_policy.md`](./artifacts/conventions/policies/knowledge_lifecycle_policy.md) |
+| README / Repository Overview | Normative | Presents the purpose and navigation | GitHub Docs | [Folder 📂](./artifacts/01_Governance_Method/governance/templates/) \| [Anchor ⚓](./artifacts/01_Governance_Method/governance/templates/repository_overview.md) |
+| GOVERNANCE.md / Governance Overview | Normative | Explains how the system evolves | GitHub Docs | [Folder 📂](./artifacts/01_Governance_Method/governance/templates/) \| [Anchor ⚓](./artifacts/01_Governance_Method/governance/templates/governance_overview.md) |
+| Engineering Handbook | Normative | Anchor document for the operating model | Scrum Guide | [Folder 📂](./artifacts/01_Governance_Method/governance/templates/) \| [Anchor ⚓](./artifacts/01_Governance_Method/governance/templates/engineering_handbook.md) |
+| Workflow Definition | Normative | Defines dev, review, and delivery flows | GitHub Docs | [Folder 📂](./artifacts/01_Governance_Method/governance/standards/) \| [Anchor ⚓](./artifacts/01_Governance_Method/governance/standards/workflow_definition.md) |
+| Contribution Guidelines | Normative | Explains how to submit changes | GitHub Docs | [Folder 📂](./artifacts/01_Governance_Method/governance/templates/) \| [Anchor ⚓](./artifacts/01_Governance_Method/governance/templates/contribution_guidelines.md) |
+| Code of Conduct | Normative | Defines behavioral standards | GitHub Docs | [Folder 📂](./artifacts/01_Governance_Method/governance/policies/) \| [Anchor ⚓](./artifacts/01_Governance_Method/governance/policies/code_of_conduct_policy.md) |
+| Coding Standards | Normative | Defines technical consistency standards | Microsoft Learn | [Folder 📂](./artifacts/01_Governance_Method/conventions/standards/) \| [Anchor ⚓](./artifacts/01_Governance_Method/conventions/standards/coding_standards.md) |
+| Definition of Done / Quality Gates | Normative | States minimum completion criteria | Scrum Guide | [Folder 📂](./artifacts/01_Governance_Method/conventions/standards/) \| [Anchor ⚓](./artifacts/01_Governance_Method/conventions/standards/definition_of_done_quality_gates.md) |
+| Documentation Policy | Normative | Defines level of rigor for documentation | Diataxis | [Folder 📂](./artifacts/01_Governance_Method/conventions/standards/) \| [Anchor ⚓](./artifacts/01_Governance_Method/conventions/standards/documentation_policy.md) |
+| ADR Policy | Normative | Defines when a formal record is required | AWS Docs | [Folder 📂](./artifacts/01_Governance_Method/conventions/policies/) \| [Anchor ⚓](./artifacts/01_Governance_Method/conventions/policies/adr_policy.md) |
+| Incident Management Policy | Normative | Defines severity, roles, and governance | NIST | [Folder 📂](./artifacts/01_Governance_Method/operations/policies/) \| [Anchor ⚓](./artifacts/01_Governance_Method/operations/policies/incident_management_policy.md) |
+| Release & Versioning Policy | Normative | Defines release and versioning rules | Google SRE | [Folder 📂](./artifacts/01_Governance_Method/conventions/policies/) \| [Anchor ⚓](./artifacts/01_Governance_Method/conventions/policies/release_versioning_policy.md) |
+| Knowledge Lifecycle Policy | Normative | Defines creation and archival of knowledge | Diataxis | [Folder 📂](./artifacts/01_Governance_Method/conventions/policies/) \| [Anchor ⚓](./artifacts/01_Governance_Method/conventions/policies/knowledge_lifecycle_policy.md) |
 
-## 2. Discovery, Planning & Early Learning
+</details>
 
-| Document | Nature | Public role | Primary source basis | Canonical primary artifact |
-|---|---|---|---|---|
-| Discovery Brief / Problem Framing | Instantiable | Frames the problem, goal, constraints, and decision context | Scrum Guide | [`artifacts/discovery/templates/discovery_brief.md`](./artifacts/discovery/templates/discovery_brief.md) |
-| Product Goal / Outcome Statement | Instantiable | States the product or initiative goal to pursue | Scrum Guide | [`artifacts/discovery/templates/product_goal_outcome_statement.md`](./artifacts/discovery/templates/product_goal_outcome_statement.md) |
-| Product Backlog | Instantiable | Maintains the prioritized inventory of future work | Scrum Guide | [`artifacts/discovery/templates/product_backlog.md`](./artifacts/discovery/templates/product_backlog.md) |
-| Planning Record | Instantiable | Records cycle goal, scope, and planning decisions | Scrum Guide | [`artifacts/discovery/templates/planning_record.md`](./artifacts/discovery/templates/planning_record.md) |
-| Research / Experiment Log | Instantiable | Records hypotheses, tests, results, and observations | Scrum Guide, Google SRE | [`artifacts/discovery/templates/research_experiment_log.md`](./artifacts/discovery/templates/research_experiment_log.md) |
-| Assumptions Register | Instantiable | Makes fragile or unvalidated assumptions explicit | Microsoft Learn | [`artifacts/discovery/templates/assumptions_register.md`](./artifacts/discovery/templates/assumptions_register.md) |
-| Technical Retrospective | Instantiable | Reviews an iteration, cycle, or phase of work | Scrum Guide | [`artifacts/discovery/templates/technical_retrospective.md`](./artifacts/discovery/templates/technical_retrospective.md) |
-| Pre-mortem / Failure Scenario Review | Instantiable | Anticipates failure modes, impact, and required preparation | Google SRE, Microsoft Learn | [`artifacts/discovery/templates/pre_mortem_failure_scenario_review.md`](./artifacts/discovery/templates/pre_mortem_failure_scenario_review.md) |
-| FMEA / Failure Mode Analysis | Instantiable | Preemptively analyzes failure modes and mitigation | NIST, Microsoft Learn | [`artifacts/discovery/templates/fmea_failure_mode_analysis.md`](./artifacts/discovery/templates/fmea_failure_mode_analysis.md) |
-
-## 3. Architecture, Security & Decision
+<details>
+<summary><b>02. Discovery, Planning & Early Learning (Ideation & Framing)</b></summary>
 
 | Document | Nature | Public role | Primary source basis | Canonical primary artifact |
 |---|---|---|---|---|
-| Architecture Decision Record (ADR) | Instantiable | Records hard-to-reverse decisions and their context | GitHub Docs, AWS Docs | [`artifacts/architecture/standards/architecture_decision_record_standard.md`](./artifacts/architecture/standards/architecture_decision_record_standard.md) |
-| Design Rationale | Evidence | Preserves the detailed reasoning behind a complex decision | Microsoft Learn | [`artifacts/architecture/templates/design_rationale.md`](./artifacts/architecture/templates/design_rationale.md) |
-| Trade-off Analysis | Instantiable | Compares viable options with costs, risk, and benefits | AWS Docs, Microsoft Learn | [`artifacts/architecture/templates/trade_off_analysis.md`](./artifacts/architecture/templates/trade_off_analysis.md) |
-| Architecture Review Record | Evidence | Records the formal architecture review and its outcome | Microsoft Learn, AWS Docs | [`artifacts/architecture/templates/architecture_review_record.md`](./artifacts/architecture/templates/architecture_review_record.md) |
-| Threat Model | Instantiable | Models threats, attack surfaces, and defensive priorities | Microsoft Learn | [`artifacts/architecture/templates/threat_model.md`](./artifacts/architecture/templates/threat_model.md) |
-| Security Requirements Record | Instantiable | Links security requirements to decisions and mitigations | Microsoft Learn | [`artifacts/architecture/templates/security_requirements_record.md`](./artifacts/architecture/templates/security_requirements_record.md) |
+| Discovery Brief / Problem Framing | Instantiable | Frames problem, goal, and constraints | Scrum Guide | [Folder 📂](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/) \| [Anchor ⚓](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/discovery_brief.md) |
+| Product Goal / Outcome Statement | Instantiable | States the target product goal | Scrum Guide | [Folder 📂](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/) \| [Anchor ⚓](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/product_goal_outcome_statement.md) |
+| Product Backlog | Instantiable | Inventory of prioritized future work | Scrum Guide | [Folder 📂](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/) \| [Anchor ⚓](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/product_backlog.md) |
+| Planning Record | Instantiable | Records cycle goal and scope decisions | Scrum Guide | [Folder 📂](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/) \| [Anchor ⚓](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/planning_record.md) |
+| Research / Experiment Log | Instantiable | Records hypotheses and observations | Google SRE | [Folder 📂](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/) \| [Anchor ⚓](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/research_experiment_log.md) |
+| Assumptions Register | Instantiable | Makes unvalidated assumptions explicit | Microsoft Learn | [Folder 📂](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/) \| [Anchor ⚓](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/assumptions_register.md) |
+| Technical Retrospective | Instantiable | Reviews an iteration or phase of work | Scrum Guide | [Folder 📂](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/) \| [Anchor ⚓](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/technical_retrospective.md) |
+| Pre-mortem / Failure Scenario Review | Instantiable | Anticipates failure modes and impact | Google SRE | [Folder 📂](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/) \| [Anchor ⚓](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/pre_mortem_failure_scenario_review.md) |
+| FMEA / Failure Mode Analysis | Instantiable | Preemptively analyzes mitigation | NIST | [Folder 📂](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/) \| [Anchor ⚓](./artifacts/02_Discovery_Planning_Early_Learning/discovery/templates/fmea_failure_mode_analysis.md) |
 
-## 4. Quality, Review & Control
+</details>
 
-| Document | Nature | Public role | Primary source basis | Canonical primary artifact |
-|---|---|---|---|---|
-| Review Ruleset / Merge Policy | Normative | Formalizes checks, minimum reviews, rulesets, and exceptions | GitHub Docs | [`artifacts/quality/standards/review_ruleset_and_merge_policy.md`](./artifacts/quality/standards/review_ruleset_and_merge_policy.md) |
-| CODEOWNERS / Ownership Map | Normative | Defines ownership of code and documentation surfaces | GitHub Docs | [`artifacts/quality/standards/codeowners_ownership_map.md`](./artifacts/quality/standards/codeowners_ownership_map.md) |
-| Issue Forms / Issue Templates | Operational | Standardizes the intake of bugs, requests, incidents, and investigations | GitHub Docs | [`artifacts/quality/templates/issue_forms_and_templates.md`](./artifacts/quality/templates/issue_forms_and_templates.md) |
-| Pull Request Template | Operational | Standardizes context, impact, validation, and cross-links in PRs | GitHub Docs | [`artifacts/quality/templates/pull_request_template.md`](./artifacts/quality/templates/pull_request_template.md) |
-| Security Policy | Normative | Defines how to report vulnerabilities and supported versions | GitHub Docs | [`artifacts/quality/policies/security_policy.md`](./artifacts/quality/policies/security_policy.md) |
-| Test Strategy / Verification Policy | Normative | Explains validation types, criteria, and responsibilities | Microsoft Learn, Google SRE | [`artifacts/quality/standards/test_strategy_and_verification_policy.md`](./artifacts/quality/standards/test_strategy_and_verification_policy.md) |
-| Operational / Production Readiness Review | Instantiable | Verifies whether the team can operate the change or service safely | Google SRE, AWS Docs | [`artifacts/quality/templates/production_readiness_review.md`](./artifacts/quality/templates/production_readiness_review.md) |
-| Support Guidelines | Normative | Explains where to ask for help and how to distinguish support from contribution | GitHub Docs | [`artifacts/quality/standards/support_guidelines.md`](./artifacts/quality/standards/support_guidelines.md) |
-
-## 5. Delivery, Change & Readiness
+<details>
+<summary><b>03. Architecture, Security & Decision (Design & Decision)</b></summary>
 
 | Document | Nature | Public role | Primary source basis | Canonical primary artifact |
 |---|---|---|---|---|
-| Release Plan / Rollout Plan | Instantiable | Defines order, windows, dependencies, and rollout criteria | Google SRE, AWS Docs | [`artifacts/delivery/templates/release_plan_rollout_plan.md`](./artifacts/delivery/templates/release_plan_rollout_plan.md) |
-| Release Checklist | Operational | Lists mandatory checks before publishing | GitHub Docs, Google SRE | [`artifacts/delivery/templates/release_checklist.md`](./artifacts/delivery/templates/release_checklist.md) |
-| Rollback / Backout Plan | Operational | Defines how to safely revert a change | Google SRE, Microsoft Learn | [`artifacts/delivery/templates/rollback_backout_plan.md`](./artifacts/delivery/templates/rollback_backout_plan.md) |
-| Change Record | Instantiable | Records the approved change, its context, and expected impact | NIST, AWS Docs | [`artifacts/delivery/templates/change_record.md`](./artifacts/delivery/templates/change_record.md) |
-| Change Log / Release Notes | Evidence | Communicates what changed in a traceable way | GitHub Docs | [`artifacts/delivery/templates/change_log_release_notes.md`](./artifacts/delivery/templates/change_log_release_notes.md) |
-| Change Communication | Instantiable | Defines the message, audience, and channels for change communication | Google SRE | [`artifacts/delivery/templates/change_communication.md`](./artifacts/delivery/templates/change_communication.md) |
-| Post-Implementation Review (PIR) | Evidence | Evaluates real outcomes after enough operating time has passed | NIST, GOV.UK | [`artifacts/delivery/templates/post_implementation_review.md`](./artifacts/delivery/templates/post_implementation_review.md) |
+| Architecture Decision Record (ADR) | Instantiable | Records hard-to-reverse decisions | AWS Docs | [Folder 📂](./artifacts/03_Architecture_Security_Decision/architecture/standards/) \| [Anchor ⚓](./artifacts/03_Architecture_Security_Decision/architecture/standards/architecture_decision_record_standard.md) |
+| Design Rationale | Evidence | Preserves reasoning behind decisions | Microsoft Learn | [Folder 📂](./artifacts/03_Architecture_Security_Decision/architecture/templates/) \| [Anchor ⚓](./artifacts/03_Architecture_Security_Decision/architecture/templates/design_rationale.md) |
+| Trade-off Analysis | Instantiable | Compares options with costs and risks | AWS Docs | [Folder 📂](./artifacts/03_Architecture_Security_Decision/architecture/templates/) \| [Anchor ⚓](./artifacts/03_Architecture_Security_Decision/architecture/templates/trade_off_analysis.md) |
+| Architecture Review Record | Evidence | Records formal architecture review | Microsoft Learn | [Folder 📂](./artifacts/03_Architecture_Security_Decision/architecture/templates/) \| [Anchor ⚓](./artifacts/03_Architecture_Security_Decision/architecture/templates/architecture_review_record.md) |
+| Threat Model | Instantiable | Models threats and defensive priorities | Microsoft Learn | [Folder 📂](./artifacts/03_Architecture_Security_Decision/architecture/templates/) \| [Anchor ⚓](./artifacts/03_Architecture_Security_Decision/architecture/templates/threat_model.md) |
+| Security Requirements Record | Instantiable | Links requirements to mitigations | Microsoft Learn | [Folder 📂](./artifacts/03_Architecture_Security_Decision/architecture/templates/) \| [Anchor ⚓](./artifacts/03_Architecture_Security_Decision/architecture/templates/security_requirements_record.md) |
 
-## 6. Platform Delivery, Automation & AI Operations
+</details>
 
-| Document | Nature | Public role | Primary source basis | Canonical primary artifact |
-|---|---|---|---|---|
-| CI/CD Policy | Normative | Defines how build, test, release, and deployment automation should behave across environments | GitHub Docs | [`artifacts/platform/policies/ci_cd_policy.md`](./artifacts/platform/policies/ci_cd_policy.md) |
-| CI Workflow / Build Pipeline Record | Operational or instantiable | Defines or records automated build, test, and validation flows | GitHub Docs | [`artifacts/platform/templates/ci_workflow_build_pipeline_record.md`](./artifacts/platform/templates/ci_workflow_build_pipeline_record.md) |
-| CD / Deployment Pipeline Record | Operational or instantiable | Defines or records automated deployment and promotion flows | GitHub Docs, Microsoft Learn | [`artifacts/platform/templates/cd_deployment_pipeline_record.md`](./artifacts/platform/templates/cd_deployment_pipeline_record.md) |
-| Environment Promotion Policy | Normative | Defines promotion rules across dev, test, staging, and production environments | GitHub Docs, Microsoft Learn | [`artifacts/platform/policies/environment_promotion_policy.md`](./artifacts/platform/policies/environment_promotion_policy.md) |
-| Environment / Deployment Configuration Record | Instantiable | Captures deployable environment definitions, variables, and controlled configuration | GitHub Docs, OpenGitOps | [`artifacts/platform/templates/environment_deployment_configuration_record.md`](./artifacts/platform/templates/environment_deployment_configuration_record.md) |
-| Infrastructure as Code / Platform Baseline Record | Instantiable | Records declarative infrastructure, platform defaults, and reusable baseline patterns | OpenGitOps, AWS Docs, Microsoft Learn | [`artifacts/platform/templates/infrastructure_as_code_platform_baseline_record.md`](./artifacts/platform/templates/infrastructure_as_code_platform_baseline_record.md) |
-| Artifact / Build Provenance Record | Evidence | Preserves traceability between source, pipeline run, artifact, and deployment outcome | GitHub Docs | [`artifacts/platform/templates/artifact_build_provenance_record.md`](./artifacts/platform/templates/artifact_build_provenance_record.md) |
-| GitOps Policy | Normative | Defines declarative delivery, reconciliation, and Git-as-source-of-truth rules | OpenGitOps | [`artifacts/platform/policies/gitops_policy.md`](./artifacts/platform/policies/gitops_policy.md) |
-| GitOps Application / Environment Definition | Instantiable | Defines the desired state for workloads or environments under GitOps control | OpenGitOps, Flux, Argo CD | [`artifacts/platform/templates/gitops_application_environment_definition.md`](./artifacts/platform/templates/gitops_application_environment_definition.md) |
-| MLOps / GenAIOps Policy | Normative | Defines the operating model for model lifecycle, automation, evaluation, and governance | Microsoft Learn, Google Cloud | [`artifacts/platform/policies/mlops_genaiops_policy.md`](./artifacts/platform/policies/mlops_genaiops_policy.md) |
-| Model Registry Record | Evidence or instantiable | Tracks model versions, ownership, lineage, approval, and deployment state | Microsoft Learn, Google Cloud | [`artifacts/platform/templates/model_registry_record.md`](./artifacts/platform/templates/model_registry_record.md) |
-| Dataset / Training Data Record | Evidence or instantiable | Tracks training data sources, versions, suitability, and lineage | Microsoft Learn, Google Cloud | [`artifacts/platform/templates/dataset_training_data_record.md`](./artifacts/platform/templates/dataset_training_data_record.md) |
-| Evaluation Suite / Benchmark Record | Instantiable | Defines repeatable evaluation sets, metrics, thresholds, and comparison logic | OpenAI Docs, Microsoft Learn | [`artifacts/platform/templates/evaluation_suite_benchmark_record.md`](./artifacts/platform/templates/evaluation_suite_benchmark_record.md) |
-| Prompt / System Instruction Registry | Instantiable | Tracks versioned prompts or system instructions used in production AI systems | OpenAI Docs, Microsoft Learn | [`artifacts/platform/templates/prompt_system_instruction_registry.md`](./artifacts/platform/templates/prompt_system_instruction_registry.md) |
-| Model Release / Serving Record | Instantiable | Records model deployment, serving configuration, rollout, and rollback context | Microsoft Learn, Google Cloud | [`artifacts/platform/templates/model_release_serving_record.md`](./artifacts/platform/templates/model_release_serving_record.md) |
-| Model Monitoring / Drift Report | Evidence | Records quality, drift, regressions, and operational signals after deployment | Microsoft Learn, Google Cloud | [`artifacts/platform/templates/model_monitoring_drift_report.md`](./artifacts/platform/templates/model_monitoring_drift_report.md) |
-| AI Safety / Guardrail Policy | Normative | Defines safety checks, usage constraints, and operational guardrails for AI systems | OpenAI Docs, Microsoft Learn | [`artifacts/platform/policies/ai_safety_guardrail_policy.md`](./artifacts/platform/policies/ai_safety_guardrail_policy.md) |
-
-## 7. Operations, Incidents & Continuity
+<details>
+<summary><b>04. Quality, Review & Control (Assurance & Ownership)</b></summary>
 
 | Document | Nature | Public role | Primary source basis | Canonical primary artifact |
 |---|---|---|---|---|
-| Service Overview / Service Fact Sheet | Instantiable | Summarizes purpose, dependencies, owners, SLOs, and operational context of the service | Google SRE, AWS Docs | [`artifacts/operations/templates/service_fact_sheet.md`](./artifacts/operations/templates/service_fact_sheet.md) |
-| Incident Response Plan | Normative or operational | Defines process, roles, escalation, and coordination during incidents | NIST, Google SRE | [`artifacts/operations/templates/incident_response_plan.md`](./artifacts/operations/templates/incident_response_plan.md) |
-| Incident Report | Evidence | Records the incident facts, impact, and base chronology | NIST | [`artifacts/operations/templates/incident_report.md`](./artifacts/operations/templates/incident_report.md) |
-| Incident Timeline | Evidence | Preserves the temporal sequence of events during the incident | Google SRE | [`artifacts/operations/templates/incident_timeline.md`](./artifacts/operations/templates/incident_timeline.md) |
-| Playbook | Operational | Guides investigation, triage, and decision-making in specific scenarios | AWS Docs, NIST | [`artifacts/operations/templates/playbook.md`](./artifacts/operations/templates/playbook.md) |
-| Runbook | Operational | Guides mitigation, recovery, or repeatable step-by-step operation | AWS Docs, Google SRE | [`artifacts/operations/templates/runbook.md`](./artifacts/operations/templates/runbook.md) |
-| SOP (Standard Operating Procedure) | Operational | Standardizes stable operational processes | NIST | [`artifacts/operations/templates/standard_operating_procedure.md`](./artifacts/operations/templates/standard_operating_procedure.md) |
-| Incident Communications Plan | Operational | Defines how to communicate during an incident to teams, stakeholders, and users | Google SRE, NIST | [`artifacts/operations/templates/incident_communications_plan.md`](./artifacts/operations/templates/incident_communications_plan.md) |
-| On-call & Escalation Guide | Operational | Explains escalation path, handoffs, and response expectations | Google SRE | [`artifacts/operations/templates/on_call_escalation_guide.md`](./artifacts/operations/templates/on_call_escalation_guide.md) |
-| Service Continuity Plan / ISCP / DR Plan | Operational | Defines continuity, recovery, and service reconstitution | NIST | [`artifacts/continuity/templates/service_continuity_plan.md`](./artifacts/continuity/templates/service_continuity_plan.md) |
-| Exercise / Drill Record | Evidence | Records drills, response tests, and lessons extracted | NIST, Google SRE | [`artifacts/continuity/templates/exercise_drill_record.md`](./artifacts/continuity/templates/exercise_drill_record.md) |
+| Review Ruleset / Merge Policy | Normative | Formalizes checks and merge policies | GitHub Docs | [Folder 📂](./artifacts/04_Quality_Review_Control/quality/standards/) \| [Anchor ⚓](./artifacts/04_Quality_Review_Control/quality/standards/review_ruleset_and_merge_policy.md) |
+| CODEOWNERS / Ownership Map | Normative | Defines code and doc ownership | GitHub Docs | [Folder 📂](./artifacts/04_Quality_Review_Control/quality/standards/) \| [Anchor ⚓](./artifacts/04_Quality_Review_Control/quality/standards/codeowners_ownership_map.md) |
+| Issue Forms / Issue Templates | Operational | Standardizes intake of requests | GitHub Docs | [Folder 📂](./artifacts/04_Quality_Review_Control/quality/templates/) \| [Anchor ⚓](./artifacts/04_Quality_Review_Control/quality/templates/issue_forms_and_templates.md) |
+| Pull Request Template | Operational | Standardizes context and validation | GitHub Docs | [Folder 📂](./artifacts/04_Quality_Review_Control/quality/templates/) \| [Anchor ⚓](./artifacts/04_Quality_Review_Control/quality/templates/pull_request_template.md) |
+| Security Policy | Normative | Defines vulnerability reporting | GitHub Docs | [Folder 📂](./artifacts/04_Quality_Review_Control/quality/policies/) \| [Anchor ⚓](./artifacts/04_Quality_Review_Control/quality/policies/security_policy.md) |
+| Test Strategy / Verification Policy | Normative | Explains validation criteria | Google SRE | [Folder 📂](./artifacts/04_Quality_Review_Control/quality/standards/) \| [Anchor ⚓](./artifacts/04_Quality_Review_Control/quality/standards/test_strategy_and_verification_policy.md) |
+| Operational / Production Readiness | Instantiable | Verifies change or service safety | Google SRE | [Folder 📂](./artifacts/04_Quality_Review_Control/quality/templates/) \| [Anchor ⚓](./artifacts/04_Quality_Review_Control/quality/templates/production_readiness_review.md) |
+| Support Guidelines | Normative | Explains where to ask for help | GitHub Docs | [Folder 📂](./artifacts/04_Quality_Review_Control/quality/standards/) \| [Anchor ⚓](./artifacts/04_Quality_Review_Control/quality/standards/support_guidelines.md) |
 
-## 8. Knowledge, Documentation & Continuous Improvement
+</details>
 
-| Document | Nature | Public role | Primary source basis | Canonical primary artifact |
-|---|---|---|---|---|
-| Postmortem | Evidence | Blamelessly analyzes the incident, impact, and improvements | Google SRE | [`artifacts/knowledge/templates/postmortem.md`](./artifacts/knowledge/templates/postmortem.md) |
-| Root Cause Analysis (RCA) | Evidence | Identifies causes and contributing factors explicitly | NIST | [`artifacts/knowledge/templates/root_cause_analysis.md`](./artifacts/knowledge/templates/root_cause_analysis.md) |
-| Lessons Learned | Evidence | Consolidates reusable lessons | NIST, Google SRE | [`artifacts/knowledge/templates/lessons_learned.md`](./artifacts/knowledge/templates/lessons_learned.md) |
-| Corrective Action Register | Evidence | Tracks corrective action, owner, due date, and status | Google SRE, NIST | [`artifacts/knowledge/templates/corrective_action_register.md`](./artifacts/knowledge/templates/corrective_action_register.md) |
-| Knowledge Base Article | Instantiable | Turns stabilized knowledge into a reusable reference | GitHub Docs, Google SRE | [`artifacts/knowledge/templates/knowledge_base_article.md`](./artifacts/knowledge/templates/knowledge_base_article.md) |
-| Service Review / Reliability Review | Instantiable | Reviews service health, operational trends, and improvement decisions | Google SRE | [`artifacts/knowledge/templates/service_review.md`](./artifacts/knowledge/templates/service_review.md) |
-| SLO / Error Budget Policy | Normative or instantiable | Formalizes service objectives and decision rules when the budget is consumed | Google SRE | [`artifacts/knowledge/policies/slo_error_budget_policy.md`](./artifacts/knowledge/policies/slo_error_budget_policy.md) |
-| Documentation Architecture / Information Model | Normative | Organizes the document corpus by types, relationships, and navigation | Diataxis | [`artifacts/knowledge/standards/documentation_architecture_information_model.md`](./artifacts/knowledge/standards/documentation_architecture_information_model.md) |
-| Documentation Style Guide | Normative | Standardizes voice, structure, naming, and editorial conventions | GitHub Docs, Microsoft Learn, Diataxis | [`artifacts/knowledge/standards/documentation_style_guide.md`](./artifacts/knowledge/standards/documentation_style_guide.md) |
-| Documentation Review & Ownership Matrix | Normative | Assigns ownership and review cadence to the document corpus | GitHub Docs | [`artifacts/knowledge/standards/documentation_review_ownership_matrix.md`](./artifacts/knowledge/standards/documentation_review_ownership_matrix.md) |
-| Deprecation & Archival Policy | Normative | Regulates sunset, obsolescence, and document retention | GitHub Docs, Diataxis | [`artifacts/knowledge/policies/deprecation_archival_policy.md`](./artifacts/knowledge/policies/deprecation_archival_policy.md) |
-| Decision Log | Evidence | Records official decisions in a traceable and cumulative way | GitHub Docs | [`artifacts/knowledge/standards/decision_log_standard.md`](./artifacts/knowledge/standards/decision_log_standard.md) |
-
-## 9. Project, Portfolio & Service Governance
+<details>
+<summary><b>05. Delivery, Change & Readiness (Change & Release)</b></summary>
 
 | Document | Nature | Public role | Primary source basis | Canonical primary artifact |
 |---|---|---|---|---|
-| Business Case / Value Case | Instantiable | Justifies the initiative in terms of value, cost, risk, and expected outcomes | PMI, PRINCE2 | [`artifacts/project-governance/templates/business_case.md`](./artifacts/project-governance/templates/business_case.md) |
-| Project Charter / Project Brief | Instantiable | Formally frames the initiative, authority, scope, and initial direction | PMI, PRINCE2 | [`artifacts/project-governance/templates/project_charter.md`](./artifacts/project-governance/templates/project_charter.md) |
-| Project Initiation / Management Plan | Instantiable | Consolidates the baseline approach for planning, governance, controls, and delivery | PMI, PRINCE2 | [`artifacts/project-governance/templates/project_initiation_management_plan.md`](./artifacts/project-governance/templates/project_initiation_management_plan.md) |
-| Stakeholder Register | Instantiable | Records key stakeholders, their roles, interest, and influence | PMI | [`artifacts/project-governance/templates/stakeholder_register.md`](./artifacts/project-governance/templates/stakeholder_register.md) |
-| Communications Management Plan | Instantiable | Defines communication objectives, audiences, cadence, and channels | PMI | [`artifacts/project-governance/templates/communications_management_plan.md`](./artifacts/project-governance/templates/communications_management_plan.md) |
-| Issue Log / Issue Register | Evidence | Tracks issues requiring action, escalation, or resolution | PMI, PRINCE2 | [`artifacts/project-governance/templates/issue_log_register.md`](./artifacts/project-governance/templates/issue_log_register.md) |
-| Status / Highlight Report | Evidence | Provides periodic visibility into progress, health, and material deviations | PRINCE2 | [`artifacts/project-governance/templates/status_highlight_report.md`](./artifacts/project-governance/templates/status_highlight_report.md) |
-| Exception / Escalation Report | Evidence | Records deviations beyond agreed tolerances and the need for decision or intervention | PRINCE2 | [`artifacts/project-governance/templates/exception_escalation_report.md`](./artifacts/project-governance/templates/exception_escalation_report.md) |
-| Benefits Review / Benefits Realization Record | Evidence | Reviews whether intended benefits were achieved and how they were sustained | PMI, PRINCE2 | [`artifacts/project-governance/templates/benefits_realization_record.md`](./artifacts/project-governance/templates/benefits_realization_record.md) |
-| Service Catalog / Service Portfolio Record | Instantiable | Defines the set of services offered, their scope, and ownership | ITIL | [`artifacts/project-governance/templates/service_catalog.md`](./artifacts/project-governance/templates/service_catalog.md) |
-| Service Level Policy / SLA Record | Normative or instantiable | Defines service targets, commitments, and review expectations | ITIL | [`artifacts/project-governance/policies/service_level_policy.md`](./artifacts/project-governance/policies/service_level_policy.md) |
-| Service Request Model / Request Catalog | Operational | Standardizes repeatable request types and fulfillment paths | ITIL | [`artifacts/project-governance/templates/service_request_model.md`](./artifacts/project-governance/templates/service_request_model.md) |
-| Problem Record / Problem Management Policy | Evidence or normative | Formalizes recurring-problem analysis and the practice for reducing incident recurrence | ITIL | [`artifacts/project-governance/policies/problem_management_policy.md`](./artifacts/project-governance/policies/problem_management_policy.md) |
-| Known Error Record | Evidence | Preserves diagnosed but unresolved errors and known workarounds | ITIL | [`artifacts/project-governance/templates/known_error_record.md`](./artifacts/project-governance/templates/known_error_record.md) |
-| Service Configuration / Asset Record | Evidence | Maintains traceable service components, dependencies, and managed assets | ITIL | [`artifacts/project-governance/templates/service_configuration_asset_record.md`](./artifacts/project-governance/templates/service_configuration_asset_record.md) |
+| Release Plan / Rollout Plan | Instantiable | Defines order and rollout criteria | Google SRE | [Folder 📂](./artifacts/05_Delivery_Change_Readiness/delivery/templates/) \| [Anchor ⚓](./artifacts/05_Delivery_Change_Readiness/delivery/templates/release_plan_rollout_plan.md) |
+| Release Checklist | Operational | Mandatory checks before publishing | GitHub Docs | [Folder 📂](./artifacts/05_Delivery_Change_Readiness/delivery/templates/) \| [Anchor ⚓](./artifacts/05_Delivery_Change_Readiness/delivery/templates/release_checklist.md) |
+| Rollback / Backout Plan | Operational | Defines how to safely revert | Google SRE | [Folder 📂](./artifacts/05_Delivery_Change_Readiness/delivery/templates/) \| [Anchor ⚓](./artifacts/05_Delivery_Change_Readiness/delivery/templates/rollback_backout_plan.md) |
+| Change Record | Instantiable | Records approved change and impact | NIST | [Folder 📂](./artifacts/05_Delivery_Change_Readiness/delivery/templates/) \| [Anchor ⚓](./artifacts/05_Delivery_Change_Readiness/delivery/templates/change_record.md) |
+| Change Log / Release Notes | Evidence | Communicates what changed | GitHub Docs | [Folder 📂](./artifacts/05_Delivery_Change_Readiness/delivery/templates/) \| [Anchor ⚓](./artifacts/05_Delivery_Change_Readiness/delivery/templates/change_log_release_notes.md) |
+| Change Communication | Instantiable | Defines message and channels | Google SRE | [Folder 📂](./artifacts/05_Delivery_Change_Readiness/delivery/templates/) \| [Anchor ⚓](./artifacts/05_Delivery_Change_Readiness/delivery/templates/change_communication.md) |
+| Post-Implementation Review (PIR) | Evidence | Evaluates real outcomes | NIST | [Folder 📂](./artifacts/05_Delivery_Change_Readiness/delivery/templates/) \| [Anchor ⚓](./artifacts/05_Delivery_Change_Readiness/delivery/templates/post_implementation_review.md) |
 
-## 10. Risk, Exceptions & Traceability
+</details>
+
+<details>
+<summary><b>06. Platform Delivery, Automation & AI Operations (Automation & AI Execution)</b></summary>
 
 | Document | Nature | Public role | Primary source basis | Canonical primary artifact |
 |---|---|---|---|---|
-| Risk Register | Evidence | Tracks relevant risks, impact, probability, owner, and mitigation | NIST, Microsoft Learn | [`artifacts/risk/templates/risk_register.md`](./artifacts/risk/templates/risk_register.md) |
-| Exception / Deviation Record | Evidence | Records deliberate deviations from policies, standards, or controls | NIST, Microsoft Learn | [`artifacts/risk/templates/exception_deviation_record.md`](./artifacts/risk/templates/exception_deviation_record.md) |
-| Security Advisory / Vulnerability Record | Evidence | Records public advisories and the remediation history | GitHub Docs | [`artifacts/risk/templates/security_advisory_vulnerability_record.md`](./artifacts/risk/templates/security_advisory_vulnerability_record.md) |
-| Audit Trail Policy | Normative | Defines minimum traceability for decisions, changes, and evidence | NIST | [`artifacts/risk/policies/audit_trail_policy.md`](./artifacts/risk/policies/audit_trail_policy.md) |
-| Metrics & Review Cadence | Normative | Establishes review moments for the governance system itself | Google SRE, Scrum Guide | [`artifacts/risk/standards/metrics_review_cadence.md`](./artifacts/risk/standards/metrics_review_cadence.md) |
+| CI/CD Policy | Normative | Defines automation behavior | GitHub Docs | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/policies/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/policies/ci_cd_policy.md) |
+| CI Workflow Record | Operational | Records automated build flows | GitHub Docs | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/ci_workflow_build_pipeline_record.md) |
+| CD / Deployment Record | Operational | Records automated deployment flows | Microsoft Learn | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/cd_deployment_pipeline_record.md) |
+| Environment Promotion Policy | Normative | Defines promotion rules across envs | Microsoft Learn | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/policies/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/policies/environment_promotion_policy.md) |
+| Deployment Configuration Record | Instantiable | Captures environment variables | GitHub Docs | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/environment_deployment_configuration_record.md) |
+| Infrastructure as Code Baseline | Instantiable | Records platform baseline patterns | OpenGitOps | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/infrastructure_as_code_platform_baseline_record.md) |
+| Artifact / Build Provenance | Evidence | Preserves traceability of artifacts | GitHub Docs | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/artifact_build_provenance_record.md) |
+| GitOps Policy | Normative | Defines declarative delivery rules | OpenGitOps | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/policies/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/policies/gitops_policy.md) |
+| GitOps Environment Definition | Instantiable | Defines desired state for workloads | Flux / Argo CD | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/gitops_application_environment_definition.md) |
+| MLOps / GenAIOps Policy | Normative | Defines model lifecycle governance | Google Cloud | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/policies/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/policies/mlops_genaiops_policy.md) |
+| Model Registry Record | Evidence | Tracks model versions and lineage | Microsoft Learn | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/model_registry_record.md) |
+| Dataset / Training Data Record | Evidence | Tracks data lineage and suitability | Microsoft Learn | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/dataset_training_data_record.md) |
+| Evaluation Suite / Benchmark | Instantiable | Defines metrics and comparison logic | OpenAI Docs | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/evaluation_suite_benchmark_record.md) |
+| Prompt / Instruction Registry | Instantiable | Tracks production prompts | OpenAI Docs | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/prompt_system_instruction_registry.md) |
+| Model Release / Serving Record | Instantiable | Records rollout and rollback context | Google Cloud | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/model_release_serving_record.md) |
+| Model Monitoring / Drift Report | Evidence | Records operational signals after deploy | Microsoft Learn | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/templates/model_monitoring_drift_report.md) |
+| AI Safety / Guardrail Policy | Normative | Defines operational guardrails | OpenAI Docs | [Folder 📂](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/policies/) \| [Anchor ⚓](./artifacts/06_Platform_Delivery_Automation_AI_Operations/platform/policies/ai_safety_guardrail_policy.md) |
+
+</details>
+
+<details>
+<summary><b>07. Operations, Incidents & Continuity (Execution & Continuity)</b></summary>
+
+| Document | Nature | Public role | Primary source basis | Canonical primary artifact |
+|---|---|---|---|---|
+| Service Overview / Fact Sheet | Instantiable | Summarizes operational context | AWS Docs | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/service_fact_sheet.md) |
+| Incident Response Plan | Normative | Defines process, roles, and escalation | NIST | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/incident_response_plan.md) |
+| Incident Report | Evidence | Records facts and impact | NIST | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/incident_report.md) |
+| Incident Timeline | Evidence | Preserves the chronology of events | Google SRE | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/incident_timeline.md) |
+| Playbook | Operational | Guides triage and decision-making | AWS Docs | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/incident_management_policy.md) |
+| Runbook | Operational | Guides mitigation and recovery | Google SRE | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/runbook.md) |
+| SOP (Standard Op. Procedure) | Operational | Standardizes stable processes | NIST | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/standard_operating_procedure.md) |
+| Incident Communications Plan | Operational | Defines channels and stakeholders | Google SRE | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/incident_communications_plan.md) |
+| On-call & Escalation Guide | Operational | Explains handoffs and response | Google SRE | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/operations/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/operations/templates/on_call_escalation_guide.md) |
+| Service Continuity Plan / DR | Operational | Defines recovery and ISCP | NIST | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/continuity/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/continuity/templates/service_continuity_plan.md) |
+| Exercise / Drill Record | Evidence | Records drills and extracted lessons | NIST | [Folder 📂](./artifacts/07_Operations_Incidents_Continuity/continuity/templates/) \| [Anchor ⚓](./artifacts/07_Operations_Incidents_Continuity/continuity/templates/exercise_drill_record.md) |
+
+</details>
+
+<details>
+<summary><b>08. Knowledge, Documentation & Continuous Improvement (Evolution & SRE)</b></summary>
+
+| Document | Nature | Public role | Primary source basis | Canonical primary artifact |
+|---|---|---|---|---|
+| Postmortem | Evidence | Blameless analysis of improvements | Google SRE | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/postmortem.md) |
+| Root Cause Analysis (RCA) | Evidence | Identifies explicit causes | NIST | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/root_cause_analysis.md) |
+| Lessons Learned | Evidence | Consolidates reusable lessons | Google SRE | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/lessons_learned.md) |
+| Corrective Action Register | Evidence | Tracks owner and due date | NIST | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/corrective_action_register.md) |
+| Knowledge Base Article | Instantiable | Reusable reference for knowledge | GitHub Docs | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/knowledge_base_article.md) |
+| Service Review / Reliability | Instantiable | Reviews health and improvement | Google SRE | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/templates/service_review.md) |
+| SLO / Error Budget Policy | Normative | Formalizes service objectives | Google SRE | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/policies/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/policies/slo_error_budget_policy.md) |
+| Documentation Architecture | Normative | Organizes information model | Diataxis | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/standards/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/standards/documentation_architecture_information_model.md) |
+| Documentation Style Guide | Normative | Standardizes voice and structure | Microsoft Learn | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/standards/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/standards/documentation_style_guide.md) |
+| Ownership Matrix | Normative | Assigns review cadence to corpus | GitHub Docs | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/standards/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/standards/documentation_review_ownership_matrix.md) |
+| Deprecation & Archival Policy | Normative | Regulates document sunset | Diataxis | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/policies/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/policies/deprecation_archival_policy.md) |
+| Decision Log | Evidence | Records official decisions | GitHub Docs | [Folder 📂](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/standards/) \| [Anchor ⚓](./artifacts/08_Knowledge_Documentation_Continuous_Improvement/knowledge/standards/decision_log_standard.md) |
+
+</details>
+
+<details>
+<summary><b>09. Project, Portfolio & Service Governance (Strategy & Value)</b></summary>
+
+| Document | Nature | Public role | Primary source basis | Canonical primary artifact |
+|---|---|---|---|---|
+| Business Case / Value Case | Instantiable | Justifies initiative value and risk | PRINCE2 | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/business_case.md) |
+| Project Charter / Brief | Instantiable | Frames authority and scope | PMI | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/project_charter.md) |
+| Project Management Plan | Instantiable | Consolidates baseline approach | PRINCE2 | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/project_initiation_management_plan.md) |
+| Stakeholder Register | Instantiable | Records key stakeholders and roles | PMI | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/stakeholder_register.md) |
+| Communications Plan | Instantiable | Defines objectives and channels | PMI | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/communications_management_plan.md) |
+| Issue Log / Register | Evidence | Tracks issues requiring action | PRINCE2 | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/issue_log_register.md) |
+| Status / Highlight Report | Evidence | Periodic visibility into health | PRINCE2 | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/status_highlight_report.md) |
+| Exception / Escalation Report | Evidence | Records deviations beyond tolerances | PRINCE2 | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/exception_escalation_report.md) |
+| Benefits Review Record | Evidence | Reviews if benefits were achieved | PMI | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/benefits_realization_record.md) |
+| Service Catalog | Instantiable | Defines the service value proposition | ITIL | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/service_catalog.md) |
+| Service Level Policy / SLA | Normative | Formalizes SLAs and commitments | ITIL | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/policies/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/policies/service_level_policy.md) |
+| Service Request Model | Operational | Optimizes delivery through request models | ITIL | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/service_request_model.md) |
+| Problem Management Policy | Normative | Practice for reducing incident recurrence | ITIL | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/policies/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/policies/problem_management_policy.md) |
+| Known Error Record | Evidence | Preserves diagnosed workarounds | ITIL | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/known_error_record.md) |
+| Service Configuration Asset | Evidence | Maintains traceable service components | ITIL | [Folder 📂](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/) \| [Anchor ⚓](./artifacts/09_Project_Portfolio_Service_Governance/project-governance/templates/service_configuration_asset_record.md) |
+
+</details>
+
+<details>
+<summary><b>10. Risk, Exceptions & Traceability (Control & Exceptions)</b></summary>
+
+| Document | Nature | Public role | Primary source basis | Canonical primary artifact |
+|---|---|---|---|---|
+| Risk Register | Evidence | Tracks risks, impact, and mitigation | NIST | [Folder 📂](./artifacts/10_Risk_Exceptions_Traceability/risk/templates/) \| [Anchor ⚓](./artifacts/10_Risk_Exceptions_Traceability/risk/templates/risk_register.md) |
+| Exception / Deviation Record | Evidence | Records deliberate policy deviations | Microsoft Learn | [Folder 📂](./artifacts/10_Risk_Exceptions_Traceability/risk/templates/) \| [Anchor ⚓](./artifacts/10_Risk_Exceptions_Traceability/risk/templates/exception_deviation_record.md) |
+| Security Advisory Record | Evidence | Records public advisories and remediation | GitHub Docs | [Folder 📂](./artifacts/10_Risk_Exceptions_Traceability/risk/templates/) \| [Anchor ⚓](./artifacts/10_Risk_Exceptions_Traceability/risk/templates/security_advisory_vulnerability_record.md) |
+| Audit Trail Policy | Normative | Defines minimum traceability rules | NIST | [Folder 📂](./artifacts/10_Risk_Exceptions_Traceability/risk/policies/) \| [Anchor ⚓](./artifacts/10_Risk_Exceptions_Traceability/risk/policies/audit_trail_policy.md) |
+| Metrics & Review Cadence | Normative | Establishes review moments for governance | Scrum Guide | [Folder 📂](./artifacts/10_Risk_Exceptions_Traceability/risk/standards/) \| [Anchor ⚓](./artifacts/10_Risk_Exceptions_Traceability/risk/standards/metrics_review_cadence.md) |
+
+</details>
+
+---
 
 ## Primary Source Frameworks
 
-Sources used to consolidate this map:
+This governance system is a hybrid synthesis of the following industrial standards:
 
-- [Scrum Guide](https://scrumguides.org/)
-- [GitHub Docs](https://docs.github.com/)
-- [Open Source Guides](https://opensource.guide/)
-- [Diataxis](https://diataxis.fr/)
-- [NIST SP 800-61r3 - Incident Response Recommendations and Considerations for Cybersecurity Risk Management](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf)
-- [NIST SP 800-34 Rev. 1 - Contingency Planning Guide for Federal Information Systems](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf)
-- [Google SRE - Incident Management Guide](https://sre.google/resources/practices-and-processes/incident-management-guide/)
-- [Google SRE - Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/)
-- [Google SRE - Example Error Budget Policy](https://sre.google/workbook/error-budget-policy/)
-- [Google SRE - Production Readiness Review](https://sre.google/sre-book/evolving-sre-engagement-model/)
-- [AWS Well-Architected - Operational Readiness Reviews (ORR)](https://docs.aws.amazon.com/wellarchitected/latest/operational-readiness-reviews/wa-operational-readiness-reviews.html)
-- [AWS Well-Architected - Use playbooks to investigate issues](https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ready_to_support_use_playbooks.html)
-- [AWS Well-Architected - Perform post-incident analysis](https://docs.aws.amazon.com/wellarchitected/latest/framework/ops_evolve_ops_perform_rca_process.html)
-- [Microsoft Azure Well-Architected - Develop an Incident Management Practice](https://learn.microsoft.com/en-us/azure/well-architected/design-guides/incident-management)
-- [Microsoft Azure Well-Architected - Safe deployment and rollback guidance](https://learn.microsoft.com/en-us/azure/architecture/framework/devops/release-engineering-rollback)
-- [GitHub Actions documentation](https://docs.github.com/en/actions)
-- [GitHub Docs - Continuous integration](https://docs.github.com/actions/automating-builds-and-tests/about-continuous-integration)
-- [OpenGitOps](https://opengitops.dev/about)
-- [Flux documentation](https://fluxcd.io/flux/components/)
-- [Argo CD documentation](https://argo-cd.readthedocs.io/)
-- [Azure Well-Architected - MLOps and GenAIOps for AI workloads](https://learn.microsoft.com/en-us/azure/well-architected/ai/mlops-genaiops)
-- [Azure Architecture Center - Machine learning operations](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/machine-learning-operations-v2)
-- [Google Cloud - MLOps: Continuous delivery and automation pipelines in machine learning](https://cloud.google.com/solutions/machine-learning/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning)
-- [OpenAI Docs - Evaluation best practices](https://platform.openai.com/docs/guides/evaluation-best-practices)
-- [OpenAI Docs - Safety checks](https://platform.openai.com/docs/guides/safety-checks)
-- [GOV.UK - Post-Implementation Review](https://www.gov.uk/government/publications/post-implementation-review)
-- [PMI Lexicon of Project Management Terms](https://www.pmi.org/-/media/pmi/documents/registered/pdf/pmbok-standards/pmi-lexicon-pm-terms.pdf)
-- [PMI - PMBOK references surfaced through official PMI materials](https://www.pmi.org/-/media/pmi/documents/public/pdf/pmbok-standards/pmbok-guide-6th-edition-errata-4th-printing.pdf)
-- [Axelos PRINCE2 templates and resource hub](https://www.axelos.com/resource-hub/template/prince2-7-a1-business-case-template)
-- [PeopleCert / Axelos ITIL practice references](https://atv.peoplecert.org/accreditation/accreditation-model/)
+- [**Scrum Guide**](https://scrumguides.org/) - Planning, Backlog & Retrospectives.
+- [**NIST / CISA**](https://docs.aws.amazon.com/wellarchitected/latest/incident-response-guide/welcome.html) - Incident Response & Risk Management.
+- [**Google SRE**](https://sre.google/workbook/postmortem-culture/) - Postmortems, Error Budgets & PRR.
+- [**AWS Well-Architected**](https://docs.aws.architected/) - Design Rationale & Trade-off Analysis.
+- [**ITIL v4**](https://atv.peoplecert.org/accreditation/accreditation-model/) - Service Strategy, Catalog & SLAs.
+- [**PMI / PRINCE2**](https://www.axelos.com/resource-hub/template/prince2-7-a1-business-case-template) - Business Case & Project Governance.
+- [**Diataxis**](https://diataxis.fr/) - Documentation Information Model.
 
-## How to Read This Map
+## Governance Stewards & Support
 
-Reading rules:
-- normative documents define the system;
-- operational documents guide execution, coordination, or response;
-- instantiable and evidence documents record facts, decisions, events, analysis, and concrete operations;
-- the value of the system lies in the links between discovery, decision, delivery, operations, and learning.
+This repository is maintained by the **Central Architecture Council**.
+
+- **Support:** Open an [Investigation Request](./.github/ISSUE_TEMPLATE/investigation_request.yml) for framework guidance.
+- **Reporting:** Use [Incident Report](./.github/ISSUE_TEMPLATE/incident_report.yml) for governance breaches.
+
+---
+
+## License & Usage
+
+This governance corpus is licensed under the **MIT License**. Reusable artifacts are provided as-is for organizational instantiation.
 
 ## Source Attribution
 
-- Source manifests: `governance__github_docs.md`
-- Primary source basis: GitHub Docs, Open Source Guides, and the repository's accepted governance decisions
-- Alignment mode: `hybrid-synthesis`
-- Reviewed on: 2026-03-27
+- **Source manifests:** `governance__github_docs.md`, `platform__aws_well_architected.md`, `platform__microsoft_learn.md`
+- **Primary source basis:** GitHub Docs community governance guidance plus industrial technical frameworks.
+- **Alignment mode:** `hybrid-synthesis`
+- **Reviewed on:** 2026-03-28
