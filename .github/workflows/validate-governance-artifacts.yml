@@ -1,4 +1,4 @@
-name: Validate and Sync Governance Artifacts
+name: Validate Governance Artifacts
 
 # Source Attribution: governance__github_docs.md, documentation__diataxis.md, ai_ops__openai_docs.md; GitHub Docs + Diataxis + OpenAI docs; native-platform-binding; Reviewed on 2026-03-27
 
@@ -39,35 +39,17 @@ on:
       - 'sources/**'
 
 jobs:
-  validate-and-catalog:
+  validate:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref || github.ref }}
-          
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-          
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          
       - name: Validate governance artifacts
         run: python3 scripts/validate_governance_artifacts.py
-        
-      - name: Generate dynamic catalog
-        run: python3 scripts/generate_catalog.py
-        
-      - name: Commit catalog changes
-        if: github.event_name == 'push' || github.event_name == 'pull_request'
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add docs/catalog.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: regenerate catalog.json [skip ci]" && git push)
