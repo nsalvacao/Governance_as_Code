@@ -47,8 +47,8 @@ Any risk with a residual score exceeding its category's maximum acceptable score
 
 | Risk ID | Category | Description | Likelihood (1–5) | Impact (1–5) | Risk Score | Inherent Risk Level | Treatment Strategy | Mitigation / Control | Residual Likelihood | Residual Impact | Residual Score | Status | Owner | Review Date |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| `{{RISK_ID_1}}` | `{{CATEGORY_1}}` | `{{DESCRIPTION_1}}` | `{{L_1}}` | `{{I_1}}` | `{{L_1 × I_1}}` | `{{INHERENT_LEVEL_1}}` | `{{TREATMENT_1}}` | `{{MITIGATION_1}}` | `{{RL_1}}` | `{{RI_1}}` | `{{RS_1}}` | `{{STATUS_1}}` | `{{OWNER_1}}` | `{{REVIEW_1}}` |
-| `{{RISK_ID_2}}` | `{{CATEGORY_2}}` | `{{DESCRIPTION_2}}` | `{{L_2}}` | `{{I_2}}` | `{{L_2 × I_2}}` | `{{INHERENT_LEVEL_2}}` | `{{TREATMENT_2}}` | `{{MITIGATION_2}}` | `{{RL_2}}` | `{{RI_2}}` | `{{RS_2}}` | `{{STATUS_2}}` | `{{OWNER_2}}` | `{{REVIEW_2}}` |
+| `{{RISK_ID_1}}` | `{{CATEGORY_1}}` | `{{DESCRIPTION_1}}` | `{{L_1}}` | `{{I_1}}` | `{{RISK_SCORE_1}}` | `{{INHERENT_LEVEL_1}}` | `{{TREATMENT_1}}` | `{{MITIGATION_1}}` | `{{RL_1}}` | `{{RI_1}}` | `{{RS_1}}` | `{{STATUS_1}}` | `{{OWNER_1}}` | `{{REVIEW_1}}` |
+| `{{RISK_ID_2}}` | `{{CATEGORY_2}}` | `{{DESCRIPTION_2}}` | `{{L_2}}` | `{{I_2}}` | `{{RISK_SCORE_2}}` | `{{INHERENT_LEVEL_2}}` | `{{TREATMENT_2}}` | `{{MITIGATION_2}}` | `{{RL_2}}` | `{{RI_2}}` | `{{RS_2}}` | `{{STATUS_2}}` | `{{OWNER_2}}` | `{{REVIEW_2}}` |
 
 ## Scoring Scales
 

@@ -40,7 +40,7 @@ updated: 2026-03-27
 1. Acknowledge alert in `{{ALERTING_TOOL}}` — assign to yourself
 2. Declare incident in `{{INCIDENT_MANAGEMENT_TOOL}}` with title: `{{INCIDENT_TITLE_FORMAT}}`
 3. Open war room: `{{WAR_ROOM_CHANNEL}}`
-4. Post initial status: `[INCIDENT DECLARED] {{SERVICE_NAME}} — SEV{{SEVERITY}} — {{INITIAL_IMPACT}} — IC: {{INCIDENT_COMMANDER}}`
+4. Post initial status: `[INCIDENT DECLARED] {{SERVICE_NAME}} — {{SEVERITY}} — {{INITIAL_IMPACT}} — IC: {{INCIDENT_COMMANDER}}`
 5. Start timeline: `{{TIMELINE_TEMPLATE_LINK}}`
 
 ## Coordination Roles
@@ -66,7 +66,7 @@ updated: 2026-03-27
 
 | System | Runbook | Assigned To |
 |---|---|---|
-| `{{SYSTEM_1}}` | `{{RUNBOOK_1_LINK}}` | `{{OPS_LEAD}}` |
+| `{{SYSTEM_1}}` | `{{RUNBOOK_1_LINK}}` | `{{OPERATIONS_LEAD}}` |
 | `{{SYSTEM_2}}` | `{{RUNBOOK_2_LINK}}` | `{{SME_CONTACT}}` |
 
 2. Surface hypotheses in war room; document in timeline
@@ -80,7 +80,7 @@ Escalate when:
 - No mitigation identified within `{{ESCALATION_TIMEOUT}}`
 - Customer-visible SLA breach confirmed
 
-Escalation path: `{{OPS_LEAD}}` → `{{IC}}` → `{{MANAGER_CONTACT}}` → `{{EXECUTIVE_CONTACT}}`
+Escalation path: `{{OPERATIONS_LEAD}}` → `{{INCIDENT_COMMANDER}}` → `{{MANAGER_CONTACT}}` → `{{EXECUTIVE_CONTACT}}`
 
 ## Step 5 — Resolution and Handoff
 

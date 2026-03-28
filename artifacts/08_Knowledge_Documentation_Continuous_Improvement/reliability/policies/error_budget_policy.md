@@ -33,9 +33,9 @@ Multi-window, multi-burn-rate alerting (Google SRE Workbook Ch.5):
 
 | Alert Name | Burn Rate Threshold | Short Window | Long Window | Severity | Paging? |
 |---|---|---|---|---|---|
-| `{{SERVICE_NAME}}`-critical | `{{FAST_BURN_RATE}}`× (e.g., 14.4×) | 1 hour | 5 minutes | SEV1 | Yes — immediate page |
-| `{{SERVICE_NAME}}`-high | `{{SLOW_BURN_RATE}}`× (e.g., 6×) | 6 hours | 30 minutes | SEV2 | Yes — business hours |
-| `{{SERVICE_NAME}}`-warning | `{{WARNING_BURN_RATE}}`× (e.g., 1×) | 3 days | 6 hours | SEV3 | No — ticket only |
+| `{{SERVICE_NAME}}`-critical | `{{FAST_BURN_RATE}}`× (e.g., 14.4×) | 5 minutes | 1 hour | SEV1 | Yes — immediate page |
+| `{{SERVICE_NAME}}`-high | `{{SLOW_BURN_RATE}}`× (e.g., 6×) | 30 minutes | 6 hours | SEV2 | Yes — business hours |
+| `{{SERVICE_NAME}}`-warning | `{{WARNING_BURN_RATE}}`× (e.g., 1×) | 6 hours | 3 days | SEV3 | No — ticket only |
 
 At `{{FAST_BURN_RATE}}`× burn rate: `{{FAST_BURN_BUDGET_HOURS}}` hours until budget exhausted.
 

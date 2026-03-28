@@ -60,9 +60,9 @@ updated: 2026-03-27
 
 | Requirement | Status | Evidence |
 |---|---|---|
-| Load test at `{{LOAD_MULTIPLIER}}`× expected peak | `{{LOAD_TEST_STATUS}}` | `{{LOAD_TEST_REPORT_LINK}}` |
+| Load test at `{{LOAD_TEST_MULTIPLIER}}`× expected peak | `{{LOAD_TEST_STATUS}}` | `{{LOAD_TEST_REPORT_LINK}}` |
 | Autoscaling configured with limits | `{{AUTOSCALING_STATUS}}` | `{{AUTOSCALING_CONFIG_LINK}}` |
-| Capacity plan: `{{CAPACITY_HORIZON}}` forecast | `{{CAPACITY_PLAN_STATUS}}` | `{{CAPACITY_PLAN_LINK}}` |
+| Capacity plan: `{{CAPACITY_FORECAST_HORIZON}}` forecast | `{{CAPACITY_PLAN_STATUS}}` | `{{CAPACITY_PLAN_LINK}}` |
 
 ## Pillar 5 — Security and Compliance
 

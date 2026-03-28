@@ -69,7 +69,7 @@ All times UTC. Link each entry to evidence (log query, alert, graph, or message)
 2. `{{CAUSAL_FACTOR_2}}`
 3. `{{CAUSAL_FACTOR_3}}`
 
-**Systemic / contributing factors**:
+## Contributing Factors
 
 | Category | Factor | Evidence |
 |---|---|---|

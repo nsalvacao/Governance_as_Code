@@ -26,7 +26,7 @@ A postmortem MUST be initiated for any of the following:
 | SEV1 incident (complete service unavailability) | Yes | Always, no exceptions |
 | SEV2 incident (major degradation) | Yes | Always |
 | SEV2 incident (minor / novel failure mode) | Yes | Required if failure mode is new or unexpected |
-| Error budget consumed > `{{POSTMORTEM_BUDGET_TRIGGER}`% in a single incident | Yes | |
+| Error budget consumed > `{{POSTMORTEM_BUDGET_TRIGGER}}`% in a single incident | Yes | |
 | Customer-visible data loss or corruption | Yes | Regardless of severity classification |
 | On-call engineer discretion | Optional | For learning opportunity or near-miss |
 | User-reported issue with no internal detection | Yes — retrospective | Signals monitoring gap |
