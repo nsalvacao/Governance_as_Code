@@ -4,7 +4,7 @@ artifact_type: policy
 status: draft
 visibility: public
 classification: public
-owner: platform-governance
+owner: "{{PLATFORM_OWNER}}"
 review_cadence: quarterly
 applies_to: repositories using build, test, release, or deployment automation
 source_basis: DORA State of DevOps Research (Accelerate book) + GitHub Actions
@@ -75,6 +75,19 @@ Built artifacts must be retained according to the following schedule.
 - Retention period: `{{ARTIFACT_RETENTION}}` (e.g., 30 days for PR artifacts, 90 days for release artifacts, indefinite for signed production releases).
 - Artifacts linked to a production deployment must not be purged while that deployment is active.
 - Artifact digests must be recorded in the build provenance record (see `artifact_build_provenance_record.md`).
+
+## DORA Metrics Measurement Methodology
+
+DORA metrics are only enforceable if teams agree on how each metric is measured. The following table defines the canonical calculation method for each metric in this policy. All measurements must be automated and reported to `{{METRICS_DASHBOARD}}`.
+
+| Metric | Definition | Measurement Method | Reporting Cadence | Data Source | Threshold Alert |
+|---|---|---|---|---|---|
+| Deployment Frequency | Number of times code is deployed to production per time unit | Count of successful deployments to `{{PRODUCTION_ENV}}` per day/week | Weekly | `{{DEPLOY_LOG_SOURCE}}` (e.g., GitHub Actions deployment events) | < `{{DEPLOY_FREQ_ALERT_THRESHOLD}}` deployments/week |
+| Lead Time for Changes | Elapsed time from first commit to successful production deployment | `{{LEAD_TIME_START_EVENT}}` (e.g., PR merged) → `{{LEAD_TIME_END_EVENT}}` (e.g., deployment verified) | Weekly | `{{LEAD_TIME_DATA_SOURCE}}` | > `{{LEAD_TIME_ALERT_THRESHOLD}}` |
+| Mean Time to Restore (MTTR) | Time between production incident start and service restoration | Incident start timestamp → `{{RESTORATION_SIGNAL}}` (e.g., alert resolved, status page updated) | Per incident + monthly aggregate | `{{INCIDENT_TRACKER}}` | > `{{MTTR_ALERT_THRESHOLD}}` |
+| Change Failure Rate | Percentage of deployments that cause a degraded service or require remediation | `{{FAILURE_EVENTS}}` (rollbacks + hotfixes + SEV1/SEV2 incidents) ÷ total deployments × 100 | Monthly | `{{DEPLOYMENT_TRACKER}}` + `{{INCIDENT_TRACKER}}` | > `{{CFR_ALERT_THRESHOLD}}`% |
+
+Measurement baseline period: `{{MEASUREMENT_BASELINE_PERIOD}}`. Teams must establish baselines before declaring tier compliance. Metrics must be reviewed at the `{{METRICS_REVIEW_CADENCE}}` cadence.
 
 ## Source Attribution
 

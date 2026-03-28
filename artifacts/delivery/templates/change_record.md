@@ -4,7 +4,7 @@ artifact_type: template
 status: draft
 visibility: public
 classification: public
-owner: delivery@org
+owner: "{{DELIVERY_OWNER}}"
 review_cadence: quarterly
 applies_to: change control and implementation tracking
 source_basis: ITIL 4 Change Enablement practice

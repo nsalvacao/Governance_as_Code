@@ -4,7 +4,7 @@ artifact_type: template
 status: draft
 visibility: public
 classification: public
-owner: delivery@org
+owner: "{{DELIVERY_OWNER}}"
 review_cadence: quarterly
 applies_to: release planning and rollout execution
 source_basis: DORA four key metrics and SRE Workbook progressive delivery

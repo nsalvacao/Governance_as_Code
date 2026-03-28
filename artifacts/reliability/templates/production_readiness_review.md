@@ -13,44 +13,90 @@ alignment_mode: hybrid-synthesis
 updated: 2026-03-27
 ---
 
-## Service context
+## Review Metadata
 
-- **Service name:** `{{SERVICE_NAME}}`
-- **Team:** `{{SERVICE_OWNER}}`
-- **Release window:** `{{RELEASE_WINDOW}}`
+| Field | Value |
+|---|---|
+| Service / Change | `{{SERVICE_NAME}}` |
+| Version | `{{VERSION}}` |
+| Review Type | `{{REVIEW_TYPE}}` (new service / major change / annual refresh / infra ORR) |
+| Planned Launch Date | `{{PLANNED_LAUNCH_DATE}}` |
+| Review Date | `{{REVIEW_DATE}}` |
+| Review Owner | `{{REVIEW_OWNER}}` |
+| SRE Approver | `{{SRE_APPROVER}}` |
 
-## Pillar review
+## Pillar 1 — Service Understanding
 
-### Observability
+| Requirement | Status | Evidence |
+|---|---|---|
+| Architecture diagram current | `{{ARCH_STATUS}}` | `{{ARCH_DIAGRAM_LINK}}` |
+| Dependency inventory complete | `{{DEP_INVENTORY_STATUS}}` | `{{DEPENDENCY_INVENTORY_LINK}}` |
+| Data classification reviewed | `{{DATA_CLASS_STATUS}}` | `{{DATA_CLASSIFICATION_DOC}}` |
+| Service owner defined | `{{OWNER_STATUS}}` | `{{SERVICE_OWNER}}` |
+| On-call rotation configured | `{{ONCALL_STATUS}}` | `{{ONCALL_SCHEDULE_LINK}}` |
 
-- Dashboards: `{{DASHBOARD_URL}}`
-- Alerting: `{{ALERTING_CHANNEL}}`
-- Runbooks: `{{RUNBOOK_URL}}`
+## Pillar 2 — Observability
 
-### Automation & Deployment
+| Requirement | Status | Evidence |
+|---|---|---|
+| SLI defined and implemented | `{{SLI_STATUS}}` | `{{SLI_DOC_LINK}}` |
+| SLO target set (`{{SLO_TARGET}}`%) | `{{SLO_STATUS}}` | `{{SLO_DOC_LINK}}` |
+| Error budget = `{{ERROR_BUDGET_PERCENT}}`% | Derived | See SLO doc |
+| Dashboard covers SLI signals | `{{DASHBOARD_STATUS}}` | `{{DASHBOARD_LINK}}` |
+| Fast-burn alert (`{{FAST_BURN_RATE}}`×) configured | `{{FAST_BURN_ALERT_STATUS}}` | `{{ALERT_CONFIG_LINK}}` |
+| Slow-burn alert (`{{SLOW_BURN_RATE}}`×) configured | `{{SLOW_BURN_ALERT_STATUS}}` | `{{ALERT_CONFIG_LINK}}` |
+| Runbook linked from alerts | `{{RUNBOOK_LINK_STATUS}}` | `{{RUNBOOK_LINK}}` |
 
-- Deployment workflow: `{{DEPLOY_COMMAND}}`
-- Rollback steps: `{{ROLLBACK_COMMAND}}`
-- Canary or gate: `{{CANARY_CRITERIA}}`
+## Pillar 3 — Deployment and Automation
 
-### Reliability & Support
+| Requirement | Status | Evidence |
+|---|---|---|
+| Deployment workflow automated | `{{DEPLOY_WORKFLOW_STATUS}}` | `{{DEPLOY_WORKFLOW_LINK}}` |
+| Rollback tested in staging | `{{ROLLBACK_STATUS}}` | `{{ROLLBACK_TEST_EVIDENCE}}` |
+| Canary / staged rollout configured | `{{CANARY_STATUS}}` | `{{ROLLOUT_CONFIG_LINK}}` |
+| Feature flags available | `{{FEATURE_FLAGS_STATUS}}` | `{{FEATURE_FLAG_DOC}}` |
 
-- SLO description: `{{SLO}}`
-- Error budget status: `{{ERROR_BUDGET_STATUS}}`
-- On-call acknowledgments: `{{ON_CALL_ACK}}`
+## Pillar 4 — Capacity Planning
 
-### Safety & Guardrails
+| Requirement | Status | Evidence |
+|---|---|---|
+| Load test at `{{LOAD_TEST_MULTIPLIER}}`× expected peak | `{{LOAD_TEST_STATUS}}` | `{{LOAD_TEST_REPORT_LINK}}` |
+| Autoscaling configured with limits | `{{AUTOSCALING_STATUS}}` | `{{AUTOSCALING_CONFIG_LINK}}` |
+| Capacity plan: `{{CAPACITY_FORECAST_HORIZON}}` forecast | `{{CAPACITY_PLAN_STATUS}}` | `{{CAPACITY_PLAN_LINK}}` |
 
-- Safety checks executed: `{{SAFETY_CHECK_LIST}}`
-- Approval status: `{{APPROVAL_STATUS}}`
-- Automated validation (GitHub Action/pipeline): `{{CI_REPORT}}`
+## Pillar 5 — Security and Compliance
 
-## Review outcome
+| Requirement | Status | Evidence |
+|---|---|---|
+| SAST clean (no unresolved Critical/High) | `{{SAST_STATUS}}` | `{{SAST_REPORT_LINK}}` |
+| Dependency scan clean | `{{DEP_SCAN_STATUS}}` | `{{DEP_SCAN_LINK}}` |
+| Compliance: `{{COMPLIANCE_REQUIREMENTS}}` | `{{COMPLIANCE_STATUS}}` | `{{COMPLIANCE_EVIDENCE_LINK}}` |
 
-- Status (pass/conditional/reject): `{{DECISION}}`
-- Required actions: `{{ACTIONS}}`
-- Owner: `{{ACTION_OWNER}}`
-- Completion date: `{{DUE_DATE}}`
+## Pillar 6 — Support Readiness
+
+| Requirement | Status | Evidence |
+|---|---|---|
+| Incident playbook written | `{{PLAYBOOK_STATUS}}` | `{{PLAYBOOK_LINK}}` |
+| Escalation matrix defined | `{{ESCALATION_STATUS}}` | `{{ESCALATION_MATRIX_LINK}}` |
+| On-call training complete | `{{TRAINING_STATUS}}` | `{{TRAINING_EVIDENCE}}` |
+
+## Open Risks
+
+| Risk | Severity | Mitigation | Owner | Due Date |
+|---|---|---|---|---|
+| `{{RISK_1}}` | `{{RISK_1_SEVERITY}}` | `{{RISK_1_MITIGATION}}` | `{{RISK_1_OWNER}}` | `{{RISK_1_DUE_DATE}}` |
+
+## Review Decision
+
+| Field | Value |
+|---|---|
+| Decision | `{{DECISION}}` (Approved / Approved with conditions / Deferred / Rejected) |
+| Conditions | `{{CONDITIONS}}` |
+| Required actions before launch | `{{REQUIRED_ACTIONS}}` |
+| Action owner | `{{ACTION_OWNER}}` |
+| Actions due by | `{{DUE_DATE}}` |
+| Next review | `{{NEXT_REVIEW_DATE}}` |
+| Approver | `{{SRE_APPROVER}}` |
 
 ## Source Attribution
 

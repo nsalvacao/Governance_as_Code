@@ -4,7 +4,7 @@ artifact_type: template
 status: draft
 visibility: public
 classification: public
-owner: delivery@org
+owner: "{{DELIVERY_OWNER}}"
 review_cadence: quarterly
 applies_to: release and change communication
 source_basis: Stakeholder communication best practices aligned with ITIL 4 and SRE change communication guidance

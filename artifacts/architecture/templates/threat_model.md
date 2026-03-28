@@ -4,7 +4,7 @@ artifact_type: template
 status: public-draft
 visibility: public
 classification: public
-owner: architecture-platform
+owner: "{{ARCHITECTURE_OWNER}}"
 review_cadence: quarterly
 applies_to: systems or changes that require explicit security threat analysis
 source_basis: Microsoft STRIDE threat modeling; OWASP Threat Modeling (owasp.org/www-community/Threat_Modeling)
@@ -88,6 +88,19 @@ Map each significant data flow in the system, especially flows that cross trust 
 Data classification values: public | internal | confidential | restricted.
 
 ### 6. STRIDE threat table
+
+STRIDE requires comprehensive coverage of **all six categories**. Before finalising this threat model, confirm at least one threat has been considered per category. An undocumented absence is an incomplete threat model — if a category yields no threats, justify it explicitly below.
+
+**STRIDE coverage checklist:**
+
+| STRIDE Category | At least one threat identified? | If none: justification |
+|---|---|---|
+| S — Spoofing | `{{STRIDE_S_COVERED}}` (Yes / No) | `{{STRIDE_S_JUSTIFICATION}}` |
+| T — Tampering | `{{STRIDE_T_COVERED}}` (Yes / No) | `{{STRIDE_T_JUSTIFICATION}}` |
+| R — Repudiation | `{{STRIDE_R_COVERED}}` (Yes / No) | `{{STRIDE_R_JUSTIFICATION}}` |
+| I — Information Disclosure | `{{STRIDE_I_COVERED}}` (Yes / No) | `{{STRIDE_I_JUSTIFICATION}}` |
+| D — Denial of Service | `{{STRIDE_D_COVERED}}` (Yes / No) | `{{STRIDE_D_JUSTIFICATION}}` |
+| E — Elevation of Privilege | `{{STRIDE_E_COVERED}}` (Yes / No) | `{{STRIDE_E_JUSTIFICATION}}` |
 
 For each identified threat, complete one row. Threat IDs should be stable and referenced in the mitigations register.
 

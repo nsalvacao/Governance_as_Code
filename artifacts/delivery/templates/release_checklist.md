@@ -4,7 +4,7 @@ artifact_type: template
 status: draft
 visibility: public
 classification: public
-owner: delivery@org
+owner: "{{DELIVERY_OWNER}}"
 review_cadence: quarterly
 applies_to: release readiness checks
 source_basis: Standard pre/during/post deployment gates aligned with SRE and DORA practices

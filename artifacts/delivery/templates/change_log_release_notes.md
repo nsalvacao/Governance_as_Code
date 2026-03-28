@@ -4,7 +4,7 @@ artifact_type: template
 status: draft
 visibility: public
 classification: public
-owner: delivery@org
+owner: "{{DELIVERY_OWNER}}"
 review_cadence: quarterly
 applies_to: release communication and public change history
 source_basis: Keep a Changelog format and Conventional Commits specification

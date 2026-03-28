@@ -4,7 +4,7 @@ artifact_type: template
 status: draft
 visibility: public
 classification: public
-owner: governance@org
+owner: "{{GOVERNANCE_OWNER}}"
 review_cadence: quarterly
 applies_to: failure mode analysis and mitigation planning
 source_basis: IEC 60812:2018 FMEA standard + SAE J1739 Design FMEA methodology
@@ -43,10 +43,12 @@ Define the boundary of the analysis. Out-of-scope elements should be listed expl
 - **Detection (D):** 1 (almost certain to detect before impact) → 10 (cannot detect)
 - **RPN = S × O × D** (range: 1–1000; higher = greater risk)
 
-| Item ID | Function | Failure Mode | Effect | S | Cause | O | Current Controls | D | RPN | Recommended Action | Action Owner | Revised RPN |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| FM-01 | `{{FUNCTION_1}}` | `{{FAILURE_MODE_1}}` | `{{EFFECT_1}}` | `{{S_1}}` | `{{CAUSE_1}}` | `{{O_1}}` | `{{CONTROLS_1}}` | `{{D_1}}` | `{{RPN_1}}` | `{{ACTION_1}}` | `{{OWNER_1}}` | `{{REVISED_RPN_1}}` |
-| FM-02 | `{{FUNCTION_2}}` | `{{FAILURE_MODE_2}}` | `{{EFFECT_2}}` | `{{S_2}}` | `{{CAUSE_2}}` | `{{O_2}}` | `{{CONTROLS_2}}` | `{{D_2}}` | `{{RPN_2}}` | `{{ACTION_2}}` | `{{OWNER_2}}` | `{{REVISED_RPN_2}}` |
+IEC 60812 requires "Action Taken" and "Completion Status" columns to close the corrective action loop — without them, the FMEA is open-ended and cannot demonstrate that recommended actions were implemented and verified.
+
+| Item ID | Function | Failure Mode | Effect | S | Cause | O | Current Controls | D | RPN | Recommended Action | Action Owner | Target Date | Action Taken | Completion Status | Revised RPN |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| FM-01 | `{{FUNCTION_1}}` | `{{FAILURE_MODE_1}}` | `{{EFFECT_1}}` | `{{S_1}}` | `{{CAUSE_1}}` | `{{O_1}}` | `{{CONTROLS_1}}` | `{{D_1}}` | `{{RPN_1}}` | `{{ACTION_1}}` | `{{OWNER_1}}` | `{{TARGET_DATE_1}}` | `{{ACTION_TAKEN_1}}` | `{{COMPLETION_STATUS_1}}` (Open / In Progress / Completed / Verified) | `{{REVISED_RPN_1}}` |
+| FM-02 | `{{FUNCTION_2}}` | `{{FAILURE_MODE_2}}` | `{{EFFECT_2}}` | `{{S_2}}` | `{{CAUSE_2}}` | `{{O_2}}` | `{{CONTROLS_2}}` | `{{D_2}}` | `{{RPN_2}}` | `{{ACTION_2}}` | `{{OWNER_2}}` | `{{TARGET_DATE_2}}` | `{{ACTION_TAKEN_2}}` | `{{COMPLETION_STATUS_2}}` | `{{REVISED_RPN_2}}` |
 
 ---
 

@@ -38,6 +38,16 @@ List every business function performed by or dependent on this system. Assign a 
 
 Add one row per mission-critical function. RTO must be less than or equal to MTD. RPO is expressed as maximum data age at recovery (e.g., 4 hours). MTD is the absolute outer bound beyond which the disruption becomes unacceptable.
 
+## Function-to-Function Dependency Map
+
+NIST SP 800-34 Rev.1 requires mapping inter-function dependencies to ensure recovery sequencing accounts for cascading failures. If Function A depends on Function B, Function A's RTO must be ≥ Function B's RTO — otherwise the recovery target is unachievable.
+
+| Dependent Function ID | Depends On (Function ID) | Dependency Type | RTO Impact | Recovery Sequence Note |
+|---|---|---|---|---|
+| `{{DEPENDENT_FUNCTION_ID}}` | `{{REQUIRED_FUNCTION_ID}}` | `{{DEPENDENCY_TYPE}}` (hard / soft / optional) | `{{RTO_IMPACT}}` (e.g., +2h if {{REQUIRED_FUNCTION_ID}} not restored first) | `{{RECOVERY_SEQUENCE_NOTE}}` |
+
+Verify: for each dependent function, confirm its RTO ≥ the RTO of all functions it depends on. Flag any inversion as a planning risk.
+
 ## Resource Dependencies Matrix
 
 Map each key resource to the functions it supports. This matrix is used during recovery to determine the minimum resource set needed to restore each priority tier.

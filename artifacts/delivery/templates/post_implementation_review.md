@@ -4,7 +4,7 @@ artifact_type: template
 status: draft
 visibility: public
 classification: public
-owner: delivery@org
+owner: "{{DELIVERY_OWNER}}"
 review_cadence: quarterly
 applies_to: post-release and implementation review
 source_basis: GOV.UK PIR structure and ITIL 4 continual improvement practice
