@@ -1,7 +1,7 @@
 ---
 title: Status / Highlight Report
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: GOVERNANCE
@@ -12,7 +12,7 @@ source_manifests:
   - project__prince2.md
   - project__pmi.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # Status / Highlight Report
@@ -98,4 +98,4 @@ _If tolerances are being breached or are forecast to breach, an Exception Report
 - Source manifests: `project__prince2.md`, `project__pmi.md`
 - Primary source basis: PRINCE2 and PMI reporting guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

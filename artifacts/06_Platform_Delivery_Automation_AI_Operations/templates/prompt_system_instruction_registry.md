@@ -1,7 +1,7 @@
 ---
 title: Prompt / System Instruction Registry
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: platform-governance
@@ -12,7 +12,7 @@ source_manifests:
   - ai_ops__openai_docs.md
   - platform__microsoft_learn.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # Prompt / System Instruction Registry
@@ -104,4 +104,4 @@ Safety review: `{{SAFETY_REVIEW_LINK}}`
 - Source manifests: `ai_ops__openai_docs.md`, `platform__microsoft_learn.md`
 - Primary source basis: prompt and system instruction management guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

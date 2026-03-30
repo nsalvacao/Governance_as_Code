@@ -1,7 +1,7 @@
 ---
 title: Business Impact Analysis Template
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{OWNER_NAME}}"
@@ -10,7 +10,7 @@ applies_to: continuity planning
 source_basis: NIST SP 800-34 Rev. 1
 source_manifests: operations__nist_cisa.md
 alignment_mode: guided-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## System Identification
@@ -93,4 +93,4 @@ The BIA is considered complete when all sections are populated, recovery objecti
 - Source manifests: `operations__nist_cisa.md`
 - Primary source basis: NIST SP 800-34 Rev. 1 section 2.2 BIA template
 - Alignment mode: guided-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

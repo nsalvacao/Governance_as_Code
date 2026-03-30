@@ -1,7 +1,7 @@
 ---
 title: Trade-off Analysis Template
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: architecture-platform
@@ -12,7 +12,7 @@ source_manifests:
   - platform__aws_well_architected.md
   - platform__microsoft_learn.md
 alignment_mode: direct-adaptation
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Purpose
@@ -99,4 +99,4 @@ If no dissent was recorded, state: "No dissent recorded." Do not leave this sect
 - Source manifests: `platform__aws_well_architected.md`, `platform__microsoft_learn.md`
 - Primary source basis: AWS Well-Architected trade-off analysis practices; Microsoft Learn decision support guidance
 - Alignment mode: direct-adaptation
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

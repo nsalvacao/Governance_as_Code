@@ -1,7 +1,7 @@
 ---
 title: Source attribution partial
 artifact_type: template-partial
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: governance-team
@@ -10,7 +10,7 @@ applies_to: governance artifacts
 source_basis: governance__github_docs
 source_manifests: governance__github_docs.md
 alignment_mode: direct-adaptation
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 <!-- HOW TO USE THIS PARTIAL

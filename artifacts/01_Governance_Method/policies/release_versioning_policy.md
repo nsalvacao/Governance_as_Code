@@ -1,7 +1,7 @@
 ---
 title: Release and Versioning Policy
 artifact_type: policy
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{OWNER_NAME}}"
@@ -12,7 +12,7 @@ source_manifests:
   - governance__github_docs.md
   - operations__google_sre.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Policy Statement
@@ -130,4 +130,4 @@ Before every release, the release owner must confirm that a rollback procedure e
 - Source manifests: governance__github_docs.md, operations__google_sre.md
 - Primary source basis: Semantic Versioning 2.0.0 (semver.org) and Conventional Commits 1.0.0
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

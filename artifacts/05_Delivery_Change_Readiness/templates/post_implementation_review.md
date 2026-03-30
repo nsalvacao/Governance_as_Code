@@ -1,7 +1,7 @@
 ---
 title: Post-Implementation Review Template
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{DELIVERY_OWNER}}"
@@ -12,7 +12,7 @@ source_manifests:
   - operations__nist_cisa.md
   - governance__github_docs.md
 alignment_mode: guided-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Post-Implementation Review - `{{CHANGE_ID}}`
@@ -156,4 +156,4 @@ The PIR is not closed until all high-priority action items have owners and due d
 - Source manifests: `operations__nist_cisa.md`, `governance__github_docs.md`
 - Primary source basis: GOV.UK PIR structure and ITIL 4 continual improvement practice
 - Alignment mode: guided-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

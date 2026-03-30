@@ -1,7 +1,7 @@
 ---
 title: Environment Promotion Policy
 artifact_type: policy
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: platform-governance
@@ -12,7 +12,7 @@ source_manifests:
   - governance__github_docs.md
   - platform__microsoft_learn.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # Environment Promotion Policy
@@ -92,4 +92,4 @@ Every promotion event must be recorded for traceability and compliance.
 - Source manifests: `governance__github_docs.md`, `platform__microsoft_learn.md`
 - Primary source basis: GitHub environments and Microsoft promotion guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

@@ -1,7 +1,7 @@
 ---
 title: Service Request Model / Request Catalog
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: GOVERNANCE
@@ -11,7 +11,7 @@ source_basis: ITIL
 source_manifests:
   - service_mgmt__itil.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # Service Request Model / Request Catalog
@@ -96,4 +96,4 @@ Define a repeatable service request type with its eligibility criteria, fulfillm
 - Source manifests: `service_mgmt__itil.md`
 - Primary source basis: ITIL request fulfillment guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

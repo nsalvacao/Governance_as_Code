@@ -1,7 +1,7 @@
 ---
 title: Automation and AI Execution
 artifact_type: normative
-status: public-draft
+status: public
 visibility: public
 classification: public-redacted
 owner: governance@org
@@ -10,7 +10,7 @@ applies_to: repositories using automation hooks or AI agents
 source_basis: documentation__diataxis, platform__aws_well_architected, platform__microsoft_learn, ai_ops__openai_docs
 source_manifests: documentation__diataxis.md, platform__aws_well_architected.md, platform__microsoft_learn.md, ai_ops__openai_docs.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # Automation and AI Execution
@@ -122,4 +122,4 @@ Link automation descriptions to `artifacts/01_Governance_Method/templates/partia
 - Source manifests: documentation__diataxis.md, platform__aws_well_architected.md, platform__microsoft_learn.md, ai_ops__openai_docs.md
 - Primary source basis: AI safety and human-in-the-loop principles; AWS/Microsoft automation guidance; OpenAI AI ops guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

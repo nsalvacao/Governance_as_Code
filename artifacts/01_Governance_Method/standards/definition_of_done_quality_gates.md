@@ -1,7 +1,7 @@
 ---
 title: Definition of Done and Quality Gates
 artifact_type: standard
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{OWNER_NAME}}"
@@ -12,7 +12,7 @@ source_manifests:
   - method__scrum_guide.md
   - governance__github_docs.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Purpose
@@ -80,4 +80,4 @@ Stricter gates may be adopted immediately; relaxing a gate requires a documented
 - Source manifests: method__scrum_guide.md, governance__github_docs.md
 - Primary source basis: Scrum Guide 2020 and GitHub validation conventions
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

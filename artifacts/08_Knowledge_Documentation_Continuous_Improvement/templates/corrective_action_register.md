@@ -1,7 +1,7 @@
 ---
 title: Corrective Action Register Template
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: knowledge-platform
@@ -11,7 +11,7 @@ source_basis: PDCA (Plan-Do-Check-Act) cycle for continuous operational improvem
 source_manifests:
   - operations__google_sre.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Purpose
@@ -90,4 +90,4 @@ At each review: confirm statuses are accurate, escalate overdue P1 and P2 action
 - Source manifests: operations__google_sre.md
 - Primary source basis: PDCA (Plan-Do-Check-Act) cycle for continuous operational improvement
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

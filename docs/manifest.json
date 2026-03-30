@@ -9,7 +9,8 @@
         "nature": "Normative",
         "role": "Presents the purpose and navigation",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/repository_overview.md"
       },
       {
@@ -17,7 +18,8 @@
         "nature": "Normative",
         "role": "Explains how the system evolves",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/governance_overview.md"
       },
       {
@@ -25,7 +27,8 @@
         "nature": "Normative",
         "role": "Anchor document for the operating model",
         "source": "Scrum Guide",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/engineering_handbook.md"
       },
       {
@@ -33,7 +36,8 @@
         "nature": "Normative",
         "role": "Defines dev, review, and delivery flows",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/standards/workflow_definition.md"
       },
       {
@@ -41,7 +45,8 @@
         "nature": "Normative",
         "role": "Explains how to submit changes",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/contribution_guidelines.md"
       },
       {
@@ -49,7 +54,8 @@
         "nature": "Normative",
         "role": "Defines behavioral standards",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/policies/code_of_conduct_policy.md"
       },
       {
@@ -57,7 +63,8 @@
         "nature": "Normative",
         "role": "Defines technical consistency standards",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/standards/coding_standards.md"
       },
       {
@@ -65,7 +72,8 @@
         "nature": "Normative",
         "role": "States minimum completion criteria",
         "source": "Scrum Guide",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/standards/definition_of_done_quality_gates.md"
       },
       {
@@ -73,7 +81,8 @@
         "nature": "Normative",
         "role": "Defines level of rigor for documentation",
         "source": "Diataxis",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/standards/documentation_policy.md"
       },
       {
@@ -81,7 +90,8 @@
         "nature": "Normative",
         "role": "Defines when a formal record is required",
         "source": "AWS Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/policies/adr_policy.md"
       },
       {
@@ -89,7 +99,8 @@
         "nature": "Normative",
         "role": "Defines severity, roles, and governance",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/policies/incident_management_policy.md"
       },
       {
@@ -97,7 +108,8 @@
         "nature": "Normative",
         "role": "Defines release and versioning rules",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/policies/release_versioning_policy.md"
       },
       {
@@ -105,7 +117,8 @@
         "nature": "Normative",
         "role": "Defines creation and archival of knowledge",
         "source": "Diataxis",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/policies/knowledge_lifecycle_policy.md"
       }
     ],
@@ -116,16 +129,16 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting standard",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/standards/adr_standard.md"
       },
       {
         "title": "Automation & AI Execution",
         "role": "Defines deterministic versus AI-assisted execution behavior",
-        "maturity": "Public draft",
+        "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting standard",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/standards/automation_and_ai_execution.md"
       },
       {
@@ -134,7 +147,7 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting standard",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/standards/document_conventions.md"
       },
       {
@@ -143,25 +156,25 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting standard",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/standards/source_attribution_standard.md"
       },
       {
         "title": "Architecture Decision Record Template",
         "role": "Reusable ADR body template for downstream repositories",
-        "maturity": "Public draft",
+        "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting template",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/architecture_decision_record.md"
       },
       {
         "title": "Decision Log Entry Template",
         "role": "Reusable decision entry template aligned with the public decision log",
-        "maturity": "Public draft",
+        "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting template",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/decision_log_entry.md"
       },
       {
@@ -170,16 +183,16 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting GitHub-native template",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/github-native/PULL_REQUEST_TEMPLATE.md"
       },
       {
         "title": "Source Attribution Partial",
         "role": "Reusable attribution footer partial for template composition",
-        "maturity": "Public draft",
+        "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting partial",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/partials/source_attribution.md"
       },
       {
@@ -188,7 +201,7 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting instance template",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/repository-health/README.md"
       },
       {
@@ -197,7 +210,7 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting instance template",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/repository-health/GOVERNANCE.md"
       },
       {
@@ -206,7 +219,7 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting instance template",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/repository-health/CONTRIBUTING.md"
       },
       {
@@ -215,7 +228,7 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting instance template",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/repository-health/CODE_OF_CONDUCT.md"
       },
       {
@@ -224,7 +237,7 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting instance template",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/repository-health/SECURITY.md"
       },
       {
@@ -233,7 +246,7 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting instance template",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/01_Governance_Method/templates/repository-health/SUPPORT.md"
       }
     ]
@@ -248,7 +261,8 @@
         "nature": "Instantiable",
         "role": "Frames problem, goal, and constraints",
         "source": "Scrum Guide",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/discovery_brief.md"
       },
       {
@@ -256,7 +270,8 @@
         "nature": "Instantiable",
         "role": "States the target product goal",
         "source": "Scrum Guide",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/product_goal_outcome_statement.md"
       },
       {
@@ -264,7 +279,8 @@
         "nature": "Instantiable",
         "role": "Inventory of prioritized future work",
         "source": "Scrum Guide",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/product_backlog.md"
       },
       {
@@ -272,7 +288,8 @@
         "nature": "Instantiable",
         "role": "Records cycle goal and scope decisions",
         "source": "Scrum Guide",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/planning_record.md"
       },
       {
@@ -280,7 +297,8 @@
         "nature": "Instantiable",
         "role": "Records hypotheses and observations",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/research_experiment_log.md"
       },
       {
@@ -288,7 +306,8 @@
         "nature": "Instantiable",
         "role": "Makes unvalidated assumptions explicit",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/assumptions_register.md"
       },
       {
@@ -296,7 +315,8 @@
         "nature": "Instantiable",
         "role": "Reviews an iteration or phase of work",
         "source": "Scrum Guide",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/technical_retrospective.md"
       },
       {
@@ -304,7 +324,8 @@
         "nature": "Instantiable",
         "role": "Anticipates failure modes and impact",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/pre_mortem_failure_scenario_review.md"
       },
       {
@@ -312,7 +333,8 @@
         "nature": "Instantiable",
         "role": "Preemptively analyzes mitigation",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/fmea_failure_mode_analysis.md"
       }
     ],
@@ -328,7 +350,8 @@
         "nature": "Instantiable",
         "role": "Records hard-to-reverse decisions",
         "source": "AWS Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/03_Architecture_Security_Decision/standards/architecture_decision_record_standard.md"
       },
       {
@@ -336,7 +359,8 @@
         "nature": "Evidence",
         "role": "Preserves reasoning behind decisions",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/03_Architecture_Security_Decision/templates/design_rationale.md"
       },
       {
@@ -344,7 +368,8 @@
         "nature": "Instantiable",
         "role": "Compares options with costs and risks",
         "source": "AWS Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/03_Architecture_Security_Decision/templates/trade_off_analysis.md"
       },
       {
@@ -352,7 +377,8 @@
         "nature": "Evidence",
         "role": "Records formal architecture review",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/03_Architecture_Security_Decision/templates/architecture_review_record.md"
       },
       {
@@ -360,7 +386,8 @@
         "nature": "Instantiable",
         "role": "Models threats and defensive priorities",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/03_Architecture_Security_Decision/templates/threat_model.md"
       },
       {
@@ -368,7 +395,8 @@
         "nature": "Instantiable",
         "role": "Links requirements to mitigations",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/03_Architecture_Security_Decision/templates/security_requirements_record.md"
       }
     ],
@@ -384,7 +412,8 @@
         "nature": "Normative",
         "role": "Formalizes checks and merge policies",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/04_Quality_Review_Control/standards/review_ruleset_and_merge_policy.md"
       },
       {
@@ -392,7 +421,8 @@
         "nature": "Normative",
         "role": "Defines code and doc ownership",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/04_Quality_Review_Control/standards/codeowners_ownership_map.md"
       },
       {
@@ -400,7 +430,8 @@
         "nature": "Operational",
         "role": "Standardizes intake of requests",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/04_Quality_Review_Control/templates/issue_forms_and_templates.md"
       },
       {
@@ -408,7 +439,8 @@
         "nature": "Operational",
         "role": "Standardizes context and validation",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/04_Quality_Review_Control/templates/pull_request_template.md"
       },
       {
@@ -416,7 +448,8 @@
         "nature": "Normative",
         "role": "Defines vulnerability reporting",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/04_Quality_Review_Control/policies/security_policy.md"
       },
       {
@@ -424,7 +457,8 @@
         "nature": "Normative",
         "role": "Explains validation criteria",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/04_Quality_Review_Control/standards/test_strategy_and_verification_policy.md"
       },
       {
@@ -432,7 +466,8 @@
         "nature": "Instantiable",
         "role": "Verifies change or service safety",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/04_Quality_Review_Control/templates/production_readiness_review.md"
       },
       {
@@ -440,7 +475,8 @@
         "nature": "Normative",
         "role": "Explains where to ask for help",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/04_Quality_Review_Control/standards/support_guidelines.md"
       }
     ],
@@ -456,7 +492,8 @@
         "nature": "Instantiable",
         "role": "Defines order and rollout criteria",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/05_Delivery_Change_Readiness/templates/release_plan_rollout_plan.md"
       },
       {
@@ -464,7 +501,8 @@
         "nature": "Operational",
         "role": "Mandatory checks before publishing",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/05_Delivery_Change_Readiness/templates/release_checklist.md"
       },
       {
@@ -472,7 +510,8 @@
         "nature": "Operational",
         "role": "Defines how to safely revert",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/05_Delivery_Change_Readiness/templates/rollback_backout_plan.md"
       },
       {
@@ -480,7 +519,8 @@
         "nature": "Instantiable",
         "role": "Records approved change and impact",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/05_Delivery_Change_Readiness/templates/change_record.md"
       },
       {
@@ -488,7 +528,8 @@
         "nature": "Evidence",
         "role": "Communicates what changed",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/05_Delivery_Change_Readiness/templates/change_log_release_notes.md"
       },
       {
@@ -496,7 +537,8 @@
         "nature": "Instantiable",
         "role": "Defines message and channels",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/05_Delivery_Change_Readiness/templates/change_communication.md"
       },
       {
@@ -504,7 +546,8 @@
         "nature": "Evidence",
         "role": "Evaluates real outcomes",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/05_Delivery_Change_Readiness/templates/post_implementation_review.md"
       }
     ],
@@ -520,7 +563,8 @@
         "nature": "Normative",
         "role": "Defines automation behavior",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/policies/ci_cd_policy.md"
       },
       {
@@ -528,7 +572,8 @@
         "nature": "Operational",
         "role": "Records automated build flows",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/ci_workflow_build_pipeline_record.md"
       },
       {
@@ -536,7 +581,8 @@
         "nature": "Operational",
         "role": "Records automated deployment flows",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/cd_deployment_pipeline_record.md"
       },
       {
@@ -544,7 +590,8 @@
         "nature": "Normative",
         "role": "Defines promotion rules across envs",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/policies/environment_promotion_policy.md"
       },
       {
@@ -552,7 +599,8 @@
         "nature": "Instantiable",
         "role": "Captures environment variables",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/environment_deployment_configuration_record.md"
       },
       {
@@ -560,7 +608,8 @@
         "nature": "Instantiable",
         "role": "Records platform baseline patterns",
         "source": "OpenGitOps",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/infrastructure_as_code_platform_baseline_record.md"
       },
       {
@@ -568,7 +617,8 @@
         "nature": "Evidence",
         "role": "Preserves traceability of artifacts",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/artifact_build_provenance_record.md"
       },
       {
@@ -576,7 +626,8 @@
         "nature": "Normative",
         "role": "Defines declarative delivery rules",
         "source": "OpenGitOps",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/policies/gitops_policy.md"
       },
       {
@@ -584,7 +635,8 @@
         "nature": "Instantiable",
         "role": "Defines desired state for workloads",
         "source": "Flux / Argo CD",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/gitops_application_environment_definition.md"
       },
       {
@@ -592,7 +644,8 @@
         "nature": "Normative",
         "role": "Defines model lifecycle governance",
         "source": "Google Cloud",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/policies/mlops_genaiops_policy.md"
       },
       {
@@ -600,7 +653,8 @@
         "nature": "Evidence",
         "role": "Tracks model versions and lineage",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/model_registry_record.md"
       },
       {
@@ -608,7 +662,8 @@
         "nature": "Evidence",
         "role": "Tracks data lineage and suitability",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/dataset_training_data_record.md"
       },
       {
@@ -616,7 +671,8 @@
         "nature": "Instantiable",
         "role": "Defines metrics and comparison logic",
         "source": "OpenAI Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/evaluation_suite_benchmark_record.md"
       },
       {
@@ -624,7 +680,8 @@
         "nature": "Instantiable",
         "role": "Tracks production prompts",
         "source": "OpenAI Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/prompt_system_instruction_registry.md"
       },
       {
@@ -632,7 +689,8 @@
         "nature": "Instantiable",
         "role": "Records rollout and rollback context",
         "source": "Google Cloud",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/model_release_serving_record.md"
       },
       {
@@ -640,7 +698,8 @@
         "nature": "Evidence",
         "role": "Records operational signals after deploy",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/model_monitoring_drift_report.md"
       },
       {
@@ -648,7 +707,8 @@
         "nature": "Normative",
         "role": "Defines operational guardrails",
         "source": "OpenAI Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/policies/ai_safety_guardrail_policy.md"
       }
     ],
@@ -664,7 +724,8 @@
         "nature": "Instantiable",
         "role": "Summarizes operational context",
         "source": "AWS Docs",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/service_fact_sheet.md"
       },
       {
@@ -672,7 +733,8 @@
         "nature": "Normative",
         "role": "Defines process, roles, and escalation",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/incident_response_plan.md"
       },
       {
@@ -680,7 +742,8 @@
         "nature": "Evidence",
         "role": "Records facts and impact",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/incident_report.md"
       },
       {
@@ -688,7 +751,8 @@
         "nature": "Evidence",
         "role": "Preserves the chronology of events",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/incident_timeline.md"
       },
       {
@@ -696,7 +760,8 @@
         "nature": "Operational",
         "role": "Guides triage and decision-making",
         "source": "AWS Docs",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/playbook.md"
       },
       {
@@ -704,7 +769,8 @@
         "nature": "Operational",
         "role": "Guides mitigation and recovery",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/runbook.md"
       },
       {
@@ -712,7 +778,8 @@
         "nature": "Operational",
         "role": "Standardizes stable processes",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/standard_operating_procedure.md"
       },
       {
@@ -720,7 +787,8 @@
         "nature": "Operational",
         "role": "Defines channels and stakeholders",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/incident_communications_plan.md"
       },
       {
@@ -728,7 +796,8 @@
         "nature": "Operational",
         "role": "Explains handoffs and response",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/on_call_escalation_guide.md"
       },
       {
@@ -736,7 +805,8 @@
         "nature": "Operational",
         "role": "Defines recovery and ISCP",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/service_continuity_plan.md"
       },
       {
@@ -744,7 +814,8 @@
         "nature": "Evidence",
         "role": "Records drills and extracted lessons",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/exercise_drill_record.md"
       }
     ],
@@ -752,19 +823,19 @@
       {
         "title": "Incident Response Policy",
         "role": "Governs incident process expectations behind the plan and report set",
-        "maturity": "Public draft",
+        "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting policy",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/07_Operations_Incidents_Continuity/policies/incident_response_policy.md"
       },
       {
         "title": "Incident Playbook Standard",
         "role": "Defines the common structure for specialized incident playbooks",
-        "maturity": "Public draft",
+        "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting standard",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/07_Operations_Incidents_Continuity/standards/incident_playbook_standard.md"
       },
       {
@@ -773,7 +844,7 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting standard",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/07_Operations_Incidents_Continuity/standards/business_impact_analysis_standard.md"
       },
       {
@@ -782,25 +853,25 @@
         "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting standard",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/07_Operations_Incidents_Continuity/standards/contingency_planning_standard.md"
       },
       {
         "title": "Business Impact Analysis Template",
         "role": "Reusable BIA template that feeds continuity planning",
-        "maturity": "Public draft",
+        "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting template",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/business_impact_analysis.md"
       },
       {
         "title": "Contingency Plan Template",
         "role": "Reusable contingency planning template for downstream repositories",
-        "maturity": "Public draft",
+        "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting template",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/contingency_plan.md"
       },
       {
@@ -809,7 +880,7 @@
         "maturity": "Public draft",
         "nature": "Supporting",
         "source": "Supporting playbook",
-        "status": "draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/playbooks/escalation.md"
       },
       {
@@ -818,7 +889,7 @@
         "maturity": "Public draft",
         "nature": "Supporting",
         "source": "Supporting playbook",
-        "status": "draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/playbooks/incident_communications.md"
       },
       {
@@ -827,7 +898,7 @@
         "maturity": "Public draft",
         "nature": "Supporting",
         "source": "Supporting playbook",
-        "status": "draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/playbooks/incident_coordination.md"
       },
       {
@@ -836,7 +907,7 @@
         "maturity": "Public draft",
         "nature": "Supporting",
         "source": "Supporting playbook",
-        "status": "draft",
+        "status": "hardening",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/playbooks/service_recovery.md"
       }
     ]
@@ -851,7 +922,8 @@
         "nature": "Evidence",
         "role": "Blameless analysis of improvements",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/postmortem.md"
       },
       {
@@ -859,7 +931,8 @@
         "nature": "Evidence",
         "role": "Identifies explicit causes",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/root_cause_analysis.md"
       },
       {
@@ -867,7 +940,8 @@
         "nature": "Evidence",
         "role": "Consolidates reusable lessons",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/lessons_learned.md"
       },
       {
@@ -875,7 +949,8 @@
         "nature": "Evidence",
         "role": "Tracks owner and due date",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/corrective_action_register.md"
       },
       {
@@ -883,7 +958,8 @@
         "nature": "Instantiable",
         "role": "Reusable reference for knowledge",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/knowledge_base_article.md"
       },
       {
@@ -891,7 +967,8 @@
         "nature": "Instantiable",
         "role": "Reviews health and improvement",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/service_review.md"
       },
       {
@@ -899,7 +976,8 @@
         "nature": "Normative",
         "role": "Formalizes service objectives",
         "source": "Google SRE",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/policies/slo_error_budget_policy.md"
       },
       {
@@ -907,7 +985,8 @@
         "nature": "Normative",
         "role": "Organizes information model",
         "source": "Diataxis",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/documentation_architecture_information_model.md"
       },
       {
@@ -915,7 +994,8 @@
         "nature": "Normative",
         "role": "Standardizes voice and structure",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/documentation_style_guide.md"
       },
       {
@@ -923,7 +1003,8 @@
         "nature": "Normative",
         "role": "Assigns review cadence to corpus",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public draft",
+        "status": "hardening",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/documentation_review_ownership_matrix.md"
       },
       {
@@ -931,7 +1012,8 @@
         "nature": "Normative",
         "role": "Regulates document sunset",
         "source": "Diataxis",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/policies/deprecation_archival_policy.md"
       },
       {
@@ -939,7 +1021,8 @@
         "nature": "Evidence",
         "role": "Records official decisions",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/decision_log_standard.md"
       }
     ],
@@ -947,28 +1030,28 @@
       {
         "title": "Error Budget Policy",
         "role": "Reliability companion policy used by service reviews and SLO governance",
-        "maturity": "Public draft",
+        "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting policy",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/policies/error_budget_policy.md"
       },
       {
         "title": "Postmortem Standard",
         "role": "Defines how postmortems should be authored and evaluated",
-        "maturity": "Public draft",
+        "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting standard",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/postmortem_standard.md"
       },
       {
         "title": "Production Readiness Standard",
         "role": "Defines how readiness evidence should be interpreted across services",
-        "maturity": "Public draft",
+        "maturity": "Public",
         "nature": "Supporting",
         "source": "Supporting standard",
-        "status": "draft",
+        "status": "ready",
         "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/production_readiness_standard.md"
       }
     ]
@@ -983,7 +1066,8 @@
         "nature": "Instantiable",
         "role": "Justifies initiative value and risk",
         "source": "PRINCE2",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/business_case.md"
       },
       {
@@ -991,7 +1075,8 @@
         "nature": "Instantiable",
         "role": "Frames authority and scope",
         "source": "PMI",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/project_charter.md"
       },
       {
@@ -999,7 +1084,8 @@
         "nature": "Instantiable",
         "role": "Consolidates baseline approach",
         "source": "PRINCE2",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/project_initiation_management_plan.md"
       },
       {
@@ -1007,7 +1093,8 @@
         "nature": "Instantiable",
         "role": "Records key stakeholders and roles",
         "source": "PMI",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/stakeholder_register.md"
       },
       {
@@ -1015,7 +1102,8 @@
         "nature": "Instantiable",
         "role": "Defines objectives and channels",
         "source": "PMI",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/communications_management_plan.md"
       },
       {
@@ -1023,7 +1111,8 @@
         "nature": "Evidence",
         "role": "Tracks issues requiring action",
         "source": "PRINCE2",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/issue_log_register.md"
       },
       {
@@ -1031,7 +1120,8 @@
         "nature": "Evidence",
         "role": "Periodic visibility into health",
         "source": "PRINCE2",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/status_highlight_report.md"
       },
       {
@@ -1039,7 +1129,8 @@
         "nature": "Evidence",
         "role": "Records deviations beyond tolerances",
         "source": "PRINCE2",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/exception_escalation_report.md"
       },
       {
@@ -1047,7 +1138,8 @@
         "nature": "Evidence",
         "role": "Reviews if benefits were achieved",
         "source": "PMI",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/benefits_realization_record.md"
       },
       {
@@ -1055,7 +1147,8 @@
         "nature": "Instantiable",
         "role": "Defines the service value proposition",
         "source": "ITIL",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/service_catalog.md"
       },
       {
@@ -1063,7 +1156,8 @@
         "nature": "Normative",
         "role": "Formalizes SLAs and commitments",
         "source": "ITIL",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/policies/service_level_policy.md"
       },
       {
@@ -1071,7 +1165,8 @@
         "nature": "Operational",
         "role": "Optimizes delivery through request models",
         "source": "ITIL",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/service_request_model.md"
       },
       {
@@ -1079,7 +1174,8 @@
         "nature": "Normative",
         "role": "Practice for reducing incident recurrence",
         "source": "ITIL",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/policies/problem_management_policy.md"
       },
       {
@@ -1087,7 +1183,8 @@
         "nature": "Evidence",
         "role": "Preserves diagnosed workarounds",
         "source": "ITIL",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/known_error_record.md"
       },
       {
@@ -1095,7 +1192,8 @@
         "nature": "Evidence",
         "role": "Maintains traceable service components",
         "source": "ITIL",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/service_configuration_asset_record.md"
       }
     ],
@@ -1111,7 +1209,8 @@
         "nature": "Evidence",
         "role": "Tracks risks, impact, and mitigation",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/10_Risk_Exceptions_Traceability/templates/risk_register.md"
       },
       {
@@ -1119,7 +1218,8 @@
         "nature": "Evidence",
         "role": "Records deliberate policy deviations",
         "source": "Microsoft Learn",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/10_Risk_Exceptions_Traceability/templates/exception_deviation_record.md"
       },
       {
@@ -1127,7 +1227,8 @@
         "nature": "Evidence",
         "role": "Records public advisories and remediation",
         "source": "GitHub Docs",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/10_Risk_Exceptions_Traceability/templates/security_advisory_vulnerability_record.md"
       },
       {
@@ -1135,7 +1236,8 @@
         "nature": "Normative",
         "role": "Defines minimum traceability rules",
         "source": "NIST",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/10_Risk_Exceptions_Traceability/policies/audit_trail_policy.md"
       },
       {
@@ -1143,7 +1245,8 @@
         "nature": "Normative",
         "role": "Establishes review moments for governance",
         "source": "Scrum Guide",
-        "status": "draft",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/10_Risk_Exceptions_Traceability/standards/metrics_review_cadence.md"
       }
     ],

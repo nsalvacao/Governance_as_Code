@@ -1,7 +1,7 @@
 ---
 title: Deprecation and Archival Policy
 artifact_type: policy
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: knowledge-platform
@@ -12,7 +12,7 @@ source_manifests:
   - governance__github_docs.md
   - documentation__diataxis.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Policy Statement
@@ -36,4 +36,4 @@ Documents that are no longer authoritative must be deprecated, marked clearly, a
 - Source manifests: governance__github_docs.md, documentation__diataxis.md
 - Primary source basis: GitHub Docs and Diataxis archiving guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

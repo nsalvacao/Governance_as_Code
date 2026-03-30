@@ -1,7 +1,7 @@
 ---
 title: Project Initiation / Management Plan
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{GOVERNANCE_OWNER}}"
@@ -12,7 +12,7 @@ source_manifests:
   - project__pmi.md
   - project__prince2.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # Project Initiation / Management Plan
@@ -104,4 +104,4 @@ Changes outside tolerances require Exception Report to `{{PROJECT_BOARD}}`.
 - Source manifests: `project__pmi.md`, `project__prince2.md`
 - Primary source basis: PMI and PRINCE2 management planning guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

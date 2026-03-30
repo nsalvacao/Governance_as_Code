@@ -1,7 +1,7 @@
 ---
 title: GitOps Policy
 artifact_type: policy
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: platform-governance
@@ -12,7 +12,7 @@ source_manifests:
   - platform__gitops.md
   - governance__github_docs.md
 alignment_mode: direct-adaptation
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # GitOps Policy
@@ -93,4 +93,4 @@ Manual changes to managed environments are permitted only in declared emergencie
 - Source manifests: `platform__gitops.md`, `governance__github_docs.md`
 - Primary source basis: OpenGitOps v1.0 (gitops.tech)
 - Alignment mode: direct-adaptation
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

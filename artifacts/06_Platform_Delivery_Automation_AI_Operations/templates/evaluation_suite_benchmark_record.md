@@ -1,7 +1,7 @@
 ---
 title: Evaluation Suite / Benchmark Record
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: platform-governance
@@ -12,7 +12,7 @@ source_manifests:
   - ai_ops__openai_docs.md
   - platform__microsoft_learn.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # Evaluation Suite / Benchmark Record
@@ -94,4 +94,4 @@ Regression threshold: fail if any metric regresses by > `{{REGRESSION_THRESHOLD}
 - Source manifests: `ai_ops__openai_docs.md`, `platform__microsoft_learn.md`
 - Primary source basis: evaluation and benchmark guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

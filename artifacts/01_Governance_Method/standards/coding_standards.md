@@ -1,7 +1,7 @@
 ---
 title: Coding Standards
 artifact_type: standard
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{OWNER_NAME}}"
@@ -12,7 +12,7 @@ source_manifests:
   - governance__github_docs.md
   - platform__microsoft_learn.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Purpose
@@ -93,4 +93,4 @@ The formatter configuration is located at `{{FORMATTER_CONFIG_PATH}}`. Formattin
 - Source manifests: governance__github_docs.md, platform__microsoft_learn.md
 - Primary source basis: Google Style Guide principles and GitHub Docs engineering guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

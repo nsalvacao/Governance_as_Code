@@ -1,7 +1,7 @@
 ---
 title: GitOps Application / Environment Definition
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: platform-governance
@@ -11,7 +11,7 @@ source_basis: OpenGitOps, Flux, and Argo CD application definition guidance
 source_manifests:
   - platform__gitops.md
 alignment_mode: direct-adaptation
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # GitOps Application / Environment Definition
@@ -95,4 +95,4 @@ This definition implements the four OpenGitOps v1.0 principles:
 - Source manifests: `platform__gitops.md`
 - Primary source basis: OpenGitOps, Flux, and Argo CD application definition guidance
 - Alignment mode: direct-adaptation
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

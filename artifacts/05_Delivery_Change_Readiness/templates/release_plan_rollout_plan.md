@@ -1,7 +1,7 @@
 ---
 title: Release Plan / Rollout Plan Template
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{DELIVERY_OWNER}}"
@@ -12,7 +12,7 @@ source_manifests:
   - operations__google_sre.md
   - governance__github_docs.md
 alignment_mode: guided-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Release Plan - `{{RELEASE_ID}}`
@@ -145,4 +145,4 @@ Ensure the rollback plan has been reviewed and the rollback procedure tested bef
 - Source manifests: `operations__google_sre.md`, `governance__github_docs.md`
 - Primary source basis: DORA four key metrics and SRE Workbook progressive delivery
 - Alignment mode: guided-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

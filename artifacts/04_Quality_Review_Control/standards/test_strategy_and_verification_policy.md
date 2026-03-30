@@ -1,7 +1,7 @@
 ---
 title: Test Strategy and Verification Policy
 artifact_type: standard
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: quality-platform
@@ -12,7 +12,7 @@ source_manifests:
   - platform__microsoft_learn.md
   - operations__google_sre.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Purpose
@@ -85,4 +85,4 @@ A build is releasable when ALL of the following are true:
 - Source manifests: `platform__microsoft_learn.md`, `operations__google_sre.md`
 - Primary source basis: Microsoft testing guidance and Google SRE verification practices
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

@@ -13,6 +13,15 @@ SUMMARY_PATTERN = re.compile(
 LINK_PATTERN = re.compile(r"\[([^\]]+)\]\(\./([^)]+)\)")
 
 
+def map_maturity_to_status(maturity: str) -> str:
+    normalized = maturity.strip().lower()
+    if normalized == "public":
+        return "ready"
+    if normalized == "public draft":
+        return "hardening"
+    return "draft"
+
+
 def parse_table(block: str, *, is_supporting: bool) -> list[dict[str, str]]:
     lines = block.strip().splitlines()
     items: list[dict[str, str]] = []
@@ -37,33 +46,33 @@ def parse_table(block: str, *, is_supporting: bool) -> list[dict[str, str]]:
         path_match = LINK_PATTERN.search(line)
         path = path_match.group(2) if path_match else ""
 
-        if "✅" in line:
-            status = "ready"
-        elif "🟡" in line:
-            status = "hardening"
-        else:
-            status = "draft"
-
         if is_supporting:
+            if len(columns) < 5:
+                continue
+            maturity = columns[2]
             items.append(
                 {
                     "title": title,
                     "role": columns[1],
-                    "maturity": columns[2],
+                    "maturity": maturity,
                     "nature": "Supporting",
                     "source": columns[3],
-                    "status": status,
+                    "status": map_maturity_to_status(maturity),
                     "path": path,
                 }
             )
         else:
+            if len(columns) < 6:
+                continue
+            maturity = columns[4]
             items.append(
                 {
                     "title": title,
                     "nature": columns[1],
                     "role": columns[2],
                     "source": columns[3],
-                    "status": status,
+                    "maturity": maturity,
+                    "status": map_maturity_to_status(maturity),
                     "path": path,
                 }
             )

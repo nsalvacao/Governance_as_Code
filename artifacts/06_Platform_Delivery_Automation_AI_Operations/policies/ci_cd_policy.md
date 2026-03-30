@@ -1,7 +1,7 @@
 ---
 title: CI/CD Policy
 artifact_type: policy
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{PLATFORM_OWNER}}"
@@ -12,7 +12,7 @@ source_manifests:
   - governance__github_docs.md
   - platform__microsoft_learn.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # CI/CD Policy
@@ -94,4 +94,4 @@ Measurement baseline period: `{{MEASUREMENT_BASELINE_PERIOD}}`. Teams must estab
 - Source manifests: `governance__github_docs.md`, `platform__microsoft_learn.md`
 - Primary source basis: DORA State of DevOps Research (Accelerate book) + GitHub Actions
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

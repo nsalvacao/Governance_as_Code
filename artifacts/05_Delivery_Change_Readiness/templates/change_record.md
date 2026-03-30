@@ -1,7 +1,7 @@
 ---
 title: Change Record Template
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{DELIVERY_OWNER}}"
@@ -12,7 +12,7 @@ source_manifests:
   - operations__nist_cisa.md
   - platform__aws_well_architected.md
 alignment_mode: guided-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Change Record - `{{CHANGE_ID}}`
@@ -163,4 +163,4 @@ A change record must not be closed until post-implementation verification criter
 - Source manifests: `operations__nist_cisa.md`, `platform__aws_well_architected.md`
 - Primary source basis: ITIL 4 Change Enablement practice
 - Alignment mode: guided-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

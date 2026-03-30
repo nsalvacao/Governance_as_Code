@@ -1,7 +1,7 @@
 ---
 title: SLO and Error Budget Policy
 artifact_type: policy
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: knowledge-platform
@@ -11,7 +11,7 @@ source_basis: Google SRE Book Chapter 6 Service Level Objectives
 source_manifests:
   - operations__google_sre.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Policy Statement
@@ -102,4 +102,4 @@ At the end of each reset period, the error budget returns to its full value. Use
 - Source manifests: operations__google_sre.md
 - Primary source basis: Google SRE Book Chapter 6 Service Level Objectives
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

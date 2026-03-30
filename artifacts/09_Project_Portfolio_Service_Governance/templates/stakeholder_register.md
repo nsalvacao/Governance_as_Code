@@ -1,7 +1,7 @@
 ---
 title: Stakeholder Register
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: GOVERNANCE
@@ -11,7 +11,7 @@ source_basis: PMI
 source_manifests:
   - project__pmi.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # Stakeholder Register
@@ -75,4 +75,4 @@ Quadrant mapping for prioritisation:
 - Source manifests: `project__pmi.md`
 - Primary source basis: PMI stakeholder management guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

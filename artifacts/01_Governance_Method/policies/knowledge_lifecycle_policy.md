@@ -1,7 +1,7 @@
 ---
 title: Knowledge Lifecycle Policy
 artifact_type: policy
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{OWNER_NAME}}"
@@ -12,7 +12,7 @@ source_manifests:
   - governance__github_docs.md
   - documentation__diataxis.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Policy Statement
@@ -105,4 +105,4 @@ All lifecycle transitions — creation, review, update, deprecation, archival, d
 - Source manifests: governance__github_docs.md, documentation__diataxis.md
 - Primary source basis: GitHub Docs and Diataxis documentation lifecycle guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

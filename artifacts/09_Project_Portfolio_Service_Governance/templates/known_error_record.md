@@ -1,7 +1,7 @@
 ---
 title: Known Error Record
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{GOVERNANCE_OWNER}}"
@@ -12,7 +12,7 @@ source_manifests:
   - service_mgmt__itil.md
   - operations__nist_cisa.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # Known Error Record
@@ -110,4 +110,4 @@ Record a diagnosed but unresolved error, its impact, and its workaround until a 
 - Source manifests: `service_mgmt__itil.md`, `operations__nist_cisa.md`
 - Primary source basis: ITIL known error management guidance and NIST incident learning practices
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

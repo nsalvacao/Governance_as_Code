@@ -1,7 +1,7 @@
 ---
 title: Incident Playbook Standard
 artifact_type: standard
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{OWNER_NAME}}"
@@ -10,7 +10,7 @@ applies_to: incident responders
 source_basis: Google SRE Incident Management Guide, NIST SP 800-61r3
 source_manifests: operations__google_sre.md, operations__nist_cisa.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Standard Overview
@@ -142,4 +142,4 @@ A playbook must be reviewed and updated when any of the following occur:
 - Source manifests: `operations__google_sre.md`, `operations__nist_cisa.md`
 - Primary source basis: Google SRE Incident Management Guide, NIST SP 800-61r3
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

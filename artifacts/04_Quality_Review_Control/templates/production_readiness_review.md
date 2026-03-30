@@ -1,7 +1,7 @@
 ---
 title: Production Readiness Review Template
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: quality-platform
@@ -12,7 +12,7 @@ source_manifests:
   - operations__google_sre.md
   - platform__aws_well_architected.md
 alignment_mode: direct-adaptation
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Review Metadata
@@ -102,4 +102,4 @@ updated: 2026-03-27
 - Source manifests: `operations__google_sre.md`, `platform__aws_well_architected.md`
 - Primary source basis: Google SRE production readiness practices and AWS operational readiness guidance
 - Alignment mode: direct-adaptation
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

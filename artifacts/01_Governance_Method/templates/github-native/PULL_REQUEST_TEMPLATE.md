@@ -1,3 +1,18 @@
+---
+title: Pull Request Template
+artifact_type: template
+status: public
+visibility: public
+classification: public
+owner: GOVERNANCE
+review_cadence: quarterly
+applies_to: reusable_governance
+source_basis: GitHub Docs
+source_manifests: governance__github_docs.md
+alignment_mode: direct-adaptation
+updated: 2026-03-30
+---
+
 <!-- Pull Request Template — instantiate per repository; fill all {{PLACEHOLDER}} values before publishing -->
 
 ## Change Type

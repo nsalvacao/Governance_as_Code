@@ -1,7 +1,7 @@
 ---
 title: Rollback / Backout Plan Template
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{DELIVERY_OWNER}}"
@@ -12,7 +12,7 @@ source_manifests:
   - operations__google_sre.md
   - platform__microsoft_learn.md
 alignment_mode: guided-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Rollback Plan - `{{CHANGE_REFERENCE}}`
@@ -157,4 +157,4 @@ A post-rollback review must be initiated within `{{PIR_TRIGGER_WINDOW}}` of roll
 - Source manifests: `operations__google_sre.md`, `platform__microsoft_learn.md`
 - Primary source basis: SRE Workbook rollback and recovery practices
 - Alignment mode: guided-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

@@ -1,7 +1,7 @@
 ---
 title: Architecture Decision Record Policy
 artifact_type: policy
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{OWNER_NAME}}"
@@ -12,7 +12,7 @@ source_manifests:
   - governance__github_docs.md
   - platform__microsoft_learn.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Policy Statement
@@ -87,4 +87,4 @@ Link each accepted ADR to the decision log entry at `{{DECISION_LOG_PATH}}` so t
 - Source manifests: governance__github_docs.md, platform__microsoft_learn.md
 - Primary source basis: MADR (Markdown Architectural Decision Records) lifecycle specification
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

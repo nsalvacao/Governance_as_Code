@@ -1,7 +1,7 @@
 ---
 title: Service Review Template
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: knowledge-platform
@@ -11,7 +11,7 @@ source_basis: Google SRE Workbook quarterly reliability review practices
 source_manifests:
   - operations__google_sre.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Purpose
@@ -123,4 +123,4 @@ Every action item must have an owner. Actions carried over from the previous rev
 - Source manifests: operations__google_sre.md
 - Primary source basis: Google SRE Workbook quarterly reliability review practices
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

@@ -1,7 +1,7 @@
 ---
 title: Review Ruleset and Merge Policy
 artifact_type: standard
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: quality-platform
@@ -11,7 +11,7 @@ source_basis: GitHub Docs branch protection and rulesets guidance
 source_manifests:
   - governance__github_docs.md
 alignment_mode: direct-adaptation
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Purpose
@@ -84,4 +84,4 @@ Exceptions to the above must be:
 - Source manifests: `governance__github_docs.md`
 - Primary source basis: GitHub Docs branch protection and rulesets guidance
 - Alignment mode: direct-adaptation
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

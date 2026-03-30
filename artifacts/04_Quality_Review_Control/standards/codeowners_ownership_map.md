@@ -1,7 +1,7 @@
 ---
 title: CODEOWNERS and Ownership Map
 artifact_type: standard
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: quality-platform
@@ -11,7 +11,7 @@ source_basis: GitHub Docs CODEOWNERS guidance
 source_manifests:
   - governance__github_docs.md
 alignment_mode: direct-adaptation
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Purpose
@@ -74,4 +74,4 @@ SECURITY.md                     @{{SECURITY_OFFICER}}
 - Source manifests: `governance__github_docs.md`
 - Primary source basis: GitHub Docs CODEOWNERS guidance
 - Alignment mode: direct-adaptation
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

@@ -65,6 +65,16 @@ THIN_WRAPPER_REFERENCES = {
 }
 
 
+def read_artifact_status(path: Path) -> str:
+    text = path.read_text(encoding="utf-8")
+    fm_data, _ = parse_frontmatter(text)
+    return str(fm_data.get("status", "")).strip()
+
+
+def expected_maturity_for_status(status: str) -> str | None:
+    return {"public": "Public", "public-draft": "Public draft", "private": "Private"}.get(status)
+
+
 def iter_markdown_paths() -> Iterable[Path]:
     for base in FRONTMATTER_PATHS:
         if not base.exists():
@@ -340,21 +350,24 @@ def check_readme_catalog_links() -> list[Tuple[Path, Sequence[str]]]:
             current_section = line.strip()
             in_catalog_table = False
             continue
-        if current_section and line.startswith("| Document | Nature | Public role | Primary source basis"):
+        if current_section and line.startswith("| Document | Nature | Public role | Primary source basis | Maturity |"):
             in_catalog_table = True
             continue
         if in_catalog_table and line.startswith("|---"):
             continue
         if in_catalog_table and line.startswith("|"):
             cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-            if len(cells) < 5:
+            if len(cells) < 6:
                 failures.append((readme, [f"catalog row in '{current_section}' is missing the canonical artifact column: {line}"]))
                 continue
             document = cells[0]
             if document == "Document":
                 continue
             row_count += 1
-            links = MARKDOWN_LINK_PATTERN.findall(cells[4])
+            maturity = cells[4]
+            if maturity not in {"Public", "Public draft", "Private"}:
+                failures.append((readme, [f"catalog row '{document}' uses invalid maturity value: {maturity}"]))
+            links = MARKDOWN_LINK_PATTERN.findall(cells[5])
             if not links:
                 failures.append((readme, [f"catalog row '{document}' is missing a valid relative artifact link"]))
                 continue
@@ -369,6 +382,10 @@ def check_readme_catalog_links() -> list[Tuple[Path, Sequence[str]]]:
             relative = target.relative_to("artifacts")
             if len(relative.parts) < 3:
                 failures.append((readme, [f"catalog row '{document}' must point to artifacts/<dimension>/<artifact-type>/, got: {target}"]))
+            status = read_artifact_status(target)
+            expected = expected_maturity_for_status(status)
+            if expected and maturity != expected:
+                failures.append((readme, [f"catalog row '{document}' maturity '{maturity}' does not match artifact status '{status}'"]))
             if target.name == "incident_management_policy.md" and "Playbook" in document:
                 failures.append((readme, [f"catalog row '{document}' points to a policy instead of the playbook artifact"]))
             continue
@@ -450,10 +467,8 @@ def check_readme_supporting_tables() -> list[Tuple[Path, Sequence[str]]]:
             if not target.exists():
                 failures.append((readme, [f"supporting row '{artifact}' points to a missing artifact: {target}"]))
                 continue
-            text = target.read_text(encoding="utf-8")
-            fm_data, _ = parse_frontmatter(text)
-            status = str(fm_data.get("status", "")).strip()
-            expected = {"public": "Public", "public-draft": "Public draft", "private": "Private"}.get(status)
+            status = read_artifact_status(target)
+            expected = expected_maturity_for_status(status)
             if expected and maturity != expected:
                 failures.append((readme, [f"supporting row '{artifact}' maturity '{maturity}' does not match artifact status '{status}'"]))
             continue

@@ -1,7 +1,7 @@
 ---
 title: Threat Model Template
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{ARCHITECTURE_OWNER}}"
@@ -12,7 +12,7 @@ source_manifests:
   - platform__microsoft_learn.md
   - operations__nist_cisa.md
 alignment_mode: direct-adaptation
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Purpose
@@ -145,4 +145,4 @@ List threats where the residual risk (after mitigations) is accepted rather than
 - Source manifests: `platform__microsoft_learn.md`, `operations__nist_cisa.md`
 - Primary source basis: Microsoft STRIDE threat modeling; OWASP Threat Modeling (owasp.org/www-community/Threat_Modeling)
 - Alignment mode: direct-adaptation
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

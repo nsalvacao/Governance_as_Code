@@ -1,7 +1,7 @@
 ---
 title: Engineering Handbook
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{OWNER_NAME}}"
@@ -12,7 +12,7 @@ source_manifests:
   - governance__github_docs.md
   - method__scrum_guide.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Purpose
@@ -158,5 +158,5 @@ Definition of Done: `artifacts/01_Governance_Method/standards/definition_of_done
 - Source manifests: governance__github_docs.md, method__scrum_guide.md
 - Primary source basis: GitHub Docs and Scrum Guide
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30
 

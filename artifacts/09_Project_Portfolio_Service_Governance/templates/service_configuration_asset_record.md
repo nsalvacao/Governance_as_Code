@@ -1,7 +1,7 @@
 ---
 title: Service Configuration / Asset Record
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: GOVERNANCE
@@ -11,7 +11,7 @@ source_basis: ITIL
 source_manifests:
   - service_mgmt__itil.md
 alignment_mode: hybrid-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 # Service Configuration / Asset Record
@@ -87,4 +87,4 @@ Relationship types: Depends on / Supports / Hosted on / Component of / Connects 
 - Source manifests: `service_mgmt__itil.md`
 - Primary source basis: ITIL configuration and asset management guidance
 - Alignment mode: hybrid-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30

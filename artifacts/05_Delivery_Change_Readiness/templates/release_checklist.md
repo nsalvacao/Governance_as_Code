@@ -1,7 +1,7 @@
 ---
 title: Release Checklist Template
 artifact_type: template
-status: public-draft
+status: public
 visibility: public
 classification: public
 owner: "{{DELIVERY_OWNER}}"
@@ -12,7 +12,7 @@ source_manifests:
   - governance__github_docs.md
   - operations__google_sre.md
 alignment_mode: guided-synthesis
-updated: 2026-03-27
+updated: 2026-03-30
 ---
 
 ## Release Checklist - `{{RELEASE_ID}}`
@@ -127,4 +127,4 @@ The release manager must confirm all blocking items are resolved before the chan
 - Source manifests: `governance__github_docs.md`, `operations__google_sre.md`
 - Primary source basis: Standard pre/during/post deployment gates aligned with SRE and DORA practices
 - Alignment mode: guided-synthesis
-- Reviewed on: 2026-03-27
+- Reviewed on: 2026-03-30
