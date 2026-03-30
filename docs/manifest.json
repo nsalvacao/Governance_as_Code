@@ -1,0 +1,1152 @@
+[
+  {
+    "id": "01",
+    "name": "Governance & Method",
+    "focus": "Foundation & Norms",
+    "primary": [
+      {
+        "title": "README / Repository Overview",
+        "nature": "Normative",
+        "role": "Presents the purpose and navigation",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/repository_overview.md"
+      },
+      {
+        "title": "GOVERNANCE.md / Governance Overview",
+        "nature": "Normative",
+        "role": "Explains how the system evolves",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/governance_overview.md"
+      },
+      {
+        "title": "Engineering Handbook",
+        "nature": "Normative",
+        "role": "Anchor document for the operating model",
+        "source": "Scrum Guide",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/engineering_handbook.md"
+      },
+      {
+        "title": "Workflow Definition",
+        "nature": "Normative",
+        "role": "Defines dev, review, and delivery flows",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/standards/workflow_definition.md"
+      },
+      {
+        "title": "Contribution Guidelines",
+        "nature": "Normative",
+        "role": "Explains how to submit changes",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/contribution_guidelines.md"
+      },
+      {
+        "title": "Code of Conduct",
+        "nature": "Normative",
+        "role": "Defines behavioral standards",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/policies/code_of_conduct_policy.md"
+      },
+      {
+        "title": "Coding Standards",
+        "nature": "Normative",
+        "role": "Defines technical consistency standards",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/standards/coding_standards.md"
+      },
+      {
+        "title": "Definition of Done / Quality Gates",
+        "nature": "Normative",
+        "role": "States minimum completion criteria",
+        "source": "Scrum Guide",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/standards/definition_of_done_quality_gates.md"
+      },
+      {
+        "title": "Documentation Policy",
+        "nature": "Normative",
+        "role": "Defines level of rigor for documentation",
+        "source": "Diataxis",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/standards/documentation_policy.md"
+      },
+      {
+        "title": "ADR Policy",
+        "nature": "Normative",
+        "role": "Defines when a formal record is required",
+        "source": "AWS Docs",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/policies/adr_policy.md"
+      },
+      {
+        "title": "Incident Management Policy",
+        "nature": "Normative",
+        "role": "Defines severity, roles, and governance",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/policies/incident_management_policy.md"
+      },
+      {
+        "title": "Release & Versioning Policy",
+        "nature": "Normative",
+        "role": "Defines release and versioning rules",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/policies/release_versioning_policy.md"
+      },
+      {
+        "title": "Knowledge Lifecycle Policy",
+        "nature": "Normative",
+        "role": "Defines creation and archival of knowledge",
+        "source": "Diataxis",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/policies/knowledge_lifecycle_policy.md"
+      }
+    ],
+    "supporting": [
+      {
+        "title": "ADR Standard",
+        "role": "Governs how ADR templates and accepted decisions interact",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting standard",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/standards/adr_standard.md"
+      },
+      {
+        "title": "Automation & AI Execution",
+        "role": "Defines deterministic versus AI-assisted execution behavior",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting standard",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/standards/automation_and_ai_execution.md"
+      },
+      {
+        "title": "Document Conventions",
+        "role": "Defines placeholders, frontmatter, and writing rules",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting standard",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/standards/document_conventions.md"
+      },
+      {
+        "title": "Source Attribution Standard",
+        "role": "Governs traceable attribution blocks and alignment modes",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting standard",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/standards/source_attribution_standard.md"
+      },
+      {
+        "title": "Architecture Decision Record Template",
+        "role": "Reusable ADR body template for downstream repositories",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting template",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/architecture_decision_record.md"
+      },
+      {
+        "title": "Decision Log Entry Template",
+        "role": "Reusable decision entry template aligned with the public decision log",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting template",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/decision_log_entry.md"
+      },
+      {
+        "title": "GitHub-native Pull Request Template",
+        "role": "Ready-to-copy PR template for downstream repositories",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting GitHub-native template",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/github-native/PULL_REQUEST_TEMPLATE.md"
+      },
+      {
+        "title": "Source Attribution Partial",
+        "role": "Reusable attribution footer partial for template composition",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting partial",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/partials/source_attribution.md"
+      },
+      {
+        "title": "Repository-health README Template",
+        "role": "Reusable instance README baseline for downstream repositories",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting instance template",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/repository-health/README.md"
+      },
+      {
+        "title": "Repository-health GOVERNANCE Template",
+        "role": "Reusable instance governance baseline for downstream repositories",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting instance template",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/repository-health/GOVERNANCE.md"
+      },
+      {
+        "title": "Repository-health CONTRIBUTING Template",
+        "role": "Reusable instance contribution baseline for downstream repositories",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting instance template",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/repository-health/CONTRIBUTING.md"
+      },
+      {
+        "title": "Repository-health CODE_OF_CONDUCT Template",
+        "role": "Reusable instance conduct baseline for downstream repositories",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting instance template",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/repository-health/CODE_OF_CONDUCT.md"
+      },
+      {
+        "title": "Repository-health SECURITY Template",
+        "role": "Reusable instance security baseline for downstream repositories",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting instance template",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/repository-health/SECURITY.md"
+      },
+      {
+        "title": "Repository-health SUPPORT Template",
+        "role": "Reusable instance support baseline for downstream repositories",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting instance template",
+        "status": "draft",
+        "path": "artifacts/01_Governance_Method/templates/repository-health/SUPPORT.md"
+      }
+    ]
+  },
+  {
+    "id": "02",
+    "name": "Discovery, Planning & Early Learning",
+    "focus": "Ideation & Framing",
+    "primary": [
+      {
+        "title": "Discovery Brief / Problem Framing",
+        "nature": "Instantiable",
+        "role": "Frames problem, goal, and constraints",
+        "source": "Scrum Guide",
+        "status": "draft",
+        "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/discovery_brief.md"
+      },
+      {
+        "title": "Product Goal / Outcome Statement",
+        "nature": "Instantiable",
+        "role": "States the target product goal",
+        "source": "Scrum Guide",
+        "status": "draft",
+        "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/product_goal_outcome_statement.md"
+      },
+      {
+        "title": "Product Backlog",
+        "nature": "Instantiable",
+        "role": "Inventory of prioritized future work",
+        "source": "Scrum Guide",
+        "status": "draft",
+        "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/product_backlog.md"
+      },
+      {
+        "title": "Planning Record",
+        "nature": "Instantiable",
+        "role": "Records cycle goal and scope decisions",
+        "source": "Scrum Guide",
+        "status": "draft",
+        "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/planning_record.md"
+      },
+      {
+        "title": "Research / Experiment Log",
+        "nature": "Instantiable",
+        "role": "Records hypotheses and observations",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/research_experiment_log.md"
+      },
+      {
+        "title": "Assumptions Register",
+        "nature": "Instantiable",
+        "role": "Makes unvalidated assumptions explicit",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/assumptions_register.md"
+      },
+      {
+        "title": "Technical Retrospective",
+        "nature": "Instantiable",
+        "role": "Reviews an iteration or phase of work",
+        "source": "Scrum Guide",
+        "status": "draft",
+        "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/technical_retrospective.md"
+      },
+      {
+        "title": "Pre-mortem / Failure Scenario Review",
+        "nature": "Instantiable",
+        "role": "Anticipates failure modes and impact",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/pre_mortem_failure_scenario_review.md"
+      },
+      {
+        "title": "FMEA / Failure Mode Analysis",
+        "nature": "Instantiable",
+        "role": "Preemptively analyzes mitigation",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/fmea_failure_mode_analysis.md"
+      }
+    ],
+    "supporting": []
+  },
+  {
+    "id": "03",
+    "name": "Architecture, Security & Decision",
+    "focus": "Design & Decision",
+    "primary": [
+      {
+        "title": "Architecture Decision Record (ADR)",
+        "nature": "Instantiable",
+        "role": "Records hard-to-reverse decisions",
+        "source": "AWS Docs",
+        "status": "draft",
+        "path": "artifacts/03_Architecture_Security_Decision/standards/architecture_decision_record_standard.md"
+      },
+      {
+        "title": "Design Rationale",
+        "nature": "Evidence",
+        "role": "Preserves reasoning behind decisions",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/03_Architecture_Security_Decision/templates/design_rationale.md"
+      },
+      {
+        "title": "Trade-off Analysis",
+        "nature": "Instantiable",
+        "role": "Compares options with costs and risks",
+        "source": "AWS Docs",
+        "status": "draft",
+        "path": "artifacts/03_Architecture_Security_Decision/templates/trade_off_analysis.md"
+      },
+      {
+        "title": "Architecture Review Record",
+        "nature": "Evidence",
+        "role": "Records formal architecture review",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/03_Architecture_Security_Decision/templates/architecture_review_record.md"
+      },
+      {
+        "title": "Threat Model",
+        "nature": "Instantiable",
+        "role": "Models threats and defensive priorities",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/03_Architecture_Security_Decision/templates/threat_model.md"
+      },
+      {
+        "title": "Security Requirements Record",
+        "nature": "Instantiable",
+        "role": "Links requirements to mitigations",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/03_Architecture_Security_Decision/templates/security_requirements_record.md"
+      }
+    ],
+    "supporting": []
+  },
+  {
+    "id": "04",
+    "name": "Quality, Review & Control",
+    "focus": "Assurance & Ownership",
+    "primary": [
+      {
+        "title": "Review Ruleset / Merge Policy",
+        "nature": "Normative",
+        "role": "Formalizes checks and merge policies",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/04_Quality_Review_Control/standards/review_ruleset_and_merge_policy.md"
+      },
+      {
+        "title": "CODEOWNERS / Ownership Map",
+        "nature": "Normative",
+        "role": "Defines code and doc ownership",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/04_Quality_Review_Control/standards/codeowners_ownership_map.md"
+      },
+      {
+        "title": "Issue Forms / Issue Templates",
+        "nature": "Operational",
+        "role": "Standardizes intake of requests",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/04_Quality_Review_Control/templates/issue_forms_and_templates.md"
+      },
+      {
+        "title": "Pull Request Template",
+        "nature": "Operational",
+        "role": "Standardizes context and validation",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/04_Quality_Review_Control/templates/pull_request_template.md"
+      },
+      {
+        "title": "Security Policy",
+        "nature": "Normative",
+        "role": "Defines vulnerability reporting",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/04_Quality_Review_Control/policies/security_policy.md"
+      },
+      {
+        "title": "Test Strategy / Verification Policy",
+        "nature": "Normative",
+        "role": "Explains validation criteria",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/04_Quality_Review_Control/standards/test_strategy_and_verification_policy.md"
+      },
+      {
+        "title": "Operational / Production Readiness",
+        "nature": "Instantiable",
+        "role": "Verifies change or service safety",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/04_Quality_Review_Control/templates/production_readiness_review.md"
+      },
+      {
+        "title": "Support Guidelines",
+        "nature": "Normative",
+        "role": "Explains where to ask for help",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/04_Quality_Review_Control/standards/support_guidelines.md"
+      }
+    ],
+    "supporting": []
+  },
+  {
+    "id": "05",
+    "name": "Delivery, Change & Readiness",
+    "focus": "Change & Release",
+    "primary": [
+      {
+        "title": "Release Plan / Rollout Plan",
+        "nature": "Instantiable",
+        "role": "Defines order and rollout criteria",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/05_Delivery_Change_Readiness/templates/release_plan_rollout_plan.md"
+      },
+      {
+        "title": "Release Checklist",
+        "nature": "Operational",
+        "role": "Mandatory checks before publishing",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/05_Delivery_Change_Readiness/templates/release_checklist.md"
+      },
+      {
+        "title": "Rollback / Backout Plan",
+        "nature": "Operational",
+        "role": "Defines how to safely revert",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/05_Delivery_Change_Readiness/templates/rollback_backout_plan.md"
+      },
+      {
+        "title": "Change Record",
+        "nature": "Instantiable",
+        "role": "Records approved change and impact",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/05_Delivery_Change_Readiness/templates/change_record.md"
+      },
+      {
+        "title": "Change Log / Release Notes",
+        "nature": "Evidence",
+        "role": "Communicates what changed",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/05_Delivery_Change_Readiness/templates/change_log_release_notes.md"
+      },
+      {
+        "title": "Change Communication",
+        "nature": "Instantiable",
+        "role": "Defines message and channels",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/05_Delivery_Change_Readiness/templates/change_communication.md"
+      },
+      {
+        "title": "Post-Implementation Review (PIR)",
+        "nature": "Evidence",
+        "role": "Evaluates real outcomes",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/05_Delivery_Change_Readiness/templates/post_implementation_review.md"
+      }
+    ],
+    "supporting": []
+  },
+  {
+    "id": "06",
+    "name": "Platform Delivery, Automation & AI Operations",
+    "focus": "Automation & AI Execution",
+    "primary": [
+      {
+        "title": "CI/CD Policy",
+        "nature": "Normative",
+        "role": "Defines automation behavior",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/policies/ci_cd_policy.md"
+      },
+      {
+        "title": "CI Workflow Record",
+        "nature": "Operational",
+        "role": "Records automated build flows",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/ci_workflow_build_pipeline_record.md"
+      },
+      {
+        "title": "CD / Deployment Record",
+        "nature": "Operational",
+        "role": "Records automated deployment flows",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/cd_deployment_pipeline_record.md"
+      },
+      {
+        "title": "Environment Promotion Policy",
+        "nature": "Normative",
+        "role": "Defines promotion rules across envs",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/policies/environment_promotion_policy.md"
+      },
+      {
+        "title": "Deployment Configuration Record",
+        "nature": "Instantiable",
+        "role": "Captures environment variables",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/environment_deployment_configuration_record.md"
+      },
+      {
+        "title": "Infrastructure as Code Baseline",
+        "nature": "Instantiable",
+        "role": "Records platform baseline patterns",
+        "source": "OpenGitOps",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/infrastructure_as_code_platform_baseline_record.md"
+      },
+      {
+        "title": "Artifact / Build Provenance",
+        "nature": "Evidence",
+        "role": "Preserves traceability of artifacts",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/artifact_build_provenance_record.md"
+      },
+      {
+        "title": "GitOps Policy",
+        "nature": "Normative",
+        "role": "Defines declarative delivery rules",
+        "source": "OpenGitOps",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/policies/gitops_policy.md"
+      },
+      {
+        "title": "GitOps Environment Definition",
+        "nature": "Instantiable",
+        "role": "Defines desired state for workloads",
+        "source": "Flux / Argo CD",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/gitops_application_environment_definition.md"
+      },
+      {
+        "title": "MLOps / GenAIOps Policy",
+        "nature": "Normative",
+        "role": "Defines model lifecycle governance",
+        "source": "Google Cloud",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/policies/mlops_genaiops_policy.md"
+      },
+      {
+        "title": "Model Registry Record",
+        "nature": "Evidence",
+        "role": "Tracks model versions and lineage",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/model_registry_record.md"
+      },
+      {
+        "title": "Dataset / Training Data Record",
+        "nature": "Evidence",
+        "role": "Tracks data lineage and suitability",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/dataset_training_data_record.md"
+      },
+      {
+        "title": "Evaluation Suite / Benchmark",
+        "nature": "Instantiable",
+        "role": "Defines metrics and comparison logic",
+        "source": "OpenAI Docs",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/evaluation_suite_benchmark_record.md"
+      },
+      {
+        "title": "Prompt / Instruction Registry",
+        "nature": "Instantiable",
+        "role": "Tracks production prompts",
+        "source": "OpenAI Docs",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/prompt_system_instruction_registry.md"
+      },
+      {
+        "title": "Model Release / Serving Record",
+        "nature": "Instantiable",
+        "role": "Records rollout and rollback context",
+        "source": "Google Cloud",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/model_release_serving_record.md"
+      },
+      {
+        "title": "Model Monitoring / Drift Report",
+        "nature": "Evidence",
+        "role": "Records operational signals after deploy",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/templates/model_monitoring_drift_report.md"
+      },
+      {
+        "title": "AI Safety / Guardrail Policy",
+        "nature": "Normative",
+        "role": "Defines operational guardrails",
+        "source": "OpenAI Docs",
+        "status": "draft",
+        "path": "artifacts/06_Platform_Delivery_Automation_AI_Operations/policies/ai_safety_guardrail_policy.md"
+      }
+    ],
+    "supporting": []
+  },
+  {
+    "id": "07",
+    "name": "Operations, Incidents & Continuity",
+    "focus": "Execution & Continuity",
+    "primary": [
+      {
+        "title": "Service Overview / Fact Sheet",
+        "nature": "Instantiable",
+        "role": "Summarizes operational context",
+        "source": "AWS Docs",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/service_fact_sheet.md"
+      },
+      {
+        "title": "Incident Response Plan",
+        "nature": "Normative",
+        "role": "Defines process, roles, and escalation",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/incident_response_plan.md"
+      },
+      {
+        "title": "Incident Report",
+        "nature": "Evidence",
+        "role": "Records facts and impact",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/incident_report.md"
+      },
+      {
+        "title": "Incident Timeline",
+        "nature": "Evidence",
+        "role": "Preserves the chronology of events",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/incident_timeline.md"
+      },
+      {
+        "title": "Playbook",
+        "nature": "Operational",
+        "role": "Guides triage and decision-making",
+        "source": "AWS Docs",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/playbook.md"
+      },
+      {
+        "title": "Runbook",
+        "nature": "Operational",
+        "role": "Guides mitigation and recovery",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/runbook.md"
+      },
+      {
+        "title": "SOP (Standard Op. Procedure)",
+        "nature": "Operational",
+        "role": "Standardizes stable processes",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/standard_operating_procedure.md"
+      },
+      {
+        "title": "Incident Communications Plan",
+        "nature": "Operational",
+        "role": "Defines channels and stakeholders",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/incident_communications_plan.md"
+      },
+      {
+        "title": "On-call & Escalation Guide",
+        "nature": "Operational",
+        "role": "Explains handoffs and response",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/on_call_escalation_guide.md"
+      },
+      {
+        "title": "Service Continuity Plan / DR",
+        "nature": "Operational",
+        "role": "Defines recovery and ISCP",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/service_continuity_plan.md"
+      },
+      {
+        "title": "Exercise / Drill Record",
+        "nature": "Evidence",
+        "role": "Records drills and extracted lessons",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/exercise_drill_record.md"
+      }
+    ],
+    "supporting": [
+      {
+        "title": "Incident Response Policy",
+        "role": "Governs incident process expectations behind the plan and report set",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting policy",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/policies/incident_response_policy.md"
+      },
+      {
+        "title": "Incident Playbook Standard",
+        "role": "Defines the common structure for specialized incident playbooks",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting standard",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/standards/incident_playbook_standard.md"
+      },
+      {
+        "title": "Business Impact Analysis Standard",
+        "role": "Governs how BIAs are authored and refreshed",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting standard",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/standards/business_impact_analysis_standard.md"
+      },
+      {
+        "title": "Contingency Planning Standard",
+        "role": "Governs contingency plan scope and review expectations",
+        "maturity": "Public",
+        "nature": "Supporting",
+        "source": "Supporting standard",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/standards/contingency_planning_standard.md"
+      },
+      {
+        "title": "Business Impact Analysis Template",
+        "role": "Reusable BIA template that feeds continuity planning",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting template",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/business_impact_analysis.md"
+      },
+      {
+        "title": "Contingency Plan Template",
+        "role": "Reusable contingency planning template for downstream repositories",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting template",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/contingency_plan.md"
+      },
+      {
+        "title": "Escalation Playbook",
+        "role": "Specialized playbook for escalation sequencing and ownership",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting playbook",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/playbooks/escalation.md"
+      },
+      {
+        "title": "Incident Communications Playbook",
+        "role": "Specialized playbook for stakeholder messaging during incidents",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting playbook",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/playbooks/incident_communications.md"
+      },
+      {
+        "title": "Incident Coordination Playbook",
+        "role": "Specialized playbook for coordination mechanics during active response",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting playbook",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/playbooks/incident_coordination.md"
+      },
+      {
+        "title": "Service Recovery Playbook",
+        "role": "Specialized playbook for recovery sequencing and restoration control",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting playbook",
+        "status": "draft",
+        "path": "artifacts/07_Operations_Incidents_Continuity/templates/playbooks/service_recovery.md"
+      }
+    ]
+  },
+  {
+    "id": "08",
+    "name": "Knowledge, Documentation & Continuous Improvement",
+    "focus": "Evolution & SRE",
+    "primary": [
+      {
+        "title": "Postmortem",
+        "nature": "Evidence",
+        "role": "Blameless analysis of improvements",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/postmortem.md"
+      },
+      {
+        "title": "Root Cause Analysis (RCA)",
+        "nature": "Evidence",
+        "role": "Identifies explicit causes",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/root_cause_analysis.md"
+      },
+      {
+        "title": "Lessons Learned",
+        "nature": "Evidence",
+        "role": "Consolidates reusable lessons",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/lessons_learned.md"
+      },
+      {
+        "title": "Corrective Action Register",
+        "nature": "Evidence",
+        "role": "Tracks owner and due date",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/corrective_action_register.md"
+      },
+      {
+        "title": "Knowledge Base Article",
+        "nature": "Instantiable",
+        "role": "Reusable reference for knowledge",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/knowledge_base_article.md"
+      },
+      {
+        "title": "Service Review / Reliability",
+        "nature": "Instantiable",
+        "role": "Reviews health and improvement",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/templates/service_review.md"
+      },
+      {
+        "title": "SLO / Error Budget Policy",
+        "nature": "Normative",
+        "role": "Formalizes service objectives",
+        "source": "Google SRE",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/policies/slo_error_budget_policy.md"
+      },
+      {
+        "title": "Documentation Architecture",
+        "nature": "Normative",
+        "role": "Organizes information model",
+        "source": "Diataxis",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/documentation_architecture_information_model.md"
+      },
+      {
+        "title": "Documentation Style Guide",
+        "nature": "Normative",
+        "role": "Standardizes voice and structure",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/documentation_style_guide.md"
+      },
+      {
+        "title": "Ownership Matrix",
+        "nature": "Normative",
+        "role": "Assigns review cadence to corpus",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/documentation_review_ownership_matrix.md"
+      },
+      {
+        "title": "Deprecation & Archival Policy",
+        "nature": "Normative",
+        "role": "Regulates document sunset",
+        "source": "Diataxis",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/policies/deprecation_archival_policy.md"
+      },
+      {
+        "title": "Decision Log",
+        "nature": "Evidence",
+        "role": "Records official decisions",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/decision_log_standard.md"
+      }
+    ],
+    "supporting": [
+      {
+        "title": "Error Budget Policy",
+        "role": "Reliability companion policy used by service reviews and SLO governance",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting policy",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/policies/error_budget_policy.md"
+      },
+      {
+        "title": "Postmortem Standard",
+        "role": "Defines how postmortems should be authored and evaluated",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting standard",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/postmortem_standard.md"
+      },
+      {
+        "title": "Production Readiness Standard",
+        "role": "Defines how readiness evidence should be interpreted across services",
+        "maturity": "Public draft",
+        "nature": "Supporting",
+        "source": "Supporting standard",
+        "status": "draft",
+        "path": "artifacts/08_Knowledge_Documentation_Continuous_Improvement/standards/production_readiness_standard.md"
+      }
+    ]
+  },
+  {
+    "id": "09",
+    "name": "Project, Portfolio & Service Governance",
+    "focus": "Strategy & Value",
+    "primary": [
+      {
+        "title": "Business Case / Value Case",
+        "nature": "Instantiable",
+        "role": "Justifies initiative value and risk",
+        "source": "PRINCE2",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/business_case.md"
+      },
+      {
+        "title": "Project Charter / Brief",
+        "nature": "Instantiable",
+        "role": "Frames authority and scope",
+        "source": "PMI",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/project_charter.md"
+      },
+      {
+        "title": "Project Management Plan",
+        "nature": "Instantiable",
+        "role": "Consolidates baseline approach",
+        "source": "PRINCE2",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/project_initiation_management_plan.md"
+      },
+      {
+        "title": "Stakeholder Register",
+        "nature": "Instantiable",
+        "role": "Records key stakeholders and roles",
+        "source": "PMI",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/stakeholder_register.md"
+      },
+      {
+        "title": "Communications Plan",
+        "nature": "Instantiable",
+        "role": "Defines objectives and channels",
+        "source": "PMI",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/communications_management_plan.md"
+      },
+      {
+        "title": "Issue Log / Register",
+        "nature": "Evidence",
+        "role": "Tracks issues requiring action",
+        "source": "PRINCE2",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/issue_log_register.md"
+      },
+      {
+        "title": "Status / Highlight Report",
+        "nature": "Evidence",
+        "role": "Periodic visibility into health",
+        "source": "PRINCE2",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/status_highlight_report.md"
+      },
+      {
+        "title": "Exception / Escalation Report",
+        "nature": "Evidence",
+        "role": "Records deviations beyond tolerances",
+        "source": "PRINCE2",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/exception_escalation_report.md"
+      },
+      {
+        "title": "Benefits Review Record",
+        "nature": "Evidence",
+        "role": "Reviews if benefits were achieved",
+        "source": "PMI",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/benefits_realization_record.md"
+      },
+      {
+        "title": "Service Catalog",
+        "nature": "Instantiable",
+        "role": "Defines the service value proposition",
+        "source": "ITIL",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/service_catalog.md"
+      },
+      {
+        "title": "Service Level Policy / SLA",
+        "nature": "Normative",
+        "role": "Formalizes SLAs and commitments",
+        "source": "ITIL",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/policies/service_level_policy.md"
+      },
+      {
+        "title": "Service Request Model",
+        "nature": "Operational",
+        "role": "Optimizes delivery through request models",
+        "source": "ITIL",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/service_request_model.md"
+      },
+      {
+        "title": "Problem Management Policy",
+        "nature": "Normative",
+        "role": "Practice for reducing incident recurrence",
+        "source": "ITIL",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/policies/problem_management_policy.md"
+      },
+      {
+        "title": "Known Error Record",
+        "nature": "Evidence",
+        "role": "Preserves diagnosed workarounds",
+        "source": "ITIL",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/known_error_record.md"
+      },
+      {
+        "title": "Service Configuration Asset",
+        "nature": "Evidence",
+        "role": "Maintains traceable service components",
+        "source": "ITIL",
+        "status": "draft",
+        "path": "artifacts/09_Project_Portfolio_Service_Governance/templates/service_configuration_asset_record.md"
+      }
+    ],
+    "supporting": []
+  },
+  {
+    "id": "10",
+    "name": "Risk, Exceptions & Traceability",
+    "focus": "Control & Exceptions",
+    "primary": [
+      {
+        "title": "Risk Register",
+        "nature": "Evidence",
+        "role": "Tracks risks, impact, and mitigation",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/10_Risk_Exceptions_Traceability/templates/risk_register.md"
+      },
+      {
+        "title": "Exception / Deviation Record",
+        "nature": "Evidence",
+        "role": "Records deliberate policy deviations",
+        "source": "Microsoft Learn",
+        "status": "draft",
+        "path": "artifacts/10_Risk_Exceptions_Traceability/templates/exception_deviation_record.md"
+      },
+      {
+        "title": "Security Advisory Record",
+        "nature": "Evidence",
+        "role": "Records public advisories and remediation",
+        "source": "GitHub Docs",
+        "status": "draft",
+        "path": "artifacts/10_Risk_Exceptions_Traceability/templates/security_advisory_vulnerability_record.md"
+      },
+      {
+        "title": "Audit Trail Policy",
+        "nature": "Normative",
+        "role": "Defines minimum traceability rules",
+        "source": "NIST",
+        "status": "draft",
+        "path": "artifacts/10_Risk_Exceptions_Traceability/policies/audit_trail_policy.md"
+      },
+      {
+        "title": "Metrics & Review Cadence",
+        "nature": "Normative",
+        "role": "Establishes review moments for governance",
+        "source": "Scrum Guide",
+        "status": "draft",
+        "path": "artifacts/10_Risk_Exceptions_Traceability/standards/metrics_review_cadence.md"
+      }
+    ],
+    "supporting": []
+  }
+]

@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-PT" class="dark">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Governance as Code | Public Document Map</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <title>Technical Standards Library | Governance as Code</title>
+    
+    <!-- SEO / Meta -->
+    <meta name="description" content="Central Governance Repository. Public Document Map containing the operating model and technical standards library.">
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    
+    <!-- Scripts -->
+    <script src="./assets/js/tailwindcss.js"></script>
+    <script src="./assets/js/mermaid.min.js"></script>
+    
+    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -19,296 +26,399 @@
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        ai: {
-                            indigo: '#6366f1',
-                            purple: '#8b5cf6',
-                            soft: '#f8fafc',
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                            950: '#1e1b4b',
+                        },
+                        glass: {
+                            light: 'rgba(255, 255, 255, 0.7)',
+                            dark: 'rgba(15, 23, 42, 0.8)',
+                            borderLight: 'rgba(255, 255, 255, 0.5)',
+                            borderDark: 'rgba(255, 255, 255, 0.1)'
                         }
+                    },
+                    boxShadow: {
+                        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 20px rgba(99, 102, 241, 0.3)',
                     }
                 }
             }
         }
     </script>
+    
+    <!-- Custom CSS -->
     <style>
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .dark .glass {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: var(--tw-colors-glass-light, rgba(255, 255, 255, 0.7));
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--tw-colors-glass-borderLight, rgba(255, 255, 255, 0.5));
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
         }
-        .ai-gradient {
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+
+        .dark .glass-panel {
+            background: var(--tw-colors-glass-dark, rgba(15, 23, 42, 0.7));
+            border: 1px solid var(--tw-colors-glass-borderDark, rgba(255, 255, 255, 0.1));
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
-        .ai-text-gradient {
-            background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        /* Ambient Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.05), transparent 25%);
+            pointer-events: none;
+        }
+
+        .dark body::before {
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 30%),
+                radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.15), transparent 30%);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
         }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
-        html { scroll-behavior: smooth; }
-        .active-dim {
-            border-color: #6366f1 !important;
-            background: rgba(99, 102, 241, 0.1) !important;
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
-        }
-        .line-clamp-2 {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
+        
+        /* Typography overrides */
+        .text-micro { font-size: 11px; }
+
+        /* Accordion Transitions */
+        .accordion-content {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
             overflow: hidden;
         }
+        .accordion-content.open {
+            max-height: 5000px;
+            opacity: 1;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-button[aria-expanded="true"] .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Filter active state */
+        .filter-btn.active {
+            border-color: #6366f1;
+            color: #6366f1;
+            background: rgba(99, 102, 241, 0.05);
+        }
+        .dark .filter-btn.active {
+            color: #818cf8;
+            border-color: #818cf8;
+            background: rgba(129, 140, 248, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 0.4s ease forwards; }
     </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-200 font-sans transition-colors duration-300">
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-200 font-sans transition-colors duration-300 antialiased min-h-screen relative">
+    
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="absolute top-0 left-0 -translate-y-full focus:translate-y-0 z-[100] px-4 py-2 bg-brand-600 text-white font-bold transition-transform">Skip to main content</a>
 
-    <!-- Header -->
-    <nav class="fixed top-0 w-full z-50 glass border-b">
+    <!-- Sticky Global Navigation -->
+    <nav class="sticky top-0 w-full z-50 glass-panel border-b border-t-0 border-x-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-3 cursor-pointer" onclick="resetAllFilters()">
-                    <div class="w-8 h-8 ai-gradient rounded-lg flex items-center justify-center shadow-lg">
-                        <span class="text-white font-bold text-xs">GC</span>
+                <!-- Logo & Brand -->
+                <a href="#" class="flex items-center space-x-3 group focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-lg p-1" aria-label="Go to Homepage">
+                    <div class="w-8 h-8 bg-gradient-to-br from-brand-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all">
+                        <span class="text-white font-bold text-xs font-mono">GC</span>
                     </div>
-                    <span class="font-semibold text-lg tracking-tight">Governance <span class="text-ai-indigo opacity-70">as Code</span></span>
-                </div>
+                    <span class="font-semibold text-lg tracking-tight">Technical Standards <span class="text-brand-600 dark:text-brand-400 opacity-80">Library</span></span>
+                </a>
+
+                <!-- Desktop Nav -->
                 <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                    <a href="#dimensions" class="hover:text-ai-indigo transition-colors">Dimensions</a>
-                    <a href="#catalog" class="hover:text-ai-indigo transition-colors">Corpus</a>
-                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">
-                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    <a href="#operating-model" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Operating Model</a>
+                    <a href="#quick-start" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Quick Start</a>
+                    <a href="#corpus" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">The Corpus</a>
+                    
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Toggle Dark Mode">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-slate-600 dark:text-slate-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-slate-600 dark:text-slate-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <a href="https://github.com/nsalvacao/Governance_as_Code" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" aria-label="GitHub Repository">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden items-center space-x-4">
+                    <button id="mobile-theme-toggle" class="p-2 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300" aria-label="Toggle Dark Mode">
+                        <!-- Icons handled by JS -->
+                    </button>
+                    <button id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
                     </button>
                 </div>
             </div>
         </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#operating-model" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-slate-800">Operating Model</a>
+                <a href="#quick-start" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-slate-800">Quick Start</a>
+                <a href="#corpus" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-slate-800">The Corpus</a>
+                <a href="https://github.com/nsalvacao/Governance_as_Code" target="_blank" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-slate-800">GitHub Repository</a>
+            </div>
+        </div>
     </nav>
 
-    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <!-- Hero Section -->
-        <section id="dimensions" class="mb-20 text-center">
-            <h1 class="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight">
-                Governance <span class="ai-text-gradient">Engine</span>
+    <!-- Main Content -->
+    <main id="main-content" class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-16 pb-24 space-y-24">
+        
+        <!-- Section 1: Hero / What is this -->
+        <header class="text-center animate-fade-in py-12">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 dark:text-white">
+                Governance <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-purple-600">as Code</span>
             </h1>
-            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-12">
-                Explora o <b>Public Document Map</b> em tempo real. Uma réplica visual do Corpus oficial do repositório, organizada por dimensões e maturidade.
+            <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                This environment functions as a <b>Governance-as-Code</b> infrastructure. It provides both the live operating model and a comprehensive, reusable library of technical standards for the organization.
             </p>
+        </header>
 
-            <div id="dimension-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                <!-- Populado via JS -->
-                <div class="animate-pulse p-10 glass rounded-2xl col-span-full text-center opacity-20">Initializing Dimensions...</div>
+        <!-- Section 2: Operating Model Compass -->
+        <section id="operating-model" class="scroll-mt-24">
+            <div class="glass-panel rounded-2xl p-8 sm:p-12 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-start gap-12">
+                    <div class="md:w-1/3 space-y-6">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-center">
+                            <span class="w-8 h-8 rounded bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400 flex items-center justify-center mr-3 text-sm">01</span>
+                            Operating Model Compass
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                            The organization follows a lifecycle-oriented governance flow. Every project or service evolves through these standard gates, ensuring quality, security, and continuous feedback.
+                        </p>
+                    </div>
+                    <div class="md:w-2/3 bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-inner overflow-x-auto">
+                        <div class="mermaid text-center" id="mermaid-graph">
+                            graph LR
+                                A[01. Governance] --> B[02. Discovery]
+                                B --> C[03. Architecture]
+                                C --> D[04. Quality]
+                                D --> E[05. Delivery]
+                                E --> F[06. Platform]
+                                F --> G[07. Operations]
+                                G --> H[08. Knowledge]
+                                H --> I[09. Portfolio]
+                                I --> J[10. Risk]
+                                J --> A
+                                
+                                subgraph "The Feedback Loop"
+                                G -.-> B
+                                H -.-> C
+                                end
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Search & Filters -->
-        <section id="catalog" class="pt-12 border-t border-slate-200 dark:border-slate-800">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 space-y-4 md:space-y-0">
-                <div class="flex items-center space-x-3">
-                    <h2 class="text-2xl font-bold">The Corpus</h2>
-                    <span id="items-count" class="text-xs font-mono bg-ai-indigo/10 text-ai-indigo px-3 py-1 rounded-full uppercase tracking-tighter italic">Syncing...</span>
+        <!-- Section 3: Project Onboarding -->
+        <section id="quick-start" class="scroll-mt-24">
+            <h2 class="text-3xl font-bold mb-8 tracking-tight text-center">Project Onboarding</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-brand-500 group-hover:w-2 transition-all"></div>
+                    <div class="text-brand-600 dark:text-brand-400 font-mono font-bold text-lg mb-3">01</div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900 dark:text-white">Initialize Metadata</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Copy the Request Templates and Issue Forms from the library into your repository's <code class="bg-slate-100 dark:bg-slate-800 px-1 rounded">.github/</code> folder.</p>
                 </div>
-                <div class="relative w-full md:w-96 group">
-                    <input id="search-input" type="text" placeholder="Filter by name, role or source basis..." class="w-full pl-10 pr-4 py-2.5 glass rounded-2xl focus:ring-2 focus:ring-ai-indigo outline-none transition-all">
-                    <svg class="absolute left-3 top-3 w-5 h-5 text-slate-400 group-hover:text-ai-indigo transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-purple-500 group-hover:w-2 transition-all"></div>
+                    <div class="text-purple-600 dark:text-purple-400 font-mono font-bold text-lg mb-3">02</div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900 dark:text-white">Dimension Selection</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Identify which of the 10 Governance Dimensions apply to your project. Instantiate the corresponding Normative policies locally.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-emerald-500 group-hover:w-2 transition-all"></div>
+                    <div class="text-emerald-600 dark:text-emerald-400 font-mono font-bold text-lg mb-3">03</div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900 dark:text-white">Validate Compliance</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Integrate the Deterministic Validator script into your CI/CD pipeline to ensure structural adherence over time.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Filter Badges -->
-            <div id="filter-buttons" class="flex items-center space-x-2 mb-12 overflow-x-auto scrollbar-hide pb-2">
-                <button data-filter-type="nature" data-filter-value="All" class="filter-btn px-5 py-2 rounded-full glass border-ai-indigo text-xs font-semibold whitespace-nowrap transition-all">All Artifacts</button>
-                <button data-filter-type="nature" data-filter-value="Normative" class="filter-btn px-5 py-2 rounded-full glass border-transparent hover:border-ai-indigo text-xs font-medium whitespace-nowrap transition-all">Normative</button>
-                <button data-filter-type="nature" data-filter-value="Instantiable" class="filter-btn px-5 py-2 rounded-full glass border-transparent hover:border-ai-indigo text-xs font-medium whitespace-nowrap transition-all">Instantiable</button>
-                <button data-filter-type="nature" data-filter-value="Evidence" class="filter-btn px-5 py-2 rounded-full glass border-transparent hover:border-ai-indigo text-xs font-medium whitespace-nowrap transition-all">Evidence</button>
-                <button data-filter-type="nature" data-filter-value="Supporting" class="filter-btn px-5 py-2 rounded-full glass border-transparent hover:border-ai-indigo text-xs font-medium whitespace-nowrap transition-all text-slate-400">Supporting</button>
+        <!-- Section 4: The Corpus & Search -->
+        <section id="corpus" class="scroll-mt-28">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight">The Corpus</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Explore the live replica of the public document map.</p>
+                </div>
                 
-                <div class="h-4 w-px bg-slate-200 dark:bg-slate-800 mx-3"></div>
-                <button id="reset-filters" class="hidden text-xs text-ai-indigo hover:underline px-2 py-1 font-medium italic">Reset filters</button>
+                <!-- Search & Status -->
+                <div class="flex flex-col items-end gap-3 w-full md:w-auto">
+                    <div class="flex items-center space-x-3 bg-brand-50 dark:bg-brand-900/20 px-4 py-2 rounded-full border border-brand-100 dark:border-brand-800/50">
+                        <div id="status-dot" class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                        <span id="items-count" class="text-xs font-mono font-bold text-brand-700 dark:text-brand-400 uppercase tracking-wide">Syncing API...</span>
+                    </div>
+
+                    <div class="relative w-full md:w-80">
+                        <input id="search-input" type="text" placeholder="Search articles, roles or dimensions..." class="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-shadow text-sm shadow-sm" aria-label="Search corpus">
+                        <svg class="absolute left-3 top-3 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                </div>
             </div>
 
-            <!-- Catalog Container -->
-            <div id="catalog-container" class="space-y-32 min-h-[400px]">
-                <div class="p-20 text-center text-slate-500 italic flex flex-col items-center">
-                    <div class="w-12 h-12 border-4 border-ai-indigo/30 border-t-ai-indigo rounded-full animate-spin mb-4"></div>
-                    Parsing live README.md corpus...
+            <!-- Enhanced Filters -->
+            <div class="sticky top-16 z-40 bg-slate-50/90 dark:bg-slate-950/90 backdrop-blur-sm pt-4 pb-2 mb-8 border-b border-slate-200 dark:border-slate-800">
+                <div class="glass-panel p-3 rounded-xl flex flex-col gap-3 shadow-sm">
+                    <!-- Dimension Quick Links -->
+                    <div class="flex items-center gap-2 overflow-x-auto w-full pb-1 scrollbar-hide border-b border-slate-200/50 dark:border-slate-800/50 mb-1" id="dimension-index">
+                        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider mr-2 shrink-0">Jump To:</span>
+                        <!-- Javascript will populate this -->
+                    </div>
+                    <!-- Nature Filters -->
+                    <div class="flex items-center justify-between w-full">
+                        <div class="flex items-center gap-2 overflow-x-auto w-full pb-1 scrollbar-hide" id="filter-buttons" role="group" aria-label="Filter artifacts by nature">
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider mr-2 shrink-0">Nature:</span>
+                            <button data-filter-type="nature" data-filter-value="All" class="filter-btn active px-3 py-1 rounded-full border border-transparent text-sm font-medium transition-colors shrink-0 hover:bg-slate-100 dark:hover:bg-slate-800" aria-pressed="true">All</button>
+                            <button data-filter-type="nature" data-filter-value="Normative" class="filter-btn px-3 py-1 rounded-full border border-transparent text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shrink-0" aria-pressed="false" title="Mandatory rules, policies, and standards">Normative</button>
+                            <button data-filter-type="nature" data-filter-value="Instantiable" class="filter-btn px-3 py-1 rounded-full border border-transparent text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shrink-0" aria-pressed="false" title="Templates and forms to be instantiated by projects">Instantiable</button>
+                            <button data-filter-type="nature" data-filter-value="Evidence" class="filter-btn px-3 py-1 rounded-full border border-transparent text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shrink-0" aria-pressed="false" title="Records that prove execution of a process">Evidence</button>
+                            <button data-filter-type="nature" data-filter-value="Supporting" class="filter-btn px-3 py-1 rounded-full border border-transparent text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shrink-0" aria-pressed="false" title="Secondary or contextual documentation">Supporting</button>
+                        </div>
+                        <button id="reset-filters" class="hidden text-sm text-brand-600 dark:text-brand-400 hover:underline shrink-0 px-2 font-medium">Reset Filters</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Catalog Container -->
+            <div id="catalog-container" class="space-y-6 min-h-[400px]" role="region" aria-live="polite">
+                <!-- Fallback Loading State -->
+                <div class="p-20 text-center text-slate-500 italic flex flex-col items-center glass-panel rounded-2xl">
+                    <div class="w-10 h-10 border-4 border-slate-200 dark:border-slate-800 border-t-brand-500 rounded-full animate-spin mb-4"></div>
+                    Loading manifest...
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="mt-40 pb-16 text-center">
-            <div class="flex flex-wrap justify-center gap-x-10 gap-y-6 mb-12 opacity-20 grayscale text-[10px] font-black tracking-[0.3em] uppercase">
-                <span>NIST / CISA</span>
-                <span>ITIL / PEOPLECERT</span>
-                <span>GOOGLE SRE</span>
-                <span>SCRUM GUIDE</span>
-                <span>DIATAXIS</span>
-                <span>ISO 27001</span>
-                <span>AWS WAF</span>
-            </div>
-            <p class="text-[10px] text-slate-500 font-mono tracking-widest uppercase">© 2026 GOVERNANCE AS CODE. LIVE REPLICA OF THE PUBLIC DOCUMENT MAP. MIT LICENSE.</p>
-        </footer>
     </main>
 
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800/50 bg-white/50 dark:bg-slate-900/50 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8 opacity-60 text-micro font-bold tracking-[0.2em] uppercase">
+                <a href="https://www.nist.gov/cyberframework" target="_blank" class="hover:text-brand-600 transition-colors">NIST / CISA</a>
+                <a href="https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1" target="_blank" class="hover:text-brand-600 transition-colors">ITIL / PEOPLECERT</a>
+                <a href="https://sre.google/workbook/" target="_blank" class="hover:text-brand-600 transition-colors">GOOGLE SRE</a>
+                <a href="https://scrumguides.org/" target="_blank" class="hover:text-brand-600 transition-colors">SCRUM GUIDE</a>
+                <a href="https://diataxis.fr/" target="_blank" class="hover:text-brand-600 transition-colors">DIATAXIS</a>
+                <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" class="hover:text-brand-600 transition-colors">ISO 27001</a>
+                <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank" class="hover:text-brand-600 transition-colors">AWS WAF</a>
+            </div>
+            <p class="text-micro text-slate-500 dark:text-slate-500 font-mono tracking-widest uppercase">
+                © 2026 Governance as Code. Live replica of the public document map. MIT License.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Logic Script -->
     <script>
-        let dimensions = [];
-        let currentFilters = { nature: 'All', dimension: null, search: '' };
+        let dimensionsData = [];
+        let currentFilters = { nature: 'All', search: '' };
         
-        // Detect Repo Name from URL
-        const pathParts = window.location.pathname.split('/').filter(p => p.length > 0 && p !== 'docs');
-        const REPO_NAME = pathParts.length > 0 ? pathParts[0] : 'Governance_as_Code';
+        // Setup initial repo details
+        const REPO_NAME = 'Governance_as_Code';
         const GITHUB_BASE = `https://github.com/nsalvacao/${REPO_NAME}/blob/main`;
 
-        function escapeHTML(str) {
-            const div = document.createElement('div');
-            div.textContent = str || '';
-            return div.innerHTML;
-        }
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: document.documentElement.classList.contains('dark') ? 'dark' : 'default',
+            flowchart: { curve: 'basis' }
+        });
 
         async function init() {
-            console.log('Initializing sync with repository:', REPO_NAME);
+            const container = document.getElementById('catalog-container');
+            const countEl = document.getElementById('items-count');
+            const statusDot = document.getElementById('status-dot');
+
             try {
-                // Primary: Try Raw GitHub directly to avoid relative path issues on GH Pages
-                const rawUrl = `https://raw.githubusercontent.com/nsalvacao/${REPO_NAME}/main/README.md`;
-                console.log('Fetching README from:', rawUrl);
+                // Fetch the build-time generated manifest instead of raw README.md
+                const res = await fetch('./manifest.json');
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
                 
-                let response;
-                try {
-                    response = await fetch(rawUrl);
-                } catch (e) {
-                    console.warn('Network error during raw fetch, will try relative path.', e);
+                dimensionsData = await res.json();
+                
+                statusDot.classList.replace('animate-pulse', 'animate-none');
+                statusDot.classList.replace('bg-emerald-500', 'bg-emerald-500'); // remains green
+                
+                // Read Deep Links
+                const params = new URLSearchParams(window.location.search);
+                if (params.has('nature')) currentFilters.nature = params.get('nature');
+                if (params.has('search')) {
+                    currentFilters.search = params.get('search');
+                    document.getElementById('search-input').value = currentFilters.search;
                 }
                 
-                if (!response || !response.ok) {
-                    console.warn('Raw fetch failed or was not ok, trying relative path...');
-                    response = await fetch('../README.md');
-                }
-                
-                if (!response || !response.ok) throw new Error('Could not reach README.md source');
-                
-                const markdown = await response.text();
-                console.log('README content received, length:', markdown.length);
-                parseCorpus(markdown);
+                populateDimensionIndex();
+                updateFilterUI(); // This will renderCatalog
             } catch (error) {
-                console.error('Final sync failure:', error);
-                document.getElementById('catalog-container').innerHTML = `
-                    <div class="p-20 text-center glass rounded-3xl">
-                        <p class="text-red-500 font-bold text-lg mb-2">Failed to sync with README.md</p>
-                        <p class="text-sm opacity-50 mb-6">The repository source is unreachable or the parsing failed.</p>
-                        <button onclick="location.reload()" class="px-6 py-2 ai-gradient rounded-full text-white text-sm font-bold">Retry Sync</button>
+                console.error("Failed to load manifest.json", error);
+                statusDot.classList.replace('animate-pulse', 'animate-none');
+                statusDot.classList.replace('bg-emerald-500', 'bg-red-500');
+                countEl.textContent = 'API Error';
+                countEl.classList.replace('text-brand-700', 'text-red-600');
+                countEl.classList.replace('dark:text-brand-400', 'dark:text-red-400');
+                
+                container.innerHTML = `
+                    <div class="p-10 border border-red-200 dark:border-red-900/50 bg-red-50 dark:bg-red-900/10 rounded-2xl text-center">
+                        <svg class="w-10 h-10 text-red-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-2">Manifest Not Found</h3>
+                        <p class="text-sm text-red-600/80 dark:text-red-400/80 mb-6 max-w-lg mx-auto">The pre-compiled manifest.json could not be loaded. Please ensure the GitHub Action has run successfully to generate the file.</p>
+                        <button onclick="location.reload()" class="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-semibold transition-colors">Retry Connection</button>
                     </div>
                 `;
             }
         }
 
-        function parseCorpus(markdown) {
-            const sections = markdown.split('<details>');
-            const parsedDimensions = [];
-
-            sections.forEach((section, idx) => {
-                if (idx === 0) return; // Intro
-                
-                const detailsContent = section.split('</details>')[0];
-                const summaryMatch = detailsContent.match(/<summary><b>(\d{2})\. (.*?) \((.*?)\)<\/b><\/summary>/i);
-                
-                if (summaryMatch) {
-                    const dim = {
-                        id: summaryMatch[1],
-                        name: summaryMatch[2].trim(),
-                        focus: summaryMatch[3].trim(),
-                        primary: [],
-                        supporting: []
-                    };
-
-                    const parts = detailsContent.split('### Supporting Artifacts');
-                    
-                    // Primary Corpus
-                    dim.primary = parseTable(parts[0]);
-                    
-                    // Supporting Artifacts
-                    if (parts[1]) {
-                        dim.supporting = parseTable(parts[1], true);
-                    }
-
-                    parsedDimensions.push(dim);
-                }
-            });
-
-            console.log('Parsed Dimensions:', parsedDimensions.length);
-            dimensions = parsedDimensions;
-            populateDimensionGrid();
-            renderCatalog();
-        }
-
-        function parseTable(block, isSupporting = false) {
-            const lines = block.trim().split('\n');
-            const items = [];
-            
-            // Find the index of the separator line (contains '---|')
-            let sepIndex = -1;
-            for (let i = 0; i < lines.length; i++) {
-                if (lines[i].includes('---|')) {
-                    sepIndex = i;
-                    break;
-                }
-            }
-            
-            lines.forEach((line, idx) => {
-                // Ignore non-table lines, the separator, and the header line (usually exactly before the separator)
-                if (!line.includes('|') || idx === sepIndex || idx === sepIndex - 1) return;
-                
-                const cols = line.split('|').filter((_, i, a) => i > 0 && i < a.length - 1).map(c => c.trim());
-                
-                if (cols.length >= 4) {
-                    const titleRaw = cols[0];
-                    const titleMatch = titleRaw.match(/\[(.*?)\]/);
-                    const cleanTitle = titleMatch ? titleMatch[1] : titleRaw.trim();
-                    const path = extractLink(line);
-                    
-                    if (isSupporting) {
-                        items.push({
-                            title: cleanTitle,
-                            role: cols[1], // Role
-                            maturity: cols[2], // Maturity
-                            nature: 'Supporting',
-                            source: cols[3], // Catalog role
-                            status: line.includes('✅') ? 'ready' : (line.includes('🟡') ? 'hardening' : 'draft'),
-                            path: path
-                        });
-                    } else {
-                        items.push({
-                            title: cleanTitle,
-                            nature: cols[1], // Nature
-                            role: cols[2], // Public role
-                            source: cols[3], // Source Basis
-                            status: line.includes('✅') ? 'ready' : (line.includes('🟡') ? 'hardening' : 'draft'),
-                            path: path
-                        });
-                    }
-                }
-            });
-            return items;
-        }
-
-        function extractLink(text) {
-            const match = text.match(/\(\.\/(.*?)\)/);
-            return match ? match[1] : '';
-        }
-
-        function populateDimensionGrid() {
-            const grid = document.getElementById('dimension-grid');
-            grid.innerHTML = dimensions.map(dim => `
-                <button data-dimension="${dim.id}" class="dim-card group relative p-6 glass rounded-2xl border-transparent hover:border-ai-indigo transition-all duration-500 transform hover:-translate-y-1 text-left">
-                    <div class="text-[10px] font-mono text-ai-indigo mb-1.5 opacity-60">${dim.id}</div>
-                    <div class="font-bold text-xs leading-tight mb-1.5 group-hover:text-ai-indigo transition-colors">${escapeHTML(dim.name)}</div>
-                    <div class="text-[9px] opacity-40 uppercase tracking-widest font-medium">${escapeHTML(dim.focus)}</div>
-                    <div class="absolute inset-0 bg-ai-indigo/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </button>
-            `).join('');
-        }
-
+        // --- Render Engine ---
         function renderCatalog() {
             const container = document.getElementById('catalog-container');
             const countEl = document.getElementById('items-count');
@@ -316,159 +426,297 @@
             let totalItemsCount = 0;
             const fragment = document.createDocumentFragment();
 
-            const visibleDims = dimensions.filter(d => !currentFilters.dimension || d.id === currentFilters.dimension);
-
-            visibleDims.forEach(dim => {
+            // Iterate over dimensions
+            dimensionsData.forEach((dim, idx) => {
                 const primary = dim.primary.filter(applyFilters);
                 const supporting = dim.supporting.filter(applyFilters);
+                const dimTotal = primary.length + supporting.length;
 
-                if (primary.length === 0 && supporting.length === 0) return;
+                // Skip rendering dimension if it has no items matching filter
+                if (dimTotal === 0) return;
 
-                totalItemsCount += (primary.length + supporting.length);
-
+                totalItemsCount += dimTotal;
+                
+                // Create Accordion Container
                 const section = document.createElement('div');
-                section.className = 'space-y-10';
+                section.className = 'glass-panel rounded-2xl overflow-hidden shadow-sm transition-all';
+                
+                // Expand the first section by default, or all if searching
+                const isExpanded = currentFilters.search !== '' || idx === 0;
                 
                 section.innerHTML = `
-                    <div class="flex items-center space-x-5 mb-12">
-                        <span class="text-xs font-mono text-white bg-ai-indigo px-4 py-1.5 rounded-xl shadow-xl shadow-ai-indigo/30">${dim.id}</span>
-                        <div>
-                            <h3 class="font-bold text-2xl tracking-tight">${escapeHTML(dim.name)}</h3>
-                            <p class="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold">${escapeHTML(dim.focus)}</p>
+                    <button class="accordion-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none focus:bg-slate-50 dark:focus:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors" aria-expanded="${isExpanded}" aria-controls="content-${dim.id}">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-sm font-mono font-bold text-brand-600 dark:text-brand-400 bg-brand-100 dark:bg-brand-900/40 px-3 py-1 rounded-md">${dim.id}</span>
+                            <div>
+                                <h3 class="font-bold text-lg md:text-xl text-slate-900 dark:text-white">${escapeHTML(dim.name)}</h3>
+                                <p class="text-xs text-slate-500 mt-1 uppercase tracking-wider font-semibold">${escapeHTML(dim.focus)} • <span class="capitalize normal-case opacity-70 ml-1">${dimTotal} artifacts</span></p>
+                            </div>
                         </div>
-                        <div class="flex-grow border-b border-slate-200 dark:border-slate-800 opacity-20"></div>
-                    </div>
-
-                    <div class="space-y-16">
-                        <!-- Primary Corpus -->
-                        ${primary.length > 0 ? `
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                ${primary.map(item => renderCard(item, true)).join('')}
-                            </div>
-                        ` : ''}
-
-                        <!-- Supporting -->
-                        ${supporting.length > 0 ? `
-                            <div class="space-y-8">
-                                <div class="flex items-center space-x-3 opacity-40 px-3">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                                    <span class="text-[11px] font-black uppercase tracking-widest">Supporting Artifacts</span>
+                        <div class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">
+                            <svg class="accordion-icon w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </button>
+                    
+                    <div id="content-${dim.id}" class="accordion-content ${isExpanded ? 'open' : ''} border-t border-slate-200 dark:border-slate-800/50 bg-white/50 dark:bg-slate-900/20">
+                        <div class="px-6 py-8 space-y-10">
+                            <!-- Primary Items -->
+                            ${primary.length > 0 ? `
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    ${primary.map(item => renderCard(item, true)).join('')}
                                 </div>
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                                    ${supporting.map(item => renderCard(item, false)).join('')}
+                            ` : ''}
+
+                            <!-- Supporting Items -->
+                            ${supporting.length > 0 ? `
+                                <div class="pt-6 border-t border-slate-200 dark:border-slate-800/50">
+                                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6 flex items-center">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                        Supporting Materials
+                                    </h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                                        ${supporting.map(item => renderCard(item, false)).join('')}
+                                    </div>
                                 </div>
-                            </div>
-                        ` : ''}
+                            ` : ''}
+                        </div>
                     </div>
                 `;
                 fragment.appendChild(section);
             });
 
             container.innerHTML = '';
+            
             if (totalItemsCount === 0) {
-                container.innerHTML = '<div class="p-32 text-center glass rounded-3xl opacity-40 italic font-medium">No results found for your search criteria.</div>';
+                container.innerHTML = `
+                    <div class="text-center py-20 px-4">
+                        <svg class="w-12 h-12 text-slate-300 dark:text-slate-700 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <h3 class="text-lg font-medium text-slate-900 dark:text-slate-100">No matching documents found</h3>
+                        <p class="text-slate-500 mt-2">Adjust your filters or search query to see results.</p>
+                        <button onclick="resetAllFilters()" class="mt-6 text-brand-600 hover:underline text-sm font-medium">Clear all filters</button>
+                    </div>
+                `;
             } else {
                 container.appendChild(fragment);
+                
+                // Re-bind Accordion Events
+                document.querySelectorAll('.accordion-button').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const content = btn.nextElementSibling;
+                        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+                        
+                        // Toggle state
+                        btn.setAttribute('aria-expanded', !isExpanded);
+                        if (!isExpanded) {
+                            content.classList.add('open');
+                        } else {
+                            content.classList.remove('open');
+                        }
+                    });
+                });
             }
-            countEl.textContent = `${totalItemsCount} items synced`;
+            countEl.textContent = `${totalItemsCount} Artifacts`;
         }
 
         function renderCard(item, isPrimary) {
-            const statusColor = item.status === 'ready' ? 'text-emerald-500' : (item.status === 'hardening' ? 'text-amber-500' : 'text-ai-indigo opacity-60');
-            const borderStyle = isPrimary ? 'border-transparent' : 'border-dashed border-slate-300 dark:border-slate-800 bg-transparent';
-            const shadowStyle = isPrimary ? 'hover:shadow-2xl hover:shadow-ai-indigo/10' : '';
+            // Enhanced visual contrast mapping for status
+            let statusBadge = '';
+            if (item.status === 'ready') {
+                statusBadge = '<span class="text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide">Ready</span>';
+            } else if (item.status === 'hardening') {
+                statusBadge = '<span class="text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-900/30 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide">Hardening</span>';
+            } else {
+                statusBadge = '<span class="text-slate-500 dark:text-slate-400 bg-slate-200 dark:bg-slate-700 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide">Draft</span>';
+            }
+
+            const cardClasses = isPrimary ? 
+                'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-brand-300 dark:hover:border-brand-700' : 
+                'bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 border-dashed hover:border-solid hover:border-brand-300 dark:hover:border-brand-700';
 
             return `
-                <div class="group relative p-6 glass rounded-3xl transition-all duration-500 hover:border-ai-indigo/40 flex flex-col h-full ${borderStyle} ${shadowStyle}">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="px-2.5 py-1 glass rounded-lg text-[9px] font-black border-ai-indigo/10 uppercase tracking-widest">${escapeHTML(item.nature)}</span>
-                        <span class="${statusColor} text-[9px] font-black uppercase tracking-[0.1em]">${item.status === 'ready' ? '✅ Ready' : item.status.toUpperCase()}</span>
+                <a href="${GITHUB_BASE}/${item.path}" target="_blank" rel="noopener noreferrer" class="group flex flex-col p-5 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-500 h-full ${cardClasses}">
+                    <div class="flex justify-between items-start mb-3 gap-2">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 line-clamp-1" title="${getTooltipForNature(item.nature)}">${escapeHTML(item.nature)}</span>
+                        ${statusBadge}
                     </div>
-                    <a href="${GITHUB_BASE}/${item.path}" target="_blank" class="block font-bold text-base mb-3 group-hover:text-ai-indigo transition-colors leading-tight line-clamp-2">
+                    
+                    <h5 class="font-bold text-sm md:text-base text-slate-900 dark:text-slate-100 mb-2 leading-tight group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors line-clamp-2">
                         ${escapeHTML(item.title)}
-                    </a>
-                    <p class="text-xs opacity-50 mb-6 line-clamp-2 leading-relaxed italic font-medium">${escapeHTML(item.role || '')}</p>
-                    <div class="mt-auto pt-4 border-t border-white/5 flex justify-between items-center">
-                        <span class="text-[10px] font-mono opacity-30 truncate pr-4 uppercase tracking-tighter">${escapeHTML(item.source)}</span>
-                        <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0 text-ai-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </h5>
+                    
+                    <p class="text-[13px] text-slate-600 dark:text-slate-400 mb-4 leading-relaxed line-clamp-3">
+                        ${escapeHTML(item.role || '')}
+                    </p>
+                    
+                    <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs">
+                        <span class="font-mono text-slate-400 dark:text-slate-500 uppercase tracking-tighter truncate pr-2" title="${escapeHTML(item.source)}">
+                            ${escapeHTML(item.source)}
+                        </span>
+                        <svg class="w-4 h-4 text-brand-500 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
-                </div>
+                </a>
             `;
         }
 
+        // --- Logic & Helpers ---
+        function getTooltipForNature(nature) {
+            switch(nature.toLowerCase()) {
+                case 'normative': return 'Mandatory rules, policies, and standards';
+                case 'instantiable': return 'Templates and forms to be instantiated by projects';
+                case 'evidence': return 'Records that prove execution of a process';
+                case 'supporting': return 'Secondary or contextual documentation';
+                default: return 'Taxonomy tag';
+            }
+        }
+
+        function populateDimensionIndex() {
+            const indexContainer = document.getElementById('dimension-index');
+            let links = '';
+            dimensionsData.forEach(dim => {
+                links += `<button onclick="document.getElementById('content-${dim.id}').scrollIntoView({behavior: 'smooth', block: 'center'})" class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold font-mono rounded-md hover:bg-brand-100 dark:hover:bg-brand-900 hover:text-brand-600 dark:hover:text-brand-400 transition-colors shrink-0" title="${escapeHTML(dim.name)}">${dim.id}</button>`;
+            });
+            // Keep the "Jump To:" span and append links
+            indexContainer.innerHTML = `<span class="text-xs font-semibold text-slate-500 uppercase tracking-wider mr-2 shrink-0">Jump To:</span>` + links;
+        }
+
+        // --- Filtering Logic ---
         function applyFilters(item) {
             const term = currentFilters.search.toLowerCase();
             const matchesSearch = !term || 
                 item.title.toLowerCase().includes(term) || 
                 item.source.toLowerCase().includes(term) || 
-                (item.role && item.role.toLowerCase().includes(term));
+                (item.role && item.role.toLowerCase().includes(term)) ||
+                (item.status && item.status.toLowerCase().includes(term)) ||
+                (item.nature && item.nature.toLowerCase().includes(term)) ||
+                (item.maturity && item.maturity.toLowerCase().includes(term));
             
             const matchesNature = currentFilters.nature === 'All' || item.nature === currentFilters.nature;
             
             return matchesSearch && matchesNature;
         }
 
-        function updateUI() {
+        function updateURL() {
+            const url = new URL(window.location);
+            if (currentFilters.nature !== 'All') {
+                url.searchParams.set('nature', currentFilters.nature);
+            } else {
+                url.searchParams.delete('nature');
+            }
+            if (currentFilters.search) {
+                url.searchParams.set('search', currentFilters.search);
+            } else {
+                url.searchParams.delete('search');
+            }
+            window.history.replaceState({}, '', url);
+        }
+
+        function updateFilterUI() {
             document.querySelectorAll('.filter-btn').forEach(b => {
-                b.classList.remove('border-ai-indigo');
-                if (b.dataset.filterValue === currentFilters.nature) b.classList.add('border-ai-indigo');
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+                if (b.dataset.filterValue === currentFilters.nature) {
+                    b.classList.add('active');
+                    b.setAttribute('aria-pressed', 'true');
+                }
             });
-            document.getElementById('reset-filters').classList.toggle('hidden', currentFilters.nature === 'All' && !currentFilters.dimension && !currentFilters.search);
+            
+            const hasActiveFilters = currentFilters.nature !== 'All' || currentFilters.search !== '';
+            document.getElementById('reset-filters').classList.toggle('hidden', !hasActiveFilters);
+            
+            updateURL();
             renderCatalog();
         }
 
         function resetAllFilters() {
-            currentFilters = { nature: 'All', dimension: null, search: '' };
+            currentFilters = { nature: 'All', search: '' };
             document.getElementById('search-input').value = '';
-            document.querySelectorAll('.dim-card').forEach(c => c.classList.remove('active-dim'));
-            updateUI();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            updateFilterUI();
         }
 
-        // Handlers
-        document.getElementById('dimension-grid').addEventListener('click', (e) => {
-            const card = e.target.closest('.dim-card');
-            if (!card) return;
-            document.querySelectorAll('.dim-card').forEach(c => c.classList.remove('active-dim'));
-            card.classList.add('active-dim');
-            currentFilters.dimension = card.dataset.dimension;
-            updateUI();
-            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
-        });
-
+        // --- Event Listeners ---
         document.getElementById('filter-buttons').addEventListener('click', (e) => {
             const btn = e.target.closest('.filter-btn');
             if (!btn) return;
             currentFilters.nature = btn.dataset.filterValue;
-            updateUI();
+            updateFilterUI();
         });
 
+        // Debounce search
+        let searchTimeout;
         document.getElementById('search-input').addEventListener('input', (e) => {
-            currentFilters.search = e.target.value;
-            updateUI();
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                currentFilters.search = e.target.value.trim();
+                updateFilterUI();
+            }, 300);
         });
 
         document.getElementById('reset-filters').addEventListener('click', resetAllFilters);
 
-        // Theme
-        const themeToggle = document.getElementById('theme-toggle');
-        function applyTheme() {
-            const isDark = document.documentElement.classList.contains('dark');
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Theme Management
+        function setThemeIcons(isDark) {
             document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden', isDark);
             document.getElementById('theme-toggle-light-icon').classList.toggle('hidden', !isDark);
+            
+            // Re-initialize mermaid if it exists to match theme
+            try {
+                mermaid.initialize({ theme: isDark ? 'dark' : 'default' });
+                // Note: updating existing charts dynamically without reload is complex with mermaid, 
+                // but setting default is good for initial load.
+            } catch(e) {}
         }
-        themeToggle.addEventListener('click', () => {
+
+        function toggleTheme() {
             document.documentElement.classList.toggle('dark');
-            localStorage.setItem('color-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-            applyTheme();
-        });
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
+            setThemeIcons(isDark);
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+        document.getElementById('mobile-theme-toggle').addEventListener('click', toggleTheme);
+        
+        // Populate mobile icon with exact duplicate of desktop icon container logic
+        document.getElementById('mobile-theme-toggle').innerHTML = `
+            <svg class="dark:hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg class="hidden dark:block w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        `;
+
+        // Boot Init Theme Check
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
-        applyTheme();
+        setThemeIcons(document.documentElement.classList.contains('dark'));
 
+        // Utility
+        function escapeHTML(str) {
+            if (!str) return '';
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // Run
         init();
     </script>
 </body>
