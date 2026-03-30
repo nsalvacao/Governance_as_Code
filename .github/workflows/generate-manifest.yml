@@ -24,10 +24,17 @@ jobs:
       - name: Generate Manifest
         run: python3 scripts/generate_manifest.py
       - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore(docs): auto-generate manifest.json from README"
-          file_pattern: docs/manifest.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if ! git diff --quiet -- docs/manifest.json; then
+            git add docs/manifest.json
+            git commit -m "chore(docs): auto-generate manifest.json from README"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit"
+          fi
 
 # Source Attribution
 # - Source manifests: governance__github_docs.md

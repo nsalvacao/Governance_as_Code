@@ -1,121 +1,123 @@
-import os
-import re
+#!/usr/bin/env python3
+from __future__ import annotations
+
 import json
+import re
+from pathlib import Path
 
-def parse_readme(readme_path):
-    with open(readme_path, 'r', encoding='utf-8') as f:
-        content = f.read()
 
-    sections = content.split('<details>')
-    parsed_dimensions = []
+SUMMARY_PATTERN = re.compile(
+    r"<summary><b>(?P<id>\d{2})\. (?P<name>.*?) \((?P<focus>.*?)\)</b></summary>",
+    re.IGNORECASE,
+)
+LINK_PATTERN = re.compile(r"\[([^\]]+)\]\(\./([^)]+)\)")
 
-    for idx, section in enumerate(sections):
-        if idx == 0:
-            continue
-            
-        details_content = section.split('</details>')[0]
-        
-        # Match dimension header: <summary><b>01. Governance & Method (Foundation & Norms)</b></summary>
-        summary_match = re.search(r'<summary><b>(\d{2})\. (.*?) \((.*?)\)<\/b><\/summary>', details_content, re.IGNORECASE)
-        if summary_match:
-            dim_id = summary_match.group(1)
-            dim_name = summary_match.group(2).strip()
-            dim_focus = summary_match.group(3).strip()
-            
-            dim = {
-                'id': dim_id,
-                'name': dim_name,
-                'focus': dim_focus,
-                'primary': [],
-                'supporting': []
-            }
-            
-            parts = details_content.split('### Supporting Artifacts')
-            
-            # Primary Corpus
-            dim['primary'] = parse_table(parts[0], is_supporting=False)
-            
-            # Supporting Artifacts
-            if len(parts) > 1:
-                dim['supporting'] = parse_table(parts[1], is_supporting=True)
-                
-            parsed_dimensions.append(dim)
-            
-    return parsed_dimensions
 
-def parse_table(block, is_supporting):
-    lines = block.strip().split('\n')
-    items = []
-    
-    sep_index = -1
-    for i, line in enumerate(lines):
-        if '---|' in line:
-            sep_index = i
+def parse_table(block: str, *, is_supporting: bool) -> list[dict[str, str]]:
+    lines = block.strip().splitlines()
+    items: list[dict[str, str]] = []
+
+    separator_index = -1
+    for index, line in enumerate(lines):
+        if "---|" in line:
+            separator_index = index
             break
-            
-    for idx, line in enumerate(lines):
-        # Allow header (sep_index - 1) up to separator (sep_index).
-        if '|' not in line or idx == sep_index or idx == sep_index - 1:
+
+    for index, line in enumerate(lines):
+        if "|" not in line or index in {separator_index, separator_index - 1}:
             continue
-            
-        cols = [c.strip() for c in line.split('|')]
-        # Filter empty columns at start/end from splitting "| cell | cell |"
-        cols = [c for c in cols if c]
-        
-        if len(cols) >= 4:
-            title_raw = cols[0]
-            title_match = re.search(r'\[(.*?)\]', title_raw)
-            clean_title = title_match.group(1) if title_match else title_raw.strip()
-            
-            path_match = re.search(r'\(\.\/(.*?)\)', line)
-            path = path_match.group(1) if path_match else ''
-            
-            if '✅' in line:
-                status = 'ready'
-            elif '🟡' in line:
-                status = 'hardening'
-            else:
-                status = 'draft'
-                
-            if is_supporting:
-                items.append({
-                    'title': clean_title,
-                    'role': cols[1],
-                    'maturity': cols[2],
-                    'nature': 'Supporting',
-                    'source': cols[3],
-                    'status': status,
-                    'path': path
-                })
-            else:
-                items.append({
-                    'title': clean_title,
-                    'nature': cols[1],
-                    'role': cols[2],
-                    'source': cols[3],
-                    'status': status,
-                    'path': path
-                })
-                
+
+        columns = [column.strip() for column in line.split("|")]
+        columns = [column for column in columns if column]
+        if len(columns) < 4:
+            continue
+
+        title_match = LINK_PATTERN.search(columns[0])
+        title = title_match.group(1) if title_match else columns[0].strip()
+        path_match = LINK_PATTERN.search(line)
+        path = path_match.group(2) if path_match else ""
+
+        if "✅" in line:
+            status = "ready"
+        elif "🟡" in line:
+            status = "hardening"
+        else:
+            status = "draft"
+
+        if is_supporting:
+            items.append(
+                {
+                    "title": title,
+                    "role": columns[1],
+                    "maturity": columns[2],
+                    "nature": "Supporting",
+                    "source": columns[3],
+                    "status": status,
+                    "path": path,
+                }
+            )
+        else:
+            items.append(
+                {
+                    "title": title,
+                    "nature": columns[1],
+                    "role": columns[2],
+                    "source": columns[3],
+                    "status": status,
+                    "path": path,
+                }
+            )
+
     return items
 
-def main():
-    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    readme_path = os.path.join(repo_root, 'README.md')
-    manifest_path = os.path.join(repo_root, 'docs', 'manifest.json')
-    
-    dimensions = parse_readme(readme_path)
-    print(f"Parsed {len(dimensions)} dimensions.")
-    
-    # Calculate totals
-    total_items = sum(len(d['primary']) + len(d['supporting']) for d in dimensions)
-    print(f"Total items parsed: {total_items}")
-    
-    os.makedirs(os.path.dirname(manifest_path), exist_ok=True)
-    with open(manifest_path, 'w', encoding='utf-8') as f:
-        json.dump(dimensions, f, indent=2, ensure_ascii=False)
-        
-    print(f"Manifest written to {manifest_path}")
 
-if __name__ == '__main__':
-    main()
+def parse_readme(readme_path: Path) -> list[dict[str, object]]:
+    content = readme_path.read_text(encoding="utf-8")
+    sections = content.split("<details>")
+    parsed_dimensions: list[dict[str, object]] = []
+
+    for index, section in enumerate(sections):
+        if index == 0:
+            continue
+
+        details_content = section.split("</details>", 1)[0]
+        summary_match = SUMMARY_PATTERN.search(details_content)
+        if not summary_match:
+            continue
+
+        parts = details_content.split("### Supporting Artifacts", 1)
+        parsed_dimensions.append(
+            {
+                "id": summary_match.group("id"),
+                "name": summary_match.group("name").strip(),
+                "focus": summary_match.group("focus").strip(),
+                "primary": parse_table(parts[0], is_supporting=False),
+                "supporting": parse_table(parts[1], is_supporting=True) if len(parts) > 1 else [],
+            }
+        )
+
+    return parsed_dimensions
+
+
+def main() -> int:
+    repo_root = Path(__file__).resolve().parent.parent
+    readme_path = repo_root / "README.md"
+    manifest_path = repo_root / "docs" / "manifest.json"
+
+    dimensions = parse_readme(readme_path)
+    total_items = sum(len(dimension["primary"]) + len(dimension["supporting"]) for dimension in dimensions)
+
+    print(f"Parsed {len(dimensions)} dimensions.")
+    print(f"Total items parsed: {total_items}")
+
+    if not dimensions or total_items == 0:
+        raise SystemExit("Manifest generation failed: parsed zero dimensions or zero items from README.md")
+
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    manifest_path.write_text(json.dumps(dimensions, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"Manifest written to {manifest_path}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
