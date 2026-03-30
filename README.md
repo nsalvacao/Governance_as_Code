@@ -148,8 +148,8 @@ Click on a dimension to explore its associated policies, standards, and template
 |---|---|---|---|---|---|
 | Discovery Brief / Problem Framing | Instantiable | Frames problem, goal, and constraints | Scrum Guide | Public draft | [Artifact](./artifacts/02_Discovery_Planning_Early_Learning/templates/discovery_brief.md) |
 | Product Goal / Outcome Statement | Instantiable | States the target product goal | Scrum Guide | Public draft | [Artifact](./artifacts/02_Discovery_Planning_Early_Learning/templates/product_goal_outcome_statement.md) |
-| Product Backlog | Instantiable | Inventory of prioritized future work | Scrum Guide | Public draft | [Artifact](./artifacts/02_Discovery_Planning_Early_Learning/templates/product_backlog.md) |
-| Planning Record | Instantiable | Records cycle goal and scope decisions | Scrum Guide | Public draft | [Artifact](./artifacts/02_Discovery_Planning_Early_Learning/templates/planning_record.md) |
+| Product Backlog | Instantiable | Inventory of prioritized future work | Scrum Guide | Public | [Artifact](./artifacts/02_Discovery_Planning_Early_Learning/templates/product_backlog.md) |
+| Planning Record | Instantiable | Records cycle goal and scope decisions | Scrum Guide | Public | [Artifact](./artifacts/02_Discovery_Planning_Early_Learning/templates/planning_record.md) |
 | Research / Experiment Log | Instantiable | Records hypotheses and observations | Google SRE | Public draft | [Artifact](./artifacts/02_Discovery_Planning_Early_Learning/templates/research_experiment_log.md) |
 | Assumptions Register | Instantiable | Makes unvalidated assumptions explicit | Microsoft Learn | Public draft | [Artifact](./artifacts/02_Discovery_Planning_Early_Learning/templates/assumptions_register.md) |
 | Technical Retrospective | Instantiable | Reviews an iteration or phase of work | Scrum Guide | Public draft | [Artifact](./artifacts/02_Discovery_Planning_Early_Learning/templates/technical_retrospective.md) |
@@ -233,17 +233,17 @@ Click on a dimension to explore its associated policies, standards, and template
 
 | Document | Nature | Public role | Primary source basis | Maturity | Canonical primary artifact |
 |---|---|---|---|---|---|
-| Service Overview / Fact Sheet | Instantiable | Summarizes operational context | AWS Docs | Public draft | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/service_fact_sheet.md) |
-| Incident Response Plan | Normative | Defines process, roles, and escalation | NIST | Public draft | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/incident_response_plan.md) |
-| Incident Report | Evidence | Records facts and impact | NIST | Public draft | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/incident_report.md) |
-| Incident Timeline | Evidence | Preserves the chronology of events | Google SRE | Public draft | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/incident_timeline.md) |
+| Service Overview / Fact Sheet | Instantiable | Summarizes operational context | AWS Docs | Public | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/service_fact_sheet.md) |
+| Incident Response Plan | Normative | Defines process, roles, and escalation | NIST | Public | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/incident_response_plan.md) |
+| Incident Report | Evidence | Records facts and impact | NIST | Public | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/incident_report.md) |
+| Incident Timeline | Evidence | Preserves the chronology of events | Google SRE | Public | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/incident_timeline.md) |
 | Playbook | Operational | Guides triage and decision-making | AWS Docs | Public draft | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/playbook.md) |
 | Runbook | Operational | Guides mitigation and recovery | Google SRE | Public draft | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/runbook.md) |
 | SOP (Standard Op. Procedure) | Operational | Standardizes stable processes | NIST | Public draft | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/standard_operating_procedure.md) |
 | Incident Communications Plan | Operational | Defines channels and stakeholders | Google SRE | Public draft | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/incident_communications_plan.md) |
 | On-call & Escalation Guide | Operational | Explains handoffs and response | Google SRE | Public draft | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/on_call_escalation_guide.md) |
 | Service Continuity Plan / DR | Operational | Defines recovery and ISCP | NIST | Public draft | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/service_continuity_plan.md) |
-| Exercise / Drill Record | Evidence | Records drills and extracted lessons | NIST | Public draft | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/exercise_drill_record.md) |
+| Exercise / Drill Record | Evidence | Records drills and extracted lessons | NIST | Public | [Artifact](./artifacts/07_Operations_Incidents_Continuity/templates/exercise_drill_record.md) |
 
 ### Supporting Artifacts
 

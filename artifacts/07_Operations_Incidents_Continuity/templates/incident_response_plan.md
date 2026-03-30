@@ -17,7 +17,7 @@ updated: 2026-03-30
 
 ## Purpose
 
-Provide the reusable plan structure for response phases, decision rights, communications, and recovery coordination following the NIST SP 800-61r2 Incident Response Lifecycle.
+Provide the reusable plan structure for response phases, decision rights, communications, and recovery coordination following current NIST incident response lifecycle guidance and Google SRE incident-management practices.
 
 ## Plan Metadata
 
@@ -64,7 +64,7 @@ Activities performed BEFORE an incident occurs:
 
 ### Evidence Preservation
 
-NIST SP 800-61r2 mandates evidence collection and preservation during Detection & Analysis. Evidence collected here supports root cause analysis, postmortems, and potential legal or regulatory proceedings.
+NIST incident response guidance requires evidence collection and preservation during detection and analysis. Evidence collected here supports root cause analysis, postmortems, and potential legal or regulatory proceedings.
 
 | Evidence Source | Collection Method | Storage Location | Retention Period | Owner |
 |---|---|---|---|---|

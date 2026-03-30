@@ -1,7 +1,7 @@
 ---
 title: Discovery Brief Template
 artifact_type: template
-status: public
+status: public-draft
 visibility: public
 classification: public
 owner: governance@org

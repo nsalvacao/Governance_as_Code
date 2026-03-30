@@ -279,8 +279,8 @@
         "nature": "Instantiable",
         "role": "Inventory of prioritized future work",
         "source": "Scrum Guide",
-        "maturity": "Public draft",
-        "status": "hardening",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/product_backlog.md"
       },
       {
@@ -288,8 +288,8 @@
         "nature": "Instantiable",
         "role": "Records cycle goal and scope decisions",
         "source": "Scrum Guide",
-        "maturity": "Public draft",
-        "status": "hardening",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/02_Discovery_Planning_Early_Learning/templates/planning_record.md"
       },
       {
@@ -724,8 +724,8 @@
         "nature": "Instantiable",
         "role": "Summarizes operational context",
         "source": "AWS Docs",
-        "maturity": "Public draft",
-        "status": "hardening",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/service_fact_sheet.md"
       },
       {
@@ -733,8 +733,8 @@
         "nature": "Normative",
         "role": "Defines process, roles, and escalation",
         "source": "NIST",
-        "maturity": "Public draft",
-        "status": "hardening",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/incident_response_plan.md"
       },
       {
@@ -742,8 +742,8 @@
         "nature": "Evidence",
         "role": "Records facts and impact",
         "source": "NIST",
-        "maturity": "Public draft",
-        "status": "hardening",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/incident_report.md"
       },
       {
@@ -751,8 +751,8 @@
         "nature": "Evidence",
         "role": "Preserves the chronology of events",
         "source": "Google SRE",
-        "maturity": "Public draft",
-        "status": "hardening",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/incident_timeline.md"
       },
       {
@@ -814,8 +814,8 @@
         "nature": "Evidence",
         "role": "Records drills and extracted lessons",
         "source": "NIST",
-        "maturity": "Public draft",
-        "status": "hardening",
+        "maturity": "Public",
+        "status": "ready",
         "path": "artifacts/07_Operations_Incidents_Continuity/templates/exercise_drill_record.md"
       }
     ],

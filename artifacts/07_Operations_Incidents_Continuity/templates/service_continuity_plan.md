@@ -1,7 +1,7 @@
 ---
 title: Service Continuity Plan
 artifact_type: template
-status: public
+status: public-draft
 visibility: public
 classification: public
 owner: "{{OWNER_NAME}}"
